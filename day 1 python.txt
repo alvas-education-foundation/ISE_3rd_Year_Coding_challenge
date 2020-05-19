@@ -1,0 +1,72 @@
+When users post an update on social media,such as a URL, image, status update etc., other users in their network are able to view this new post on their news feed. Users can also see exactly when the post was published, i.e, how many hours, minutes or seconds ago.
+
+Since sometimes posts are published and viewed in different time zones, this can be confusing. You are given two timestamps of one such post that a user can see on his newsfeed in the following format:
+
+Day dd Mon yyyy hh:mm:ss +xxxx
+
+Here +xxxx represents the time zone. Your task is to print the absolute difference (in seconds) between them.
+
+Input Format
+
+The first line contains , the number of testcases.
+Each testcase contains  lines, representing time  and time .
+
+Constraints
+
+Input contains only valid timestamps
+.
+code:
+
+from datetime import datetime as dt
+
+
+fmt = '%a %d %b %Y %H:%M:%S %z'
+for i in range(int(input())):
+    print(int(abs((dt.strptime(input(), fmt) - 
+                   dt.strptime(input(), fmt)).total_seconds())))
+
+
+
+Output
+
+2
+Sun 10 May 2015 13:54:36 -0700
+Sun 10 May 2015 13:54:36 -0000
+Sat 02 May 2015 19:54:36 +0530
+Fri 01 May 2015 13:54:36 -0000
+
+
+
+
+
+
+
+
+
+
+2.A newly opened multinational brand has decided to base their company logo on the three most common characters in the company name. They are now trying out various combinations of company names and logos based on this condition. Given a string , which is the company name in lowercase letters, your task is to find the top three most common characters in the string.
+
+Print the three most common characters along with their occurrence count.
+Sort in descending order of occurrence count.
+If the occurrence count is the same, sort the characters in alphabetical order.
+For example, according to the conditions described above,
+
+ would have it's logo with the letters .
+
+code:
+from itertools import groupby
+print(*[char+" "+str(num) 
+for num,char in sorted(sorted([(len(list(v)),k) 
+for k, v in groupby(sorted(input()))],key=lambda x: x[1]),key=lambda x: x[0],reverse=True)][:3], sep='\n')
+
+output:
+Compiler Message
+Success
+Input (stdin)
+
+aabbbccde
+Expected Output
+
+b 3
+a 2
+c 2
