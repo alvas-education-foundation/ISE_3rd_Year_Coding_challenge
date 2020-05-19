@@ -2,7 +2,8 @@ import java.util.*;
 
 public class Solution {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)//main class
+ {
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
         int b=  scan.nextInt();
