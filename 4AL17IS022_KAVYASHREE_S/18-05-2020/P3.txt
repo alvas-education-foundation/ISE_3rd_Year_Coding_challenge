@@ -2,7 +2,7 @@ Game with shapes
 Karl loves to play with shapes and his sister is interested in Mathematics. They got a wooden box which is square in shape with length x cm and a round bangle with radius r cm and decided to play with it. They started playing and his sister asked him to find whether the circle will fit into the square. Help Karl to find whether the circle will fit into a square or not. If the circle fits, display “circle can be inside a square” else display “circle cannot be inside a square”.
 INPUT FORMAT:
 
-Input consist of 2 integers.
+Input consists of 2 integers.
 
 First input corresponds to the radius of a circle.
 
