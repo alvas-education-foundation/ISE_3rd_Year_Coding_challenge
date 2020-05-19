@@ -1,6 +1,6 @@
 CGPA
 
- Hermoine is a very brilliant girl. She has completed her Semester exam. She is eagerly waiting for her CGPA. Her class adviser, Mr.Tom need to upload the CGPA of the student. Can you help him out for the same. He needs to display the CGPA of a student.
+  Hermoine is a very brilliant girl. She has completed her Semester exam. She is eagerly waiting for her CGPA. Her class adviser, Mr.Tom need to upload the CGPA of the student. Can you help him out for the same. He needs to display the CGPA of a student.
 
 Input Format:
 
