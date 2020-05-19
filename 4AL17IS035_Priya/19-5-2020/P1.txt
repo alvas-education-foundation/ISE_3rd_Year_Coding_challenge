@@ -1,0 +1,49 @@
+Electricity Bill
+
+ Electricity board has decided to charge rupees based on the units consumed by a particular home. If the units consumed is less than or equal to 200, the cost for one unit is 0.5. If the unit is less than or equal to 400, the cost for one unit is 0.65 and Rs.100 extra charge. If the unit is less than or equal to 600, the cost for one unit is 0.80 and Rs.200 extra charge. If the unit is greater than 600 the cost for one unit is 1.25 and Rs.425 extra charge. You need to now calculate the electricity bill based on the units consumed (given input).
+
+INPUT & OUTPUT FORMAT:
+
+Input consists of one integer.
+This corresponds to the units consumed.
+The output consists of one integer.
+This corresponds to the electricity bill in rupees.
+
+SAMPLE INPUT:
+
+200
+
+SAMPLE OUTPUT:
+
+Rs.100
+
+PROGRAM:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+ 	int unit;
+	int amt, total_amt, sur_charge;
+	cin>>unit;
+	if(unit <=200)
+	{
+		amt = unit * 0.50;
+	}
+	else if(unit <= 400)
+	{
+		amt = 100 + ((unit-200) * 0.65);
+	}
+	else if(unit <= 600)
+	{
+		amt = 200 + ((unit-400) * 0.80);
+	}
+	else
+	{
+		amt = 425 + ((unit-600) * 1.25);
+	}
+	sur_charge = amt * 0.001;
+	total_amt= amt + sur_charge;
+	cout<<"Rs."<<total_amt;
+	return 0;
+}
