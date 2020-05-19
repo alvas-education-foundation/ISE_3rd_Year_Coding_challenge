@@ -85,6 +85,11 @@ git push -u origin master
 ```
 This  pushes your master branch to origin
 
+## Using .gitignore
+If you are using a editor(vscode,atom etc) to push their might be unwanted files which may get added while commit
+So create a folder and name it ```.gitignore``` and add the name of the files which u dont want to push.
+
+
 
 ### Merging and Branching commands will be updated soon
 
