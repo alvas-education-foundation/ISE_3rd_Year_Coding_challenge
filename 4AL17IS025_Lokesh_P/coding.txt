@@ -1,0 +1,102 @@
+1.Maths and logic are the necessary parts of programming that can be learned through practice. Here is a simple mathematical problem of addition for you to solve.
+
+Write a program to print the sum of two integers.
+
+Instructions:
+
+We have defined two integer variables  and  for you.
+We have provided the code to get the input for the two variables.
+You have to write the logic to add the two variables.
+Print the sum.
+#include <stdio.h>
+ 
+int main(){
+	
+	int num1, num2;   // Define two integer variables
+    
+	
+	scanf("%d %d", &num1, &num2);  // Get input for the two variables
+    
+	int sum = 0;
+	// Write the logic to add these numbers here:
+    sum=num1+num2;
+	
+	printf("%d\n", sum);   // Print the sum
+	return 0;
+}
+2.Well, that was easy. Isn’t it? Now we’ll go one step further and do the sum of elements of an array.
+
+Write a program to print the sum of all the elements of an array of size 4.
+
+Instructions:
+
+We have defined an integer array  for you.
+We have provided the code to get the input for the array elements.
+You have to write the logic to add the elements.
+Print the sum.
+#include <stdio.h>
+ 
+int main(void) {
+	
+	int numArray[4];   // Define an array of four integers
+        int i;
+	// Get inputs for the array elements
+	for (i=0; i<4; i++) 
+	{
+    	scanf("%d", &numArray[i]);
+	}
+    
+	int sum = 0;
+	for(i=0;i<4;i++)
+	{
+	    sum=sum+numArray[i];
+	}
+	printf("%d\n",sum);   // Print the sum
+    
+	return 0;
+}
+3.Write a program to print the sum of all the elements of an array of size N where N can be any integer between 1 and 100. 
+
+Instructions:
+
+We have defined an integer variable N for you.
+We have provided the code to get the input for variable N.
+We have defined an integer array .
+We have provided the code to get the input for the array elements.
+You have to write the logic to add the array elements.
+Print the sum.
+Sample Input:
+N = 3
+Array = 6 3 8
+
+Sample Output:
+17
+#include <stdio.h>
+ 
+int main(void) {
+    
+	int N, i;
+	scanf("%d", &N);
+ 
+	int numArray[N]; // Define an array of four integers
+    
+	// Get inputs for the array elements
+	for (i=0;i<N; i++) {
+    	scanf("%d", &numArray[i]);
+	}
+	
+	int sum = 0;
+	// Write here the logic to add these integers:
+    for (i=0;i<N; i++)
+	 {
+		 sum=sum+numArray[i];
+	 }
+    
+    
+   
+	printf("%d\n",sum);  // Print the sum
+    
+	return 0;
+}
+
+
