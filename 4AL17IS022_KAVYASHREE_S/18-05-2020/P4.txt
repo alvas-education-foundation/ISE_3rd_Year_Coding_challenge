@@ -2,7 +2,7 @@ Microwave oven
 A microwave oven manufacturer recommends to increase the heating time by 50% when two items are heated and to double the heating time when three items are heated. Heating more than three items at once is not recommended. Now, write a program to find out the recommended heating time.
 INPUT FORMAT:
 
-The first input is an integer which denotes the number of items
+The first input is a integer which denotes the number of items
 
 The second input is a floating point number which denotes the single item heating time.
 
