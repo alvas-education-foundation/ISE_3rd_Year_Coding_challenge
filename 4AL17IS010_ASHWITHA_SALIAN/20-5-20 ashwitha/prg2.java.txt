@@ -1,9 +1,8 @@
+2.for loop
+ans:
 #include <iostream>
 #include <cstdio>
 using namespace std;
-
-2.foor loop programm using java
-ans:
 int main()
  {
     int i,c,b;
