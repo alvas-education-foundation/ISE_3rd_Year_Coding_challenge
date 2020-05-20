@@ -1,0 +1,55 @@
+For this problem, we have  types of queries you can perform on a List:
+
+Insert  at index :
+
+Insert
+x y
+Delete the element at index :
+
+Delete
+x
+Given a list, , of  integers, perform  queries on the list. Once all queries are completed, 
+print the modified list as a single line of space-separated integers.
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+import java.util.LinkedList;
+
+public class Solution {
+    public static void main(String[] args) {
+        /* Create and fill Linked List of Integers */
+        Scanner scan = new Scanner(System.in);
+        int N = scan.nextInt();
+        LinkedList<Integer> list = new LinkedList<>();
+        for (int i = 0; i < N; i++) {
+            int value = scan.nextInt();
+            list.add(value);
+        }
+        
+        /* Perfrom queries on Linked List */
+        int Q = scan.nextInt();
+        for (int i = 0; i < Q; i++) {
+            String action = scan.next();
+            if (action.equals("Insert")) {
+                int index = scan.nextInt();
+                int value = scan.nextInt();
+                list.add(index, value);
+            } else { // "Delete"
+                int index = scan.nextInt();
+                list.remove(index);
+            }
+        }
+        scan.close();
+        
+        /* Print our updated Linked List */
+        for (Integer num : list) {
+            System.out.print(num + " ");
+        }
+    }
+} /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    
