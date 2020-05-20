@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Solution //main class
+public class Solution
 {
 
     public static void main(String[] args)//main class
