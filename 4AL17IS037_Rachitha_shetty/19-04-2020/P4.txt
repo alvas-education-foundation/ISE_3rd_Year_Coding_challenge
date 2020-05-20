@@ -1,4 +1,5 @@
-Student Marks sum:
+Student Marks Sum:
+
 
 int marks_summation(int* marks,int number_of_students,char gender) {
   int sum=0;

@@ -1,4 +1,4 @@
-Sum and difference of two numbers:
+Sum and Difference of Two Numbers
 
 #include <stdio.h>
 #include <string.h>
