@@ -3,7 +3,8 @@ import java.io.*;
 
 
 
-class Solution{
+class Solution //main class
+{
     public static void main(String []argh)
     {
         Scanner sc = new Scanner(System.in);
