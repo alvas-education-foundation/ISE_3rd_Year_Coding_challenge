@@ -91,10 +91,10 @@ git log
 ```
 ![git log](https://user-images.githubusercontent.com/33172934/82408663-b240a700-9a89-11ea-97e8-eb7092670e38.png)
 
-## During pull or push if you face any problem set master as upstream.
+## During pull or push if you face any problem set master and push.
 
 ```bash
-git push -u origin master
+git push origin master
 ```
 This  pushes your master branch to origin
 
