@@ -1,0 +1,1 @@
+Check the instructions given by Amin Vishak on how to clone repo, commit, Push, Pull, and view git status

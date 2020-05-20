@@ -1,0 +1,5 @@
+1.Hello World
+2.Adding 2 numbers
+3.Calculate square root
+4.Area of triangle
+5.Quadratic Equations
