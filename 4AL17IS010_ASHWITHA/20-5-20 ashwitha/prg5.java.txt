@@ -1,8 +1,7 @@
-5.This exercise is to test your understanding of Java Strings. A sample String declaration:
+5.
 
-String myString = "Hello World!"
-
-ans:import java.io.*;
+ans:
+import java.io.*;
 import java.util.*;
 
 public class Solution {

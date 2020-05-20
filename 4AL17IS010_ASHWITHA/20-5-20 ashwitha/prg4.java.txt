@@ -1,9 +1,4 @@
-4.Then print the formatted values as follows:
-
-US: formattedPayment
-India: formattedPayment
-China: formattedPayment
-France: formattedPayment
+4.
 ans:
 import java.util.Scanner;
 import java.text.NumberFormat;
