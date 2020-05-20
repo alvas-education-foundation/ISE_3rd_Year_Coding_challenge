@@ -1,0 +1,5 @@
+1.Quadratic Equations
+2.Swapping
+3.Generating Random Numbers
+4.Convert Kilometer to Miles
+5.Check whether number is prime
