@@ -1,0 +1,54 @@
+1.#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+	
+    char s[100];
+    scanf("%[^\n]%*c", &s);
+    printf("Hello, World!\n%s", s);
+    
+    return 0;
+   
+}
+
+2.#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    char ch;
+    char s[20], sen[100];
+    scanf("%c", &ch);
+    scanf("%s", s);
+    scanf("\n");
+    scanf("%[^\n]%*c", sen);
+    printf("%c\n", ch);
+    printf("%s\n", s);
+    printf("%s\n", sen);
+    return 0;
+}
+
+3.#include <stdio.h>
+#include <stdlib.h>
+
+void update(int *a,int *b) {
+    int temp = *a;
+    *a = *a + *b;
+    *b = abs(temp - *b);
+
+}
+
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b;
+    
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+
+    return 0;
+}
