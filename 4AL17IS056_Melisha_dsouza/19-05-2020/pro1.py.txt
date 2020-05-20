@@ -1,4 +1,4 @@
-4:Python Program to Find HCF
+1.Python Program to Find HCF
 
 def hcf(x, y):  
    if x > y:  

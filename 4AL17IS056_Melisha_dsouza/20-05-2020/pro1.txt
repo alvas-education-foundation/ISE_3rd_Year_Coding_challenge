@@ -1,4 +1,5 @@
-#Python Program to Find HCF or GCD
+Python Program to Find HCF or GCD
+
 def compute_hcf(x, y):
     if x > y:
         smaller = y
