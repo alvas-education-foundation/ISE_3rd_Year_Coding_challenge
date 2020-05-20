@@ -1,0 +1,71 @@
+Question:
+Akash and Vishal are quite fond of travelling. They mostly travel by railways. They were travelling in a train one day and they got interested in the seating arrangement of their compartment. The compartment looked something like
+
+
+So they got interested to know the seat number facing them and the seat type facing them. The seats are denoted as follows :
+
+Window Seat : WS
+Middle Seat : MS
+Aisle Seat : AS
+
+You will be given a seat number, find out the seat number facing you and the seat type, i.e. WS, MS or AS.
+
+INPUT
+First line of input will consist of a single integer T denoting number of test-cases. Each test-case consists of a single integer N denoting the seat-number.
+
+OUTPUT
+For each test case, print the facing seat-number and the seat-type, separated by a single space in a new line.
+
+Program:
+
+import java.util.*;
+
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+      
+        Scanner r = new Scanner(System.in);
+        int t = r.nextInt();
+        if(t>=1&&t<=100000)
+        {
+            for(int i=1;i<=t;i++)
+            {
+                int n=r.nextInt();
+                if(n>=1&&n<=108)
+                {
+                    int ch = n%12;
+                    switch(ch)
+                    {
+                        case 0:System.out.println((n-11)+" WS");
+                        break;
+                        case 1:System.out.println((n+11)+" WS");
+                        break;
+                        case 2:System.out.println((n+9)+" MS");
+                        break;
+                        case 3:System.out.println((n+7)+" AS");
+                        break;
+                        case 4:System.out.println((n+5)+" AS");
+                        break;
+                        case 5:System.out.println((n+3)+" MS");
+                        break;
+                        case 6:System.out.println((n+1)+" WS");
+                        break;
+                        case 7:System.out.println((n-1)+" WS");
+                        break;
+                        case 8:System.out.println((n-3)+" MS");
+                        break;
+                        case 9:System.out.println((n-5)+" AS");
+                        break;
+                        case 10:System.out.println((n-7)+" AS");
+                        break;
+                        case 11:System.out.println((n-9)+" MS");
+                        break;
+                        default:System.out.print("");
+                        break;
+                    }
+                }
+            }
+        }
+        
+    }
+}
