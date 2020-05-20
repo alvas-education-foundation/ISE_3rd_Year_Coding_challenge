@@ -1,0 +1,50 @@
+QUESTION: 
+1.Maximize-it
+
+Code:
+from itertools import product
+
+K,M = map(int,input().split())
+N = (list(map(int, input().split()))[1:] for _ in range(K))
+results = map(lambda x: sum(i**2 for i in x)%M, product(*N))
+print(max(results))
+
+Output:
+Input (stdin)
+
+3 1000
+2 5 4
+3 7 8 9
+5 5 7 8 9 10
+Your Output (stdout)
+206
+Expected Output
+
+206
+
+
+
+
+
+2.triangle quest
+
+code:
+for i in range(1,input()):
+ #More than 2 lines will result in 0 score. Do not leave a blank line also
+   print sum(map(lambda x: i * 10**x, xrange(i)))
+
+output:
+Input (stdin)
+
+5
+Your Output (stdout)
+1
+22
+333
+4444
+Expected Output
+
+1
+22
+333
+4444
