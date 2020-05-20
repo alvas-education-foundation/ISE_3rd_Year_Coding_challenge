@@ -1,3 +1,4 @@
+#Day 5 code challenge from LCO.
 n = 400
 
 q = 8

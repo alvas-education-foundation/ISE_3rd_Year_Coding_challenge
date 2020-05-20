@@ -1,3 +1,5 @@
+#Day 3 Code Challenge from LCO 
+
 n = 10
 
 for i in range(1,n+1):
