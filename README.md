@@ -93,4 +93,5 @@ So create a folder and name it ```.gitignore``` and add the name of the files wh
 
 ### Merging and Branching commands will be updated soon
 
+
 <em> If you are interested in learning more commands, have a look at https://git-scm.com/docs </em>
