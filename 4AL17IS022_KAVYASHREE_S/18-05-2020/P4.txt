@@ -1,0 +1,45 @@
+Microwave oven
+A microwave oven manufacturer recommends to increase the heating time by 50% when two items are heated and to double the heating time when three items are heated. Heating more than three items at once is not recommended. Now, write a program to find out the recommended heating time.
+INPUT FORMAT:
+
+The first input is a integer which denotes the number of items
+
+The second input is a floating point number which denotes the single item heating time.
+
+OUTPUT FORMAT:
+
+Print the recommended heating time in floating point with 2 decimal places.
+
+If the number of items is more than three, print "Number of items is more".
+
+Refer the sample output for formatting.
+
+SAMPLE INPUT:
+
+2
+
+5.0
+
+SAMPLE OUTPUT:
+
+7.50
+
+PROGRAM:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+  //Type your code here.
+  int a;
+  float b,c,d,f;
+  std::cin>>a>>b;
+  c=a*b;
+  d=(b*50)/100;
+  if(a<=2)
+    std::cout<<c-d;
+  else if(a==3)
+    std::cout<<2*b;
+  else
+    std::cout<<"Number of items is more";
+}

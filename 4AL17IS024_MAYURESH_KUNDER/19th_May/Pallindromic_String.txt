@@ -1,0 +1,51 @@
+Question:
+You have been given a String S. You need to find and print whether this string is a palindrome or not. If yes, print "YES" (without quotes), else print "NO" (without quotes).
+
+Input Format
+The first and only line of input contains the String S. The String shall consist of lowercase English alphabets only.
+
+Output Format
+Print the required answer on a single line.
+
+Constraints 1=|S|=100
+
+Note
+String S consists of lowercase English Alphabets only.
+
+Program:
+
+import java.util.*;
+
+class palli {
+
+    static boolean isPallindrome(String strr)
+    {
+        int i=0;
+        int j=strr.length()-1;
+        while(i<j)
+        {
+            if(strr.charAt(i)!=strr.charAt(j))
+            {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+
+
+    public static void main(String args[] ){
+    
+        Scanner s = new Scanner(System.in);
+        String str = s.nextLine();
+        if (isPallindrome(str))
+        {
+            System.out.println("YES");
+        }
+        else
+        {
+            System.out.println("NO");
+        }
+    }
+}
