@@ -1,0 +1,67 @@
+05. Write a python program to sort the elements of the circular linked list
+
+
+    
+class Node:    
+    def __init__(self,data):    
+        self.data = data;    
+        self.next = None;        
+class CreateList:       
+    def __init__(self):    
+        self.head = Node(None);    
+        self.tail = Node(None);    
+        self.head.next = self.tail;    
+        self.tail.next = self.head;    
+    def add(self,data):    
+        newNode = Node(data);    
+        if self.head.data is None:    
+            self.head = newNode;    
+            self.tail = newNode;    
+            newNode.next = self.head;    
+        else:    
+            self.tail.next = newNode;        
+            self.tail = newNode;       
+            self.tail.next = self.head;        
+    def sortList(self):    
+        current = self.head;    
+        if(self.head == None):    
+            print("List is empty");    
+        else:    
+            while(True):    
+                index = current.next;    
+                while(index != self.head):    
+                    if(current.data > index.data):    
+                        temp = current.data;    
+                        current.data = index.data;    
+                        index.data = temp;    
+                    index= index.next;    
+                current =current.next;    
+                if(current.next == self.head):    
+                    break;    
+    def display(self):    
+        current = self.head;    
+        if self.head is None:    
+            print("List is empty");    
+            return;    
+        else:    
+            print(current.data, end= ' ');    
+            while(current.next != self.head):    
+                current = current.next;    
+                print(current.data,end=' ');    
+        print("\n");          
+class CircularLinkedList:    
+    cl = CreateList();    
+    cl.add(70);    
+    cl.add(90);    
+    cl.add(20);    
+    cl.add(100);    
+    cl.add(50);    
+    print("Original list: ");    
+    cl.display();    
+    cl.sortList();    
+    print("Sorted list: ");    
+    cl.display();    
+
+
+
+

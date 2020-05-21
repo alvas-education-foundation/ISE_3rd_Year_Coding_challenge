@@ -1,0 +1,158 @@
+20/05/2020
+
+1st program:
+
+Java Loops II:create the following series
+
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+        }
+        in.close();
+    }
+}
+
+
+2nd program:
+
+Java Output Formatting:Java's System.out.printf function can be used to print formatted output. The purpose of this exercise is to test your understanding of formatting output using printf.
+
+To get you started, a portion of the solution is provided for you in the editor; you must format and print the input to complete the solution.
+
+
+import java.util.Scanner;
+
+public class Solution {
+
+public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("================================");
+        for(int i=0;i<3;i++)
+        {
+            String s1=sc.next();
+            int x=sc.nextInt();
+            System.out.printf("%-15s%03d%n", s1, x);
+        }
+        System.out.println("================================");
+
+}
+}
+
+3rd program:
+
+Java Datatypes
+
+Java has 8 primitive data types; char, boolean, byte, short, int, long, float, and double. For this exercise, we'll work with the primitives used to hold integer values (byte, short, int, and long):
+
+import java.util.*;
+import java.io.*;
+class Solution{
+    public static void main(String []argh)
+    {
+
+
+
+        Scanner sc = new Scanner(System.in);
+        int t=sc.nextInt();
+
+        for(int i=0;i<t;i++)
+        {
+
+            try
+            {
+                long x=sc.nextLong();
+                System.out.println(x+" can be fitted in:");
+                if(x>=-128 && x<=127)System.out.println("* byte");
+                //Complete the code
+            }
+            catch(Exception e)
+            {
+                System.out.println(sc.next()+" can't be fitted anywhere.");
+            }
+
+        }
+    }
+}
+
+
+
+4th program:
+
+Java Date and Time:The Calendar class is an abstract class that provides methods for converting between a specific instant in time and a set of calendar fields such as YEAR, MONTH, DAY_OF_MONTH, HOUR, and so on, and for manipulating the calendar fields, such as getting the date of the next week.
+
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+        int month = Integer.parseInt(firstMultipleInput[0]);
+
+        int day = Integer.parseInt(firstMultipleInput[1]);
+
+        int year = Integer.parseInt(firstMultipleInput[2]);
+
+        String res = Result.findDay(month, day, year);
+
+        bufferedWriter.write(res);
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+5th program:
+
+Java Currency Formatter:Given a double-precision number,payment , denoting an amount of money, use the NumberFormat class' getCurrencyInstance method to convert payment into the US, Indian, Chinese, and French currency formats. Then print the formatted values as follows:
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
+
+        // Write your code here.
+        NumberFormat usFormat = NumberFormat.getCurrencyInstance(Locale.US);
+        NumberFormat cnFormat = NumberFormat.getCurrencyInstance(Locale.CHINA);
+        NumberFormat frFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+        NumberFormat inFormat = NumberFormat.getCurrencyInstance(new Locale("en", "in"));
+
+        String us = usFormat.format(payment);
+        String india = inFormat.format(payment);
+        String france = frFormat.format(payment);
+        String china = cnFormat.format(payment);
+        
+        System.out.println("US: " + us);
+        System.out.println("India: " + india);
+        System.out.println("China: " + china);
+        System.out.println("France: " + france);
+    }
+}

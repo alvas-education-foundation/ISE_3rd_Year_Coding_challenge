@@ -1,0 +1,23 @@
+Question:
+This is an easy problem. 
+
+All you need to do is to print the first 10 multiples of the number given in input.
+
+Program:
+
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        
+            Scanner s = new Scanner(System.in);
+
+            int n = s.nextInt();
+
+            for(int i=1;i<=10;i++)
+            {
+                System.out.println(n*i);
+            }
+
+    }
+}
