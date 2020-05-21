@@ -1,0 +1,131 @@
+4.Sum of squares
+That was awesome!
+
+Write a program to print the sum of squares of the elements of an array of size N. N can be any integer between 1 and 100. 
+
+Instructions:
+
+We have defined an integer variable N for you.
+We have provided the code to get the input for variable N.
+We have defined an integer array .
+We have provided the code to get the input for the array elements.
+You have to write the logic to add the squares of array elements.
+Print the sum.
+Sample Input
+N = 5
+Array = 4 7 2 8 5
+
+Sample Output:
+158
+#include <stdio.h>
+ 
+int main(void) {
+    
+	int N, i;
+	scanf("%d", &N);
+ 
+	int numArray[N]; // Define an array of four integers
+    
+	// Get inputs for the array elements
+	for (i=0;i<N; i++) {
+    	scanf("%d", &numArray[i]);
+	}
+	
+	int sum = 0;
+	// Write here the logic to add these integers:
+    for (i=0;i<N; i++) {
+		sum=sum+(numArray[i]*numArray[i]);
+	}
+    
+    
+   
+	printf("%d\n",sum);  // Print the sum
+    
+	return 0;
+}
+5.Range of Integers
+Write a program to list all the integers between two integers L and R (including L and R). L and R can be any integer between 1 and 100. 
+
+Instructions:
+
+We have defined the integer variables L and R for you.
+We have provided the code to get inputs for the variables.
+Print all the integers between L and R (including L and R) with space between them
+Sample Input:
+L = 5, R = 10
+
+Sample Output:
+5 6 7 8 9 10
+#include <stdio.h>
+
+int main(void) {
+
+    // Define the two integer variables
+    int L,R;
+    int i;
+
+    // Get L and R from the user
+    scanf("%d", &L);
+    scanf("%d", &R);
+
+    // Write here the logic to print all integers between L and R
+    for(i=L;i<=R;i++)
+        printf("%d ", i);
+
+    printf("\n");
+
+
+    return 0;
+}
+6.Add two arrays
+Write a program to add the corresponding elements of two arrays, each of size N and print the sums. N can be any integer between 1 and 100. 
+
+Instructions:
+
+We have defined an integer variable N for you.
+We have provided the code to get the input for variable N.
+We have defined integer arrays ,  and .
+We have provided the code to get the input for the array elements.
+You have to write the logic to add the array elements.
+Store the sum values in respective elements of variable 
+Print all the elements of  with space between them
+Sample Input:
+N = 3
+ = 3 9 8
+ = 8 12 74
+
+Sample Output:
+11 21 82
+#include <stdio.h>
+
+int main(void) {
+    int N, i;
+    scanf("%d", &N);
+    // Declare the two arrays
+    int numArrayA[N], numArrayB[N], sumArray[N];
+
+    for(i=0;i<N;i++) sumArray[i]=0;
+
+    // Get the numArray1
+    for (i=0; i<N; i++) {
+        scanf("%d", &numArrayA[i]);
+    }
+
+    // Get the numArray2
+    for (i=0; i<N; i++) {
+        scanf("%d", &numArrayB[i]);
+    }
+
+    // Write your logic here:
+    for(i=0;i<N;i++)
+        sumArray[i] = numArrayA[i] + numArrayB[i];
+
+
+    // Print the sumArray
+    for (i=0; i<N; i++) {
+        printf("%d ", sumArray[i]);
+    }
+    // Print a newline at the end 
+    printf("\n");
+    return 0;
+}

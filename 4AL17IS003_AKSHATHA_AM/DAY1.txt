@@ -1,0 +1,132 @@
+QUESTION 1:Complete the function solveMeFirst to compute the sum of two integers
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    static int solveMeFirst(int a, int b) {
+	}
+ public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int a;
+        a = in.nextInt();
+        int b;
+        b = in.nextInt();
+        int sum;
+        sum = solveMeFirst(a, b);
+        System.out.println(sum);
+	}
+}
+
+QUESTION 2:Complete the simpleArraySum function in the editor below. It must return the sum of the array elements as an integer.
+simpleArraySum has the following parameter(s):
+ar: an array of integers
+
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class Solution {
+    static int simpleArraySum(int[] ar) {
+    }
+    private static final Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int arCount = Integer.parseInt(scanner.nextLine().trim());
+
+        int[] ar = new int[arCount];
+
+        String[] arItems = scanner.nextLine().split(" ");
+
+        for (int arItr = 0; arItr < arCount; arItr++) {
+            int arItem = Integer.parseInt(arItems[arItr].trim());
+            ar[arItr] = arItem;
+        }
+        int result = simpleArraySum(ar);
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+        bufferedWriter.close();
+    }
+}
+
+
+QUESTION 3:Calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
+
+#include<stdio.h>
+long aVeryBigSum(long long int ,int);
+int main()
+{
+    int n,i;
+    long long int p;
+    scanf("%d",&n); 
+    long long int arr[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%lld",&arr[i]);
+    }
+    p=aVeryBigSum(arr,n);
+    printf("%lld",p);
+}
+long aVeryBigSum(long long int arr,int n)
+{
+    long long int sum=0,i;
+    for(i=0;i<n;i++)
+    {
+        sum+=arr[i];
+    }
+    return sum;
+}
+
+
+QUESTION 4:Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main()
+{
+    int a[100][100],n,c=0,d=0,i,j,sum=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+        for(j=0;j<n;j++)
+            scanf("%d",&a[i][j]);
+    for(i=0;i<n;i++)
+         c=c+a[i][i];        
+    for(i=0;i<n;i++)
+         d=d+a[i][n-1-i];
+    sum=abs(c-d);
+    printf("%d",sum);
+          
+}
+
+QUESTION 5:Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. 
+Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        long sum = 0;
+        long min = 1000000000;
+        long max = 0;
+        while(scan.hasNext()) {
+            long n = scan.nextLong();
+            sum = sum + n;
+            if (min > n) {
+                min = n;
+            }
+            if (max < n) {
+                max = n;
+            }
+        }
+        scan.close();        
+        System.out.println((sum - max) + " " + (sum - min));
+    }
+}
