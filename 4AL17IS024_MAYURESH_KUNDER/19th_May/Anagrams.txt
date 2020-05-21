@@ -1,0 +1,52 @@
+Question:
+Given two strings, a and b , that may or may not be of the same length, determine the minimum number of character deletions required to make a and b anagrams. Any characters can be deleted from either of the strings.
+
+Input :
+
+test cases,t
+two strings a and b, for each test case
+Output:
+
+Desired O/p
+
+Constraints :
+
+string lengths<=10000
+
+Program:
+
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        
+        int out = 0;
+        Scanner r = new Scanner(System.in);
+        int t = r.nextInt();
+        for(int i=1;i<=t;i++)
+        {
+            String a = r.next();
+            String b = r.next();
+            if((a.length()>=1)&&(b.length()>=1)&&(a.length()<=10000)&&(b.length()<=10000))
+            {
+                int c1[] = new int[26];
+                int c2[] = new int[26];
+                for(int j=0;j<a.length();j++)
+                {
+                    c1[a.charAt(j)-'a']++;
+                }
+                for(int j=0;j<b.length();j++)
+                {
+                    c2[b.charAt(j)-'a']++;
+                }
+                for(int j=0;j<26;j++)
+                {
+                     out += Math.abs(c1[j]-c2[j]);
+                }
+                System.out.println(out);
+                out = 0;
+            }
+            
+        }
+
+    }
+}

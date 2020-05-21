@@ -1,0 +1,9 @@
+1. Write a Python program to find the Factorial of a given number
+
+2. Write a Python program to find the Fibonacci series 
+
+3. Write a Python program to find the Sum of Natural Numbers
+
+4. HTML Code to Create a Heading, Adding a Image and Adding Color to a Text
+
+5. HTML Code to Create a Title, Button, and Lists 

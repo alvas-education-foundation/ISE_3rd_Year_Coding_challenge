@@ -1,0 +1,5 @@
+1.check if number is positive
+2.Arithmetic operations
+3.Loop
+4.Functions
+5.print() function

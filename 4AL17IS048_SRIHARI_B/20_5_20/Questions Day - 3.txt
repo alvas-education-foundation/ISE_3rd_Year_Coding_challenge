@@ -1,0 +1,9 @@
+1. Python Program to Count the Number of Each Vowel
+
+2. Python Program to find compound interest
+
+3. Python Program for Program to find area of a circle
+
+4. Python Program to find sum of array
+
+5. Python Program to find largest element in an array
