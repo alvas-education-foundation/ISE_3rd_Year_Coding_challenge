@@ -1,0 +1,165 @@
+QUESTION 1:You have been asked to help study the population of birds migrating across the continent.
+Each type of bird you are interested in will be identified by an integer value. Each time a particular kind of bird is spotted,
+its id number will be added to your array of sightings.
+You would like to be able to find out which type of bird is most common given a list of sightings.
+Your task is to print the type number of that bird and if two or more types of birds are equally common, choose the type with the smallest ID number.
+
+import math
+import os
+import random
+import re
+import sys
+from collections import Counter
+def migratoryBirds(arr):
+    mc = Counter(arr)
+    return mc.most_common(1)[0][0]
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+ 
+    arr_count = int(raw_input().strip())
+ 
+    arr = map(int, raw_input().rstrip().split())
+ 
+    result = migratoryBirds(arr)
+ 
+    fptr.write(str(result) + '\n')
+ 
+    fptr.close()
+
+QUESTION 2:In this challenge, you will learn simple usage of functions in C.
+ Functions are a bunch of statements glued together.
+ A function is provided with zero or more arguments,and it executes the statements on it.
+ Based on the return type, it either returns nothing (void) or something.
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int max_of_four(int a,int b,int c, int d){
+   
+    if(a > b){
+        if(a > c){
+            if(a>d)return a;
+            else return d;
+        }
+        else {
+            if(c > d)return c;
+            else return d;
+        }
+    }
+    else{
+        if(b > c){
+            if(b > d)return b;
+            else return d;
+        }
+        else{
+            if(c > d)return c;
+            else return d;
+        }
+    }
+}  
+int main() {
+
+    int a, b, c, d;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+    int ans = max_of_four(a, b, c, d);
+    printf("%d", ans);
+    return 0;
+}
+
+QUESTION 3:if and else are two of the most frequently used conditionals in C/C++,
+and they enable you to execute zero or one conditional statement among many such dependent conditional statements. 
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {   
+    int n;
+    scanf("%d", &n);
+    if(n == 1) {
+        printf("one");
+    }
+    else if(n == 2) {
+        printf("two");
+    }
+    else if(n == 3) {
+        printf("three");
+    }
+    else if(n == 4) {
+        printf("four");
+    }
+    else if(n == 5) {
+        printf("five");
+    }
+    else if(n == 6) {
+        printf("six");
+    }
+    else if(n == 7) {
+        printf("seven");
+    }
+    else if(n == 8) {
+        printf("eight");
+    }
+    else if(n == 9) {
+        printf("nine");
+    }
+    else {
+        printf("Greater than 9");
+    }
+    
+    return 0;
+}
+
+
+QUESTION 4:For each integer  in the interval  (given as input) :
+If , then print the English representation of it in lowercase. That is "one" for , "two" for , and so on.
+Else if  and it is an even number, then print "even".
+Else if  and it is an odd number, then print "odd".
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int a, b;
+    char* represent[10] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    scanf("%d\n%d", &a, &b);
+    for(int i = a; i <= b; i++) {
+        
+        if(i > 9) {
+            if(i % 2 == 0)
+                printf("even\n");
+            else printf("odd\n");
+        }
+        else {
+            printf("%s\n", represent[i]);
+        }
+    }
+    return 0;
+}
+
+QUESTION 5:In this challenge, you have to input a five digit number and print the sum of digits of the number.
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+   
+    int n;
+    scanf("%d", &n);
+    //Complete the code to calculate the sum of the five digits on n.
+    int sum = 0;
+    do {
+        sum += (n % 10);
+        n /= 10;
+    }
+    while(n != 0);
+    printf("%d", sum);
+    return 0;
+}
