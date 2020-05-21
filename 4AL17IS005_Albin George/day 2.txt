@@ -1,0 +1,10 @@
+1.Python: Division
+
+a,b=int(input()),int(input());print(a//b,a/b,sep='\n')
+
+2.Loops
+
+if __name__ == '__main__':
+    n = int(input())
+
+print(*(num**2 for num in range(n)), sep='\n')
