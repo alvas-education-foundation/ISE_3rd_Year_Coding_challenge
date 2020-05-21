@@ -6,7 +6,6 @@ Input Format:
 Input consists of n+1 integers. The first integer corresponds to n, the number of days. The next n integers correspond to stock prices on days 1, 2...n.
 
 Output Format:
-
 The output consists of n integers that correspond to the span values.
 
 Sample Input:
