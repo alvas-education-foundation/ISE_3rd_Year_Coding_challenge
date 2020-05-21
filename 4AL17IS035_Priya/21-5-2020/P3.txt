@@ -1,4 +1,5 @@
 Digit root of a given number
+
 Write a program to find the repeated sum of digits of a number until it becomes a single-digit number.
 Input Format:
 

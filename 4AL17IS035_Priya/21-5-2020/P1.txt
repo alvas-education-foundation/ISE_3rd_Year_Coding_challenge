@@ -2,15 +2,11 @@ Factorial
 
 Write a program to compute the factorial of a number using recursion.
 INPUT AND OUTPUT FORMAT:
-
 Input consists of an integer.
-
 Refer sample input and output for formatting specifications.
 
 SAMPLE INPUT & OUTPUT
-
 5
-
 The factorial of 5 is 120
 
 Program:-
