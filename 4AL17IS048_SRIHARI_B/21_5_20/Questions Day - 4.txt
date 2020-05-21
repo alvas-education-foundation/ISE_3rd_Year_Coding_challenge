@@ -1,0 +1,9 @@
+1. C Program to find Factorial
+
+2. C Program to find LCM
+
+3. C Program to Swap two numbers using variable temp
+
+4. C Program to Reverse the case of input character
+
+5. C Program to Delete an Element from Array in C
