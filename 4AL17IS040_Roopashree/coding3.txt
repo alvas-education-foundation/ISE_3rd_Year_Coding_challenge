@@ -1,0 +1,198 @@
+1.Given a string, , and two indices,  and , print a substring consisting of all characters in the inclusive range from  to . You'll find the String class' substring method helpful in completing this challenge.
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void print(String str){
+        System.out.println(str);
+    }
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String S = in.next();
+        int start = in.nextInt();
+        int end = in.nextInt();
+        String str="";
+        for(int i=start;i<end;i++){
+            str += S.charAt(i);
+        }
+        print(str);
+    }
+}
+
+Input (stdin)
+Helloworld
+3 7
+
+Your Output (stdout)
+lowo
+
+Expected Output
+
+lowo
+
+
+
+2.A substring of a string is a contiguous block of characters in the string. For example, the substrings of abc are a, b, c, ab, bc, and abc.
+Given a string, , and an integer, , complete the function so that it finds the lexicographically smallest and largest substrings of length .
+
+import java.util.Scanner;
+
+public class Solution {
+
+    public static String getSmallestAndLargest(String s, int k) {
+        String smallest = "";
+        String largest = "";
+
+        String[] list = new String[s.length() - k + 1];
+        for (int i = 0; i <= s.length() - k; i++) {
+            String str = s.substring(i, i+k);
+            list[i] = str;
+        }
+
+        smallest = list[0];
+        largest = list[0];
+        for(int i = 1; i < list.length; i++) {
+            if (list[i].compareTo(smallest) < 0) {
+                smallest = list[i];
+            }
+
+            if (list[i].compareTo(largest) > 0){
+                largest = list[i];
+            }
+        }
+
+        return smallest + "\n" + largest;
+    }
+
+Input (stdin)
+
+welcometojava
+3
+Your Output (stdout)
+ava
+wel
+
+Expected Output
+
+ava
+wel
+
+
+3.A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward.(Wikipedia)
+Given a string , print Yes if it is a palindrome, print No otherwise.
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String A = sc.next();
+        String revA = new StringBuilder(A).reverse().toString();
+        System.out.println(((A.compareTo(revA) == 0)) ? "Yes" : "No");
+    }
+}
+
+Input (stdin)
+
+madam
+
+Your Output (stdout)
+Yes
+Expected Output
+
+Yes
+
+
+4.Two strings,  and , are called anagrams if they contain all the same characters in the same frequencies. For example, the anagrams of CAT are CAT, ACT, TAC, TCA, ATC, and CTA.
+
+Complete the function in the editor. If  and  are case-insensitive anagrams, print "Anagrams"; otherwise, print "Not Anagrams" instead.
+
+import java.util.Scanner;
+
+public class Solution {
+
+    static boolean isAnagram(String a, String b) {
+
+        if (a.length() != b.length()) return false;
+        
+        a = a.toLowerCase();
+        b = b.toLowerCase();
+        
+        int [] temp = new int [Character.MAX_VALUE]; 
+    //sry, too lazy to calculate ASCII idx of a-z rel. i :)
+        
+        int summ = 0;
+
+        for (int i = 0; i < a.length(); i++){
+            summ += ++temp [a.charAt(i)] <= 0 ? -1 : 1;
+            summ += --temp [b.charAt(i)] >= 0 ? -1 : 1;
+        }
+
+        return summ == 0;
+        
+}
+
+Input (stdin)
+
+anagram
+margana
+
+Your Output (stdout)
+Anagrams
+
+Expected Output
+
+Anagrams
+
+
+5.Given a string, , matching the regular expression [A-Za-z !,?._'@]+, split the string into tokens. We define a token to be one or more consecutive English alphabetic letters. Then, print the number of tokens, followed by each token on a new line.
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        // Write your code here.
+        scan.close();
+        
+        s = s.trim();
+
+        
+        if(s.length() > 400000){
+            System.out.print("");
+        }
+        else if(s.length()==0){
+            System.out.print(0);
+        }
+        else{
+        String arr[] = s.split("[ !,?._'@]+");
+        System.out.println(arr.length);
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
+         }
+        }
+    }
+}
+
+
+ Output (stdout)
+10
+He
+is
+a
+very
+very
+good
+boy
+isn
+t
+he

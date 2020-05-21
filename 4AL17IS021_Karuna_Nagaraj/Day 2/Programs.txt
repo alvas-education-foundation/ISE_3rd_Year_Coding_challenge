@@ -1,4 +1,4 @@
-01. Write a program in java for fibonocci series using for loop
+ 01. Write a program in java for fibonocci series using for loop
 
 
 
