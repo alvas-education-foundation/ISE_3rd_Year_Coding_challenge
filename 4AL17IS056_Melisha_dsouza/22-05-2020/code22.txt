@@ -1,0 +1,153 @@
+1.program to calculate nth term
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+int find_nth_term(int n, int a, int b, int c) {
+  
+}
+
+int main() {
+    int n, a, b, c;
+  
+    scanf("%d %d %d %d", &n, &a, &b, &c);
+    int ans = find_nth_term(n, a, b, c);
+ 
+    printf("%d", ans); 
+    return 0;
+}
+
+
+2.
+Raj's teacher Anu uses chalk to write on the board. When the chalk reduces to 1/squareroot(n) of its original size, she keeps the chalk aside as it gets too small. She joins all the small pieces of the chalk and makes another chalk of the same size and uses it. If she uses one chalk each day, in how many days will she use the given n number of chalks?
+INPUT & OUTPUT FORMAT:
+
+Input consists of 1 integer which corresponds to the number of chalks given. Output corresponds to the number of days in which the given number of chalks will be used.
+
+SAMPLE INPUT:
+
+16
+
+SAMPLE OUTPUT:
+
+21
+
+PROGRAM:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+  //Type your code here.
+  int number=0, days, cycle=50;
+  float sqroot=1;
+  cin>>number;
+  while(cycle>0)
+  {
+    sqroot = (sqroot+(number/sqroot))/2;
+    --cycle;
+  }
+  days=number+(int(sqroot)+1);
+  cout<<int(days);
+  return 0;
+}
+
+
+3.java program using  deque
+import java.util.*;
+    public class test {
+        
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Deque<Integer> deque = new ArrayDeque<>();
+        HashSet<Integer> set = new HashSet<>();
+        
+        int n = in.nextInt();
+        int m = in.nextInt();
+        int max = Integer.MIN_VALUE;
+
+        for (int i = 0; i < n; i++) {
+            int input = in.nextInt();
+            
+            deque.add(input);
+            set.add(input);
+            
+            if (deque.size() == m) {
+                if (set.size() > max) max = set.size();
+                int first = deque.remove();
+                if (!deque.contains(first)) set.remove(first);
+            }
+        }
+        
+        System.out.println(max);
+    }
+}
+        
+
+4.Calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
+
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+    int i,n;
+    long long int sum=0; 
+    scanf("%lld", &n);
+    long long int a[n]; 
+    for(i=0; i<n; i++)
+    {
+        scanf("%lld",&a[i]);
+    }
+    for(i=0; i<n; i++)
+    {
+       sum+=a[i];
+    }
+   printf("%lld", sum);
+    
+   return 0;
+}
+
+
+5.Write a Java Program to Display Armstrong Number Between Two Intervals
+
+public class Armstrong {
+
+    public static void main(String[] args) {
+
+        int low = 999, high = 99999;
+
+        for(int number = low + 1; number < high; ++number) {
+            int digits = 0;
+            int result = 0;
+            int originalNumber = number;
+
+            while (originalNumber != 0) {
+                originalNumber /= 10;
+                ++digits;
+            }
+
+            originalNumber = number;
+
+            
+            while (originalNumber != 0) {
+                int remainder = originalNumber % 10;
+                result += Math.pow(remainder, digits);
+                originalNumber /= 10;
+            }
+
+            if (result == number)
+                System.out.print(number + " ");
+        }
+
+	}
+}
+
+
+
+
+
+
