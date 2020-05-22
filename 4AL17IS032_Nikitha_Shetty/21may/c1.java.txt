@@ -1,0 +1,28 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution 
+{
+ private static final Scanner r = new Scanner(System.in);
+ public static void main(String[] args)
+  {
+        int n=r.nextInt();
+        String a="";
+        if(n%2==1 || ( (n%2==0) && (n>=6 && n <= 20 ) ) )
+        {
+            a="Weird";
+        }
+        else
+        {
+            a="Not Weird";
+        }
+        System.out.println(a);
+    }
+}  
+
+        
