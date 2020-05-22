@@ -1,0 +1,100 @@
+DAY 3:
+You have a record of  students. Each record contains the student's name, and their percent marks in Maths, Physics and Chemistry. The marks can be floating values. The user enters some integer  followed by the names and marks for  students. You are required to save the record in a dictionary data type. The user then enters a student's name. Output the average percentage marks obtained by that student, correct to two decimal places.
+Input Format
+The first line contains the integer , the number of students. The next  lines contains the name and marks obtained by that student separated by a space. The final line contains the name of a particular student previously listed.
+Constraints
+•	
+•	
+Output Format
+Print one line: The average of the marks obtained by the particular student correct to 2 decimal places.
+Sample Input 0
+ 
+Transpose
+We can generate the transposition of an array using the tool numpy.transpose.
+It will not affect the original array, but it will create a new array.
+import numpy
+
+my_array = numpy.array([[1,2,3],
+                        [4,5,6]])
+print numpy.transpose(my_array)
+
+#Output
+[[1 4]
+ [2 5]
+ [3 6]]
+Flatten
+The tool flatten creates a copy of the input array flattened to one dimension.
+import numpy
+
+my_array = numpy.array([[1,2,3],
+                        [4,5,6]])
+print my_array.flatten()
+
+#Output
+[1 2 3 4 5 6]
+________________________________________
+Task
+You are given a X integer array matrix with space separated elements ( = rows and  = columns).
+Your task is to print the transpose and flatten results.
+Input Format
+The first line contains the space separated values of  and .
+The next  lines contains the space separated elements of  columns.
+Output Format
+First, print the transpose array and then print the flatten.
+Sample Input
+2 2
+1 2
+3 4
+ 
+
+DAY 4:
+Concatenate
+Two or more arrays can be concatenated together using the concatenate function with a tuple of the arrays to be joined:
+import numpy
+
+array_1 = numpy.array([1,2,3])
+array_2 = numpy.array([4,5,6])
+array_3 = numpy.array([7,8,9])
+
+print numpy.concatenate((array_1, array_2, array_3))    
+
+#Output
+[1 2 3 4 5 6 7 8 9]
+If an array has more than one dimension, it is possible to specify the axis along which multiple arrays are concatenated. By default, it is along the first dimension.
+import numpy
+
+array_1 = numpy.array([[1,2,3],[0,0,0]])
+array_2 = numpy.array([[0,0,0],[7,8,9]])
+
+print numpy.concatenate((array_1, array_2), axis = 1)   
+
+#Output
+[[1 2 3 0 0 0]
+ [0 0 0 7 8 9]]    
+________________________________________
+Task
+You are given two integer arrays of size X and X ( &  are rows, and  is the column). Your task is to concatenate the arrays along axis .
+Input Format
+The first line contains space separated integers ,  and .
+The next  lines contains the space separated elements of the  columns.
+After that, the next  lines contains the space separated elements of the  columns.
+Output Format
+Print the concatenated array of size X.
+ 
+PROGRAM:
+Consider a list (list = []). You can perform the following commands:
+1.	insert i e: Insert integer  at position .
+2.	print: Print the list.
+3.	remove e: Delete the first occurrence of integer .
+4.	append e: Insert integer  at the end of the list.
+5.	sort: Sort the list.
+6.	pop: Pop the last element from the list.
+7.	reverse: Reverse the list.
+Initialize your list and read in the value of  followed by  lines of commands where each command will be of the  types listed above. Iterate through each command in order and perform the corresponding operation on your list.
+Input Format
+The first line contains an integer, , denoting the number of commands.
+Each line  of the  subsequent lines contains one of the commands described above.
+Constraints
+•	The elements added to the list must be integers.
+ 
+
