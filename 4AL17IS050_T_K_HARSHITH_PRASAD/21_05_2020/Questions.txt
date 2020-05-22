@@ -1,0 +1,5 @@
+1.welcome to java
+2.stdin
+3.if else
+4.stdin 2
+5.output formatting
