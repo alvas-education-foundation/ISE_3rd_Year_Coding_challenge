@@ -1,0 +1,27 @@
+Question:
+You have been given an array A of size N consisting of positive integers. You need to find and print the product of all the number in this array Modulo 109+7.
+
+Program:
+import java.util.*;
+import java.lang.Math.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        long[] arr = new long[n];
+        for(int j=0;j<n;j++)
+        {
+            arr[j] = s.nextInt();
+        }
+        long ans=1;
+        for(int i=0;i<n;i++)
+        {
+            ans = (ans*arr[i])%(1000000000+7);
+        }
+        System.out.println(ans);
+
+
+    }
+}
