@@ -1,0 +1,9 @@
+1. C Program to  Calculate Standard Deviation
+
+2. C Program to Find Transpose of a Matrix
+
+3. C Program to Access Array Elements Using Pointer
+
+4. C Program to Find the Frequency of Characters in a String
+
+5. C Program to Find the Length of a String
