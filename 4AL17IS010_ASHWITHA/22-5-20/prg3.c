@@ -1,7 +1,6 @@
 3.#include <stdio.h>
 #include <string.h>
 #include <math.h>
-3.
 #include <stdlib.h>
 
 int main() 
