@@ -2,7 +2,7 @@ Mango tree - I
 Dora is so much interested in gardening and hence she plants more trees in her garden. She plants trees in a rectangular fashion with the order of rows and columns and numbers the trees in a row-wise order. She planted the mango tree only in the 1st row, 1st column and last column. So, given the tree number, your task is to find out whether the given tree is a mango tree or not? Now, write a program to check whether the given number denotes a mango tree or not.
 INPUT FORMAT:
 
-Input consists of 3 integers.
+Input consist of 3 integers.
 
 The first input denotes the number of rows.
 

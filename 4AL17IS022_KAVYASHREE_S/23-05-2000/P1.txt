@@ -3,7 +3,7 @@ Factorial
 Write a program to compute the factorial of a number using recursion.
 
 INPUT AND OUTPUT FORMAT:
-Input consists of an integer.
+Input consist of an integer.
 Refer sample input and output for formatting specifications.
 
 SAMPLE INPUT & OUTPUT
