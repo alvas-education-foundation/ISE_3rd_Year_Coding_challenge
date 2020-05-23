@@ -1,0 +1,163 @@
+1)Write a Java program to display Floyd's triangle
+
+import java.util.Scanner; 
+class FloydTriangle
+{
+  public static void main(String args[])
+  {
+    int n, num = 1, c, d;
+    Scanner in = new Scanner(System.in);
+ 
+    System.out.println("Enter the number of rows of Floyd's triangle to display");
+    n = in.nextInt();
+ 
+    System.out.println("Floyd's triangle:");
+ 
+    for (c = 1; c <= n; c++)
+    {
+      for (d = 1; d <= c; d++)
+      {
+        System.out.print(num+" ");
+        num++;
+      }
+ 
+      System.out.println(); 
+    }
+  }
+}
+
+
+2)Write a Java Program to Display Armstrong Number Between Two Intervals
+
+public class Armstrong {
+
+    public static void main(String[] args) {
+
+        int low = 999, high = 99999;
+
+        for(int number = low + 1; number < high; ++number) {
+            int digits = 0;
+            int result = 0;
+            int originalNumber = number;
+
+            while (originalNumber != 0) {
+                originalNumber /= 10;
+                ++digits;
+            }
+
+            originalNumber = number;
+
+            
+            while (originalNumber != 0) {
+                int remainder = originalNumber % 10;
+                result += Math.pow(remainder, digits);
+                originalNumber /= 10;
+            }
+
+            if (result == number)
+                System.out.print(number + " ");
+        }
+
+	}
+}
+
+
+3)Java Program to Count the Number of Vowels and Consonants in a Sentence
+
+public class Count {
+
+    public static void main(String[] args) {
+        String line = "This website is aw3som3.";
+        int vowels = 0, consonants = 0, digits = 0, spaces = 0;
+
+        line = line.toLowerCase();
+        for(int i = 0; i < line.length(); ++i)
+        {
+            char ch = line.charAt(i);
+            if(ch == 'a' || ch == 'e' || ch == 'i'
+                || ch == 'o' || ch == 'u') {
+                ++vowels;
+            }
+            else if((ch >= 'a'&& ch <= 'z')) {
+                ++consonants;
+            }
+            else if( ch >= '0' && ch <= '9')
+            {
+                ++digits;
+            }
+            else if (ch ==' ')
+            {
+                ++spaces;
+            }
+        }
+	System.out.println("Vowels: " + vowels);
+        System.out.println("Consonants: " + consonants);
+        System.out.println("Digits: " + digits);
+        System.out.println("White spaces: " + spaces);
+    }
+}
+
+
+4)Java Program to Sort Elements in Lexicographical Order (Dictionary Order)
+
+public class Sort {
+
+    public static void main(String[] args) {
+        String[] words = { "Ruby", "C", "Python", "Java" };
+
+        for(int i = 0; i < 3; ++i) {
+            for (int j = i + 1; j < 4; ++j) {
+                if (words[i].compareTo(words[j]) > 0) {
+
+                    // swap words[i] with words[j[
+                    String temp = words[i];
+                    words[i] = words[j];
+                    words[j] = temp;
+                }
+            }
+        }
+
+        System.out.println("In lexicographical order:");
+        for(int i = 0; i < 4; i++) {
+            System.out.println(words[i]);
+        }
+    }
+}
+
+public class Sort {
+
+    public static void main(String[] args) {
+        String[] words = { "Ruby", "C", "Python", "Java" };
+
+        for(int i = 0; i < 3; ++i) {
+            for (int j = i + 1; j < 4; ++j) {
+                if (words[i].compareTo(words[j]) > 0) {
+
+                    // swap words[i] with words[j[
+                    String temp = words[i];
+                    words[i] = words[j];
+                    words[j] = temp;
+                }
+            }
+        }
+
+        System.out.println("In lexicographical order:");
+        for(int i = 0; i < 4; i++) {
+            System.out.println(words[i]);
+        }
+    }
+}
+
+
+5)Java Program to Remove All Whitespaces from a String
+
+public class Whitespaces {
+
+    public static void main(String[] args) {
+        String sentence = "T    his is b  ett     er.";
+        System.out.println("Original sentence: " + sentence);
+
+        sentence = sentence.replaceAll("\\s", "");
+        System.out.println("After replacement: " + sentence);
+    }
+}

@@ -1,0 +1,220 @@
+1.Given a double-precision number, , denoting an amount of money, use the NumberFormat class' getCurrencyInstance method to convert  into the US, Indian, Chinese, and French currency formats. Then print the formatted values as follows
+
+import java.util.*;
+import java.text.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
+        // Write your code here.
+        Locale.setDefault(new Locale("en","IN"));
+        String india = NumberFormat.getCurrencyInstance().format(payment);
+        Locale.setDefault(Locale.CHINA);
+        String china = NumberFormat.getCurrencyInstance().format(payment);
+        Locale.setDefault(Locale.US);
+        String us = NumberFormat.getCurrencyInstance().format(payment);
+        Locale.setDefault(Locale.FRANCE);
+        String france = NumberFormat.getCurrencyInstance().format(payment);
+        System.out.println("US: " + us);
+        System.out.println("India: " + india);
+        System.out.println("China: " + china);
+        System.out.println("France: " + france);
+    }
+}
+
+Your Output (stdout)
+US: $12,324.13
+India: Rs.12,324.13
+China: ?12,324.13
+France: 12 324,13 €
+Expected Output
+
+US: $12,324.13
+India: Rs.12,324.13
+China: ?12,324.13
+France: 12 324,13 €
+
+
+2.In this challenge, we use regular expressions (RegEx) to remove instances of words that are repeated more than once, but retain the first occurrence of any case-insensitive repeated word. For example, the words love and to are repeated in the sentence I love Love to To tO code. Can you complete the code in the editor so it will turn I love Love to To tO code into I love to code?
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class DuplicateWords {
+
+    public static void main(String[] args) {
+
+        String regex = "(\\b\\w+)(\\s\\1\\b)+";
+        Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE + Pattern.MULTILINE);
+
+        Scanner in = new Scanner(System.in);
+        int numSentences = Integer.parseInt(in.nextLine());
+        
+        while (numSentences-- > 0) {
+            String input = in.nextLine();
+            
+            Matcher m = p.matcher(input);
+            
+            // Check for subsequences of input that match the compiled pattern
+            while (m.find()) {
+                input = input.replaceAll(m.group(), m.group(1));
+            }
+            
+            // Prints the modified sentence.
+            System.out.println(input);
+        }
+        
+        in.close();
+    }
+}
+
+Your Output (stdout)
+Goodbye bye world
+Sam went to his business
+Reya is the best player in eye game
+in inthe
+Hello Ab
+Expected Output
+
+Goodbye bye world
+Sam went to his business
+Reya is the best player in eye game
+in inthe
+Hello Ab
+
+
+3.Consider an -element array, , where each index  in the array contains a reference to an array of  integers (where the value of  varies from array to array). See the Explanation section below for a diagram.
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    // get length of array 'a' and number of queries
+    int n, q;
+    cin >> n >> q;
+
+    // create vector of vectors
+    vector<vector<int>> a(n);
+
+    // fill each 2D vector i with k_i values
+    for (int i = 0; i < n; i++) {
+        // get the length k of the vector at a[i]
+        int k;
+        cin >> k;
+
+        // fill the vector with k values
+        a[i].resize(k);
+        for (int j = 0; j < k; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+    // run queries on a
+    for (int q_num = 0; q_num < q; q_num++) {
+        // get i, j as the 'query' to get a value from a
+        int i, j;
+        cin >> i >> j;
+        cout << a[i][j] << endl;
+    }
+
+    return 0;
+}
+
+Input (stdin)
+
+2 2
+3 1 5 4
+5 1 2 8 9 3
+0 1
+1 3
+Your Output (stdout)
+5
+9
+Expected Output
+
+5
+9
+
+
+4.You are given a main function which reads the enumeration values for two different types as input, then prints out the corresponding enumeration names. Write a class template that can provide the names of the enumeration values for both types. If the enumeration value is not valid, then print unknown.
+
+
+#include <iostream>
+using namespace std;
+enum class Fruit { apple, orange, pear };
+enum class Color { red, green, orange };
+
+template <typename T> struct Traits;
+#include <vector>
+
+template <>
+struct Traits<Fruit> {
+    static string name(int index) {
+        static vector<string> const names {"apple", "orange", "pear"};
+        if (index < 0 || index >= names.size())
+            return "unknown";
+        return names[index];
+    }
+};
+
+template <>
+struct Traits<Color> {
+    static string name(int index) {
+        static vector<string> const names {"red", "green", "orange"};
+        if (index < 0 || index >= names.size())
+            return "unknown";
+        return names[index];
+    }
+};
+
+Input (stdin)
+
+1
+0 0
+Your Output (stdout)
+red apple
+Expected Output
+
+red apple
+
+5.stringstream is a stream class to operate on strings. It basically implements input/output operations on memory (string) based streams. stringstream can be helpful in different type of parsing. The following operators/functions are commonly used here
+
+Operator >> Extracts formatted data.
+Operator << Inserts formatted data.
+Method str() Gets the contents of underlying string device object.
+Method str(string) Sets the contents of underlying string device object.
+Its header file is sstream.
+
+#include <sstream>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    string s;  cin >> s;
+    for (size_t f = 0; (f = s.find(",", f)) != string::npos; s.replace(f, 1, "\n"));
+    cout << s << endl;
+    return 0;
+}
+
+
+Input (stdin)
+
+23,4,56
+Your Output (stdout)
+23
+4
+56
+Expected Output
+
+23
+4
+56

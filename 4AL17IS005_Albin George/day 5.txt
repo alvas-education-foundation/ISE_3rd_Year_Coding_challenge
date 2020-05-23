@@ -1,0 +1,14 @@
+1.Nested Lists
+marksheet = []
+for _ in range(0,int(input())):
+    marksheet.append([input(), float(input())])
+
+second_highest = sorted(list(set([marks for name, marks in marksheet])))[1]
+print('\n'.join([a for a,b in sorted(marksheet) if b == second_highest]))
+
+2.Finding the percentage
+marks = {}
+for _ in range(int(input())):
+    line = input().split()
+    marks[line[0]] = list(map(float, line[1:]))
+print('%.2f' %(sum(marks[input()])/3))
