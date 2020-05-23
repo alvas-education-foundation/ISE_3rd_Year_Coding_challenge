@@ -1,0 +1,24 @@
+Question:
+Having a good previous year, Monk is back to teach algorithms and data structures. This year he welcomes the learners with a problem which he calls "Welcome Problem". The problem gives you two arrays A and B (each array of size N) and asks to print new array C such that:
+ ; 
+Now, Monk will proceed further when you solve this one. So, go on and solve it :)
+
+Program:
+#include<stdio.h>
+int main()
+{
+    int A[100000],B[00000],C[100000],N,i;
+    scanf("%d",&N);
+    for(i=1;i<=N;i++)
+    {
+        scanf("%d",&A[i]);
+        C[i] = A[i];
+    }
+    for(i=1;i<=N;i++)
+    {
+        scanf("%d",&B[i]);
+        C[i] += B[i];
+        printf("%d ",C[i]);
+    }
+    return 0;
+}
