@@ -1,0 +1,41 @@
+Question:
+Micro purchased an array A having N integer values. After playing it for a while, he got bored of it and decided to update value of its element. In one second he can increase value of each array element by 1. He wants each array element's value to become greater than or equal to K. Please help Micro to find out the minimum amount of time it will take, for him to do so.
+
+Program:
+
+#include<stdio.h>
+int main()
+{
+    int T,N,A[100000],K,i,min=0,c=0,j;
+    scanf("%d",&T);
+    for(i=0;i<T;i++)
+    {
+        scanf("%d%d",&N,&K);
+    
+        for(j=0;j<N;j++)
+        {
+            scanf("%d",&A[j]);
+        }
+        j=0;
+        min=A[0];
+        while(j<N)
+        {
+            if(min>A[j])
+            min=A[j];
+            j++;
+        }
+        if(min==K)
+        printf("%d\n",c);
+        else
+        {
+            while(min<K)
+            {
+                min++;
+                c++;
+            }
+            printf("%d\n",c);
+        }
+        c=0;
+    }  
+    return 0;
+}

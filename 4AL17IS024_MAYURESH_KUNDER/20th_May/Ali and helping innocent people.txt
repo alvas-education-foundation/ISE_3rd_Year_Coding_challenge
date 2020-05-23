@@ -1,0 +1,59 @@
+Question:
+
+Arpasland has surrounded by attackers. A truck enters the city. The driver claims the load is food and medicine from Iranians. Ali is one of the soldiers in Arpasland. He doubts about the truck, maybe it's from the siege. He knows that a tag is valid if the sum of every two consecutive digits of it is even and its letter is not a vowel. Determine if the tag of the truck is valid or not.
+
+We consider the letters "A","E","I","O","U","Y" to be vowels for this problem.
+
+Program:
+
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+       
+        Scanner sc = new Scanner(System.in);
+        String tag = sc.next();
+        int len = tag.length();
+        int c = 0;
+
+        for(int i = 0; i < len-1; i++)
+        {
+            char ch = tag.charAt(i);
+           
+            if(ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U' || ch=='Y')
+            {
+                    c++;
+                    break;
+            }
+            else if(tag.charAt(i)=='-' || (tag.charAt(i) >= 'A' && tag.charAt(i) <= 'Z'))
+            {
+                continue;            
+            }
+            else if(tag.charAt(i+1)=='-' || (tag.charAt(i+1) >= 'A' && tag.charAt(i+1) <= 'Z') )
+            {
+                continue;
+            }
+            else
+            {
+                int num1 = tag.charAt(i);
+                int num2 = tag.charAt(i+1);
+                if((num1+num2)%2 != 0)
+                {
+                    c++;
+                    break;
+                }
+            }
+        }
+
+        if(c>0)
+        {
+            System.out.println("invalid");
+        }
+        else{
+            System.out.println("valid");
+        }
+
+    }
+}

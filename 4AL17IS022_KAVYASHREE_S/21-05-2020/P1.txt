@@ -1,0 +1,42 @@
+Dollars & Cents
+Write a C++ program to add two dollars and cents.
+INPUT & OUTPUT FORMAT:
+
+Input consists of 4 integers. First two inputs correspond to the value of the first dollar and cent. Next two inputs correspond to the value of the second dollar and cent. Output should print the sum of dollar and cent.
+
+SAMPLE INPUT:
+
+30
+
+10
+
+140
+
+99
+
+SAMPLE OUTPUT:
+
+171
+
+9
+
+PROGRAM:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+  //Type your code here.
+  int d1, c1, d2, c2;
+  std::cin>>d1>>c1>>d2>>c2;
+  int dollar=d1+d2;
+  int cent=c1+c2;
+  while(cent>100)
+  {
+    cent=cent-100;
+    dollar=dollar+1;
+    break;
+  }
+  std::cout<<dollar<<"\n"<<cent;
+  return 0;
+}

@@ -1,0 +1,23 @@
+Calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
+
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+    int i,n;
+    long long int sum=0; 
+    scanf("%lld", &n);
+    long long int a[n]; 
+    for(i=0; i<n; i++)
+    {
+        scanf("%lld",&a[i]);
+    }
+    for(i=0; i<n; i++)
+    {
+       sum+=a[i];
+    }
+   printf("%lld", sum);
+    
+   return 0;
+}

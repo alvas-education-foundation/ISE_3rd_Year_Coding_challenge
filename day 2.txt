@@ -1,0 +1,87 @@
+1.#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    int n;
+    scanf("%d", &n);
+    if(n == 1) {
+        printf("one");
+    }
+    else if(n == 2) {
+        printf("two");
+    }
+    else if(n == 3) {
+        printf("three");
+    }
+    else if(n == 4) {
+        printf("four");
+    }
+    else if(n == 5) {
+        printf("five");
+    }
+    else if(n == 6) {
+        printf("six");
+    }
+    else if(n == 7) {
+        printf("seven");
+    }
+    else if(n == 8) {
+        printf("eight");
+    }
+    else if(n == 9) {
+        printf("nine");
+    }
+    else {
+        printf("Greater than 9");
+    }
+    
+    return 0;
+}
+
+
+2.#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int a, b;
+    char* represent[10] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    scanf("%d\n%d", &a, &b);
+    for(int i = a; i <= b; i++) {
+        
+        if(i > 9) {
+            if(i % 2 == 0)
+                printf("even\n");
+            else printf("odd\n");
+        }
+        else {
+            printf("%s\n", represent[i]);
+        }
+    }
+    return 0;
+}
+
+
+3.#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+   
+    int n;
+    scanf("%d", &n);
+    int sum = 0;
+    do {
+        sum += (n % 10);
+        n /= 10;
+    }
+    while(n != 0);
+    printf("%d", sum);
+    return 0;
+}
