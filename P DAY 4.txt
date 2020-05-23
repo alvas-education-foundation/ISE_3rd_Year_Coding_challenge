@@ -1,0 +1,91 @@
+QUESTION 1:You are in charge of the cake for your niece's birthday and have decided the cake will have one candle for each year of her total age.
+When she blows out the candles, she’ll only be able to blow out the tallest ones.
+Your task is to find out how many candles she can successfully blow out.
+
+import java.util.*
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);               
+        int n = scan.nextInt();        
+        int maxHeight = 1;        
+        int countMax = 0;       
+        for(int i = 0; i < n; i++) {
+            int tmp = scan.nextInt();
+            if(tmp > maxHeight) {
+                maxHeight = tmp;
+                countMax = 1;
+            }
+             else if(tmp == maxHeight) {
+                countMax++;
+            }
+        }
+        scan.close();        
+        System.out.println(countMax);
+    }
+}
+
+QUESTION 2:In this challenge, you will learn simple usage of functions in C.
+ Functions are a bunch of statements glued together.
+ A function is provided with zero or more arguments,and it executes the statements on it.
+ Based on the return type, it either returns nothing (void) or something.
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int max_of_four(int a,int b,int c, int d){
+   
+    if(a > b){
+        if(a > c){
+            if(a>d)return a;
+            else return d;
+        }
+        else {
+            if(c > d)return c;
+            else return d;
+        }
+    }
+    else{
+        if(b > c){
+            if(b > d)return b;
+            else return d;
+        }
+        else{
+            if(c > d)return c;
+            else return d;
+        }
+    }
+}  
+int main() {
+int a, b, c, d;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+    int ans = max_of_four(a, b, c, d);
+    printf("%d", ans);
+    return 0;
+}
+
+
+
+QUESTION 3:Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. 
+Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        long sum = 0;
+        long min = 1000000000;
+        long max = 0;
+        while(scan.hasNext()) {
+            long n = scan.nextLong();
+            sum = sum + n;
+            if (min > n) {
+                min = n;
+            }
+            if (max < n) {
+                max = n;
+            }
+        }
+        scan.close();        
+        System.out.println((sum - max) + " " + (sum - min));
+    }
+}

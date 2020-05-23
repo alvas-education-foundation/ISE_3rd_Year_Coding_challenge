@@ -1,0 +1,164 @@
+1. program to find sum of digits number
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+	
+    int n;
+    scanf("%d", &n);
+    int digit, temp, sum = 0;
+    temp = n;
+    while(temp > 0)
+    {
+        digit = temp % 10;
+        sum = sum + digit;
+        temp = temp / 10;
+    }
+    printf("%d\n",sum);
+    return 0;
+}
+ 
+ 
+2.java program for swithch statement 
+import java.util.Scanner;
+
+  public class Calculator {
+
+    public static void main(String[] args) {
+
+        Scanner reader = new Scanner(System.in);
+        System.out.print("Enter two numbers: ");
+
+        // nextDouble() reads the next double from the keyboard
+        double first = reader.nextDouble();
+        double second = reader.nextDouble();
+
+        System.out.print("Enter an operator (+, -, *, /): ");
+        char operator = reader.next().charAt(0);
+
+        double result;
+
+        switch(operator)
+        {
+            case '+':
+                result = first + second;
+                break;
+
+            case '-':
+                result = first - second;
+                break;
+
+            case '*':
+                result = first * second;
+                break;
+
+            case '/':
+                result = first / second;
+                break;
+
+            // operator doesn't match any case constant (+, -, *, /)
+            default:
+                System.out.printf("Error! operator is not correct");
+                return;
+        }
+
+        System.out.printf("%.1f %c %.1f = %.1f", first, operator, second, result);
+    }
+}
+
+
+
+
+3.java program for sub array...
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        int count = 0, sum = 0;
+        for (int i = 0; i < n; i++)
+            arr[i] = sc.nextInt();
+        sc.close();
+
+        for (int i = 0, j = 0; i < n; j++) {
+            if (j >= n) {
+                j = i++;
+                sum = 0;
+                continue;
+            }
+            
+            sum = sum + arr[j];
+            
+            if (sum < 0) count++;
+        }
+        System.out.println(count);
+    
+    }
+}
+
+4.program using pointers
+#include <stdio.h>
+void update(int *a,int *b) {
+    int sum = *a + *b;
+    int absDifference = *a - *b > 0 ? *a - *b : -(*a - *b);
+    *a = sum;
+    *b = absDifference; 
+}
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b;
+    
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+
+    return 0;
+}
+
+5.Java Program to Count the Number of Vowels and Consonants in a Sentence
+
+public class Count {
+
+    public static void main(String[] args) {
+        String line = "This website is aw3som3.";
+        int vowels = 0, consonants = 0, digits = 0, spaces = 0;
+
+        line = line.toLowerCase();
+        for(int i = 0; i < line.length(); ++i)
+        {
+            char ch = line.charAt(i);
+            if(ch == 'a' || ch == 'e' || ch == 'i'
+                || ch == 'o' || ch == 'u') {
+                ++vowels;
+            }
+            else if((ch >= 'a'&& ch <= 'z')) {
+                ++consonants;
+            }
+            else if( ch >= '0' && ch <= '9')
+            {
+                ++digits;
+            }
+            else if (ch ==' ')
+            {
+                ++spaces;
+            }
+        }
+	System.out.println("Vowels: " + vowels);
+        System.out.println("Consonants: " + consonants);
+        System.out.println("Digits: " + digits);
+        System.out.println("White spaces: " + spaces);
+    }
+}
+
+
