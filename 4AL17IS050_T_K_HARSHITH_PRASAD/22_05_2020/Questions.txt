@@ -1,0 +1,5 @@
+1.loops 1
+2.loops 2
+3.data types
+4.end of file
+5.static initializer block
