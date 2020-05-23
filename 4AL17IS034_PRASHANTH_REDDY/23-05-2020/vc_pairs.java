@@ -2,6 +2,7 @@ import java.util.*;
 import java.io.*;
 
 class TestClass {
+{
     public static void main(String args[] ) throws Exception {
        
        Scanner sc = new Scanner(System.in);
@@ -21,6 +22,7 @@ class TestClass {
                }
            }
            } 
+}
            System.out.println(c);
            c = 0;
        }
