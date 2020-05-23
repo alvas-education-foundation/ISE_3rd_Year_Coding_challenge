@@ -1,0 +1,139 @@
+1)Consider a list (list = []). You can perform the following commands:
+
+insert i e: Insert integer  at position .
+print: Print the list.
+remove e: Delete the first occurrence of integer .
+append e: Insert integer  at the end of the list.
+sort: Sort the list.
+pop: Pop the last element from the list.
+reverse: Reverse the list.
+Initialize your list and read in the value of  followed by  lines of commands where each command will be of the  types listed above. Iterate through each command in order and perform the corresponding operation on your list.
+
+Input Format
+
+The first line contains an integer, , denoting the number of commands.
+Each line  of the  subsequent lines contains one of the commands described above.
+
+Constraints
+
+The elements added to the list must be integers.
+Output Format
+
+For each command of type print, print the list on a new line.
+
+
+n = input()
+l = []
+for _ in range(n):
+    s = raw_input().split()
+    cmd = s[0]
+    args = s[1:]
+    if cmd !="print":
+        cmd += "("+ ",".join(args) +")"
+        eval("l."+cmd)
+    else:
+        print l
+
+2)Task
+Given an integer, , and  space-separated integers as input, create a tuple, , of those  integers. Then compute and print the result of .
+
+Note: hash() is one of the functions in the __builtins__ module, so it need not be imported.
+
+Input Format
+
+The first line contains an integer, , denoting the number of elements in the tuple.
+The second line contains  space-separated integers describing the elements in tuple .
+
+Output Format
+
+Print the result of .
+
+Sample Input 0
+
+2
+1 2
+Sample Output 0
+
+3713081631934410656
+
+
+if __name__ == '__main__':
+    n = int(raw_input())
+    integer_list = map(int, raw_input().split())
+    t=tuple(integer_list)
+    print hash(t)
+3)Python has built-in string validation methods for basic data. It can check if a string is composed of alphabetical characters, alphanumeric characters, digits, etc.
+
+str.isalnum()
+This method checks if all the characters of a string are alphanumeric (a-z, A-Z and 0-9).
+
+>>> print 'ab123'.isalnum()
+True
+>>> print 'ab123#'.isalnum()
+False
+str.isalpha()
+This method checks if all the characters of a string are alphabetical (a-z and A-Z).
+
+>>> print 'abcD'.isalpha()
+True
+>>> print 'abcd1'.isalpha()
+False
+str.isdigit()
+This method checks if all the characters of a string are digits (0-9).
+
+>>> print '1234'.isdigit()
+True
+>>> print '123edsd'.isdigit()
+False
+str.islower()
+This method checks if all the characters of a string are lowercase characters (a-z).
+
+>>> print 'abcd123#'.islower()
+True
+>>> print 'Abcd123#'.islower()
+False
+str.isupper()
+This method checks if all the characters of a string are uppercase characters (A-Z).
+
+>>> print 'ABCD123#'.isupper()
+True
+>>> print 'Abcd123#'.isupper()
+False
+Task
+
+You are given a string .
+Your task is to find out if the string  contains: alphanumeric characters, alphabetical characters, digits, lowercase and uppercase characters.
+
+Input Format
+
+A single line containing a string .
+
+Constraints
+
+
+Output Format
+
+In the first line, print True if  has any alphanumeric characters. Otherwise, print False.
+In the second line, print True if  has any alphabetical characters. Otherwise, print False.
+In the third line, print True if  has any digits. Otherwise, print False.
+In the fourth line, print True if  has any lowercase characters. Otherwise, print False.
+In the fifth line, print True if  has any uppercase characters. Otherwise, print False.
+
+Sample Input
+
+qA2
+Sample Output
+
+True
+True
+True
+True
+True
+
+
+str = raw_input()
+print any(c.isalnum()  for c in str)
+print any(c.isalpha() for c in str)
+print any(c.isdigit() for c in str)
+print any(c.islower() for c in str)
+print any(c.isupper() for c in str)
