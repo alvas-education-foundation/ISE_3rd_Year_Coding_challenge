@@ -6,7 +6,7 @@
 
 int main() 
 {
-    int a, b;
+     int a, b;
     scanf("%d\n%d", &a, &b);
     
     char labels[11][6] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "even", "odd"};
