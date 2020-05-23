@@ -4,7 +4,7 @@ INPUT & OUTPUT FORMAT:
 
 The input is an integer 'n' which denote the first term of the sequence.
 
-As output, print the numbers in the sequence and also print the number of times the rule has to be applied in order to reach 1.
+As output, print the number in the sequence and also print the number of times the rule has to be applied in order to reach 1.
 
 SAMPLE INPUT:
 
