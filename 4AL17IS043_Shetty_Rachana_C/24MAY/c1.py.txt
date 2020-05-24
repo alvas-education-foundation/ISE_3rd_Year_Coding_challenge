@@ -69,3 +69,12 @@ N = int(raw_input())
 ans = [[i, j, k] for i in range(X + 1) for j in range(Y + 1) for k in range(Z + 1) if i + j + k != N]
 print ans
 
+
+6)
+n = int(raw_input())
+l = list()
+integers = raw_input().split()
+for i in integers:
+        l.append(int(i))
+print hash(tuple(l))
+
