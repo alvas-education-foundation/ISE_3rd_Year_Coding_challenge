@@ -1,0 +1,122 @@
+1)
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n,ar[10005];
+    cin >> n;
+    for(int i = 0; i < n; i++)cin >> ar[i];
+    for(int i = n-1; i >=0; i--)cout << ar[i] << " ";
+    cout << endl;
+    return 0;
+}
+
+
+2)
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main() {
+    // Complete the code.
+    int a;
+    long b;
+    long long c;
+    char d;
+    float e;
+    double f;    
+    scanf("%d %ld %lld %c %f %lf", &a, &b, &c, &d, &e, &f);
+    printf("%d\n", a);
+    printf("%ld\n", b);
+    printf("%lld\n", c);
+    printf("%c\n", d);
+    printf("%f\n", e);
+    printf("%lf", f);
+    return 0;
+}
+
+
+3)
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int max_of_four(int a,int b,int c, int d){
+   
+    if(a > b){
+        if(a > c){
+            if(a>d)return a;
+            else return d;
+        }
+        else {
+            if(c > d)return c;
+            else return d;
+        }
+    }
+    else{
+        if(b > c){
+            if(b > d)return b;
+            else return d;
+        }
+        else{
+            if(c > d)return c;
+            else return d;
+        }
+    }
+}  
+int main() {
+
+    int a, b, c, d;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+    int ans = max_of_four(a, b, c, d);
+    printf("%d", ans);
+    return 0;
+}
+
+4)
+
+
+#include <stdio.h>
+void update(int *a,int *b) {
+    int aa = *a;
+    *a = *a+*b;
+    *b = aa-*b;
+    if(*b < 0)*b *= -1;
+}
+int main() {
+
+    int a, b;
+    int *pa = &a, *pb = &b;
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+    return 0;
+}
+
+
+5)
+
+#include <stdio.h>
+void update(int *a,int *b) {
+    int aa = *a;
+    *a = *a+*b;
+    *b = aa-*b;
+    if(*b < 0)*b *= -1;
+}
+int main() {
+
+    int a, b;
+    int *pa = &a, *pb = &b;
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+    return 0;
+}
+
+
+
+
