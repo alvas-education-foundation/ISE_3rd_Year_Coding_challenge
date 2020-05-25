@@ -1,102 +1,98 @@
-1.Maths and logic are the necessary parts of programming that can be learned through practice. Here is a simple mathematical problem of addition for you to solve.
+1) In Python, a string can be split on a delimiter.
+Example:
+>>> a = "this is a string"
+>>> a = a.split(" ") # a is converted to a list of strings. 
+>>> print a
+['this', 'is', 'a', 'string']
+Joining a string is simple:
+>>> a = "-".join(a)
+>>> print a
+this-is-a-string 
+Task
+You are given a string. Split the string on a " " (space) delimiter and join using a - hyphen.
+Input Format
+The first line contains a string consisting of space separated words.
+Output Format
+Print the formatted string as explained above.
+Sample Input
+this is a string   
+Sample Output
+this-is-a-string
 
-Write a program to print the sum of two integers.
+def split_and_join(line):
+    # write your code heredef split_and_join(line):
+    x=line.split(" ") 
+    x='-'.join(x)    
+    return x
+    print('-'.join(input().split()))
+if __name__ == '__main__':
 
-Instructions:
+2) You are given the firstname and lastname of a person on two different lines. Your task is to read them and print the following:
+Hello firstname lastname! You just delved into python.
+Input Format
+The first line contains the first name, and the second line contains the last name.
+Constraints
+The length of the first and last name ≤ .
+Output Format
+Print the output as mentioned above.
+Sample Input 0
+Ross
+Taylor
+Sample Output 0
+Hello Ross Taylor! You just delved into python.
+Explanation 0
+The input read by the program is stored as a string data type. A string is a collection of characters.
+def print_full_name(a, b):
+   print("Hello {} {}! You just delved into python.".format(first_name,last_name))
 
-We have defined two integer variables  and  for you.
-We have provided the code to get the input for the two variables.
-You have to write the logic to add the two variables.
-Print the sum.
-#include <stdio.h>
- 
-int main(){
-	
-	int num1, num2;   // Define two integer variables
-    
-	
-	scanf("%d %d", &num1, &num2);  // Get input for the two variables
-    
-	int sum = 0;
-	// Write the logic to add these numbers here:
-    sum=num1+num2;
-	
-	printf("%d\n", sum);   // Print the sum
-	return 0;
-}
-2.Well, that was easy. Isn’t it? Now we’ll go one step further and do the sum of elements of an array.
+if __name__ == '__main__':
 
-Write a program to print the sum of all the elements of an array of size 4.
 
-Instructions:
 
-We have defined an integer array  for you.
-We have provided the code to get the input for the array elements.
-You have to write the logic to add the elements.
-Print the sum.
-#include <stdio.h>
- 
-int main(void) {
-	
-	int numArray[4];   // Define an array of four integers
-        int i;
-	// Get inputs for the array elements
-	for (i=0; i<4; i++) 
-	{
-    	scanf("%d", &numArray[i]);
-	}
-    
-	int sum = 0;
-	for(i=0;i<4;i++)
-	{
-	    sum=sum+numArray[i];
-	}
-	printf("%d\n",sum);   // Print the sum
-    
-	return 0;
-}
-3.Write a program to print the sum of all the elements of an array of size N where N can be any integer between 1 and 100. 
+3) We have seen that lists are mutable (they can be changed), and tuples are immutable (they cannot be changed).
+Let's try to understand this with an example.
+You are given an immutable string, and you want to make changes to it.
+Example
+>>> string = "abracadabra"
+You can access an index by:
+>>> print string[5]
+a
+What if you would like to assign a value?
+>>> string[5] = 'k' 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+How would you approach this?
+•	One solution is to convert the string to a list and then change the value.
+Example
+>>> string = "abracadabra"
+>>> l = list(string)
+>>> l[5] = 'k'
+>>> string = ''.join(l)
+>>> print string
+abrackdabra
+•	Another approach is to slice the string and join it back.
+Example
+>>> string = string[:5] + "k" + string[6:]
+>>> print string
+abrackdabra
+Task
+Read a given string, change the character at a given index and then print the modified string.
+Input Format
+The first line contains a string, .
+The next line contains an integer , denoting the index location and a character  separated by a space.
+Output Format
+Using any of the methods explained above, replace the character at index  with character .
+Sample Input
+abracadabra
+5 k
+Sample Output
+abrackdabra
 
-Instructions:
 
-We have defined an integer variable N for you.
-We have provided the code to get the input for variable N.
-We have defined an integer array .
-We have provided the code to get the input for the array elements.
-You have to write the logic to add the array elements.
-Print the sum.
-Sample Input:
-N = 3
-Array = 6 3 8
-
-Sample Output:
-17
-#include <stdio.h>
- 
-int main(void) {
-    
-	int N, i;
-	scanf("%d", &N);
- 
-	int numArray[N]; // Define an array of four integers
-    
-	// Get inputs for the array elements
-	for (i=0;i<N; i++) {
-    	scanf("%d", &numArray[i]);
-	}
-	
-	int sum = 0;
-	// Write here the logic to add these integers:
-    for (i=0;i<N; i++)
-	 {
-		 sum=sum+numArray[i];
-	 }
-    
-    
-   
-	printf("%d\n",sum);  // Print the sum
-    
-	return 0;
-}
-
+def mutate_string(string, position, character):
+    list2=list(string)
+    list2[position]=character      
+    return ''.join(list2)
+if __name__ == '__main__':
 
