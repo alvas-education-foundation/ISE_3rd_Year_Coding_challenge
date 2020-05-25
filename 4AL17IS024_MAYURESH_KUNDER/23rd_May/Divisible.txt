@@ -1,0 +1,89 @@
+Question:
+You are given an array  of size  that contains integers. Here,  is an even number. You are required to perform the following operations:
+
+Divide the array of numbers in two equal halves
+Note: Here, two equal parts of a test case are created by dividing the array into two equal parts.
+Take the first digit of the numbers that are available in the first half of the array (first 50% of the test case)
+Take the last digit of the numbers that are available in the second half of the array (second 50% of the test case)
+Generate a number by using the digits that have been selected in the above steps
+Your task is to determine whether the newly-generated number is divisible by 11.
+
+Program:
+import java.io.*;
+import java.util.*;
+
+
+public class TestClass {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        PrintWriter wr = new PrintWriter(System.out);
+         int N = Integer.parseInt(br.readLine().trim());
+         String[] arr_A = br.readLine().split(" ");
+         int[] A = new int[N];
+         for(int i_A=0; i_A<arr_A.length; i_A++)
+         {
+         	A[i_A] = Integer.parseInt(arr_A[i_A]);
+         }
+
+         String out_ = solve(A);
+         System.out.println(out_);
+
+         wr.close();
+         br.close();
+    }
+    static String solve(int[] A){
+        // Write your code here
+        long factor = 0;
+        long num = 0;
+        int n = A.length/2;
+        int n1 = A.length;
+        long[] a1 = new long[n];
+        long[] a2 = new long[n];
+        long[] a3 = new long[n1];
+
+        for(int i=0;i<n;i++)
+        {
+            a1[i] = A[i];
+        }
+        int j=0;
+        for(int i=n;i<A.length;i++)
+        {
+            a2[j] = A[i];
+            j++;
+        }
+
+        for(int i=0;i<n;i++)
+        {
+            long first_digit=a1[i];
+            while(first_digit>=10)
+            {
+                first_digit = first_digit/10;
+            }
+            a3[i] = first_digit;
+            
+        }
+        j=0;
+        for(int i=n;i<n1;i++)
+        {
+            long last_digit=a2[j]%10;
+            a3[i] = last_digit;
+            j++;
+        }
+        for(int i=0;i<n1;i++)
+        {
+            num = a3[i] + factor * 10;
+            factor = num;
+        }
+        if(num%11==0)
+        {
+            String out = "OUI";
+            return(out);
+        }
+        else
+        {
+            String out1 = "NON";
+            return(out1);
+        }
+    
+    }
+}

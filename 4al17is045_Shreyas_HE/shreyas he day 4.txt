@@ -1,0 +1,182 @@
+1st program:
+Students Marks Sum:
+
+
+int marks_summation(int* marks, int number_of_students, char gender) {
+  //Write your code here.
+    int i;
+    int sum= 0;
+    if(gender== 'b')
+        for(i= 0; i < number_of_students; i= i + 2)
+            sum+= marks[i];
+    
+    else if(gender == 'g')
+        for(i= 1; i< number_of_students; i= i + 2)
+            sum+=marks[i];
+    return sum;
+}
+
+2nd program:
+
+Functions: Functions are a bunch of statements glued together. A function is provided with zero or more arguments, and it executes the statements on it. Based on the return type, it either returns nothing (void) or something.
+
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+/*
+    *
+    * Prosen Ghosh
+    * American International University - Bangladesh (AIUB)
+    *
+*/
+int max_of_four(int a,int b,int c, int d){
+   
+    if(a > b){
+        if(a > c){
+            if(a>d)return a;
+            else return d;
+        }
+        else {
+            if(c > d)return c;
+            else return d;
+        }
+    }
+    else{
+        if(b > c){
+            if(b > d)return b;
+            else return d;
+        }
+        else{
+            if(c > d)return c;
+            else return d;
+        }
+    }
+}  
+int main() {
+
+    int a, b, c, d;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+    int ans = max_of_four(a, b, c, d);
+    printf("%d", ans);
+    return 0;
+}
+
+3rd program:
+
+Variable Sized Arrays:
+
+
+ 
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+    cout.precision(16);
+	
+	int n, q;
+	cin >> n >> q;
+	
+	int **arr = new int*[n];
+	int a[n];
+
+	for(int i = 0; i < n; i++) {
+		int k;
+		cin >> k;
+		a[i] = k;
+		arr[i] = new int[k];
+		for(int j = 0; j < k; j++) {
+			cin >> arr[i][j];
+		}
+	}
+
+	/* DEBUG
+	for(int i = 0; i < n; i++) {
+		for(int j = 0; j < a[i]; j++) {
+			cout << arr[i][j] << endl;
+		}
+		cout << endl;
+	}
+	*/
+
+	for(int i = 0; i < q; i++) {
+		int idx, elem;
+		cin >> idx >> elem;
+		cout << arr[idx][elem] << endl;
+	}
+	return 0;
+}
+
+
+
+4th program:
+StringStream:stringstream is a stream class to operate on strings. It basically implements input/output operations on memory (string) based streams. stringstream can be helpful in different type of parsing. The following operators/functions are commonly used 
+
+
+
+
+#include <sstream>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+vector<int> parseInts(string str)
+{
+stringstream ss(str);
+vector<int> out;
+
+char ch;
+int temp;
+
+while(ss >> temp)
+{
+out.push_back(temp);
+ss >> ch;
+}
+return out;
+}
+
+int main()
+{
+string str;
+cin >> str;
+
+vector<int> integers = parseInts(str);
+
+for(int i = 0; i < integers.size(); i++)
+{
+cout << integers[i] << "\n";
+}
+return 0;
+}
+
+5th program:
+
+Structs:struct is a way to combine multiple fields to represent a composite data structure, which further lays the foundation for Object Oriented Programming. For example, we can store details related to a student in a struct consisting of his age (int), first_name (string), last_name (string) and standard (int).
+
+
+
+
+#include <iostream>
+using namespace std;
+
+struct Bharat{
+    int age;
+    string fname;
+    string lname;
+    int std;
+};
+
+int main() 
+{   Bharat b;
+    cin>>b.age>>b.fname>>b.lname>>b.std;
+    cout<<b.age<<" "<<b.fname<<" "<<b.lname<<" "<<b.std;
+    return 0;
+}

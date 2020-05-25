@@ -1,0 +1,181 @@
+1)import java.util.*;
+import java.io.*;
+class Map {
+   public static void main(String []argh)
+   {
+      Scanner in = new Scanner(System.in);
+      Map m = new HashMap();
+      int n=in.nextInt();
+      in.nextLine();
+      for(int i=0;i<n;i++)
+      {
+         String name=in.nextLine();
+         int phone=in.nextInt();
+         in.nextLine();
+         m.put(name,phone);
+      }
+      while(in.hasNext())
+      {
+         String s=in.nextLine();
+          if (m.containsKey(s)) {
+              System.out.println(s + "=" + m.get(s));
+          }
+          else {
+              System.out.println("Not found");
+          }
+      }
+   }
+}
+
+
+
+
+2)import java.util.*; 
+  
+public class DequeExample 
+{ 
+    public static void main(String[] args) 
+    { 
+        Deque<String> deque = new LinkedList<String>(); 
+  
+         
+        deque.add("Element 1 (Tail)");
+        deque.addFirst("Element 2 (Head)"); 
+        deque.addLast("Element 3 (Tail)"); 
+        deque.push("Element 4 (Head)"); 
+        deque.offer("Element 5 (Tail)"); 
+        deque.offerFirst("Element 6 (Head)"); 
+        deque.offerLast("Element 7 (Tail)"); 
+  
+        System.out.println(deque + "\n"); 
+  
+         
+        System.out.println("Standard Iterator"); 
+        Iterator iterator = deque.iterator(); 
+        while (iterator.hasNext()) 
+            System.out.println("\t" + iterator.next()); 
+  
+  
+        
+        Iterator reverse = deque.descendingIterator(); 
+        System.out.println("Reverse Iterator"); 
+        while (reverse.hasNext()) 
+            System.out.println("\t" + reverse.next()); 
+  
+         
+        System.out.println("Peek " + deque.peek()); 
+        System.out.println("After peek: " + deque); 
+  
+       
+
+        System.out.println("Pop " + deque.pop()); 
+        System.out.println("After pop: " + deque); 
+  
+        
+ 
+        System.out.println("Contains element 3: " + 
+                        deque.contains("Element 3 (Tail)")); 
+  
+        
+        deque.removeFirst(); 
+        deque.removeLast(); 
+        System.out.println("Deque after removing " + "first and last: " + deque); 
+  
+    } 
+}
+
+3) import java.io.*;
+    import java.util.*;
+    import java.text.*;
+    import java.math.*;
+    import java.util.regex.*;
+
+    public class Solution {
+
+        public static void main(String[] args) {
+
+            Scanner sc=new Scanner(System.in);
+            int n=sc.nextInt();            
+            String ans="";
+            if(n%2==1){
+              ans = "Weird";
+            }
+            else {
+                if (n >= 2 && n <= 5) {
+                    ans = "Not Weird";
+                } else if (n >= 6 && n <= 20) {
+                    ans = "Weird";
+                } else {
+                    ans = "Not Weird";
+                }
+                
+            }
+            System.out.println(ans);
+            
+        }
+    }
+
+4)import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+            Scanner sc=new Scanner(System.in);
+            System.out.println("================================");
+            for(int i=0;i<3;i++){
+                String s1=sc.next();
+                int x=sc.nextInt();
+                System.out.printf("%-14s %03d\n", s1, x);
+            }
+            System.out.println("================================");
+
+    }
+}
+
+
+5)import java.util.*;
+import java.security.*;
+public class IntToString {
+	public static void main(String[] args) {
+		
+		Do_Not_Terminate.forbidExit();
+
+		try{
+			Scanner in = new Scanner(System.in);
+			int n=in.nextInt();
+      String s = Integer.toString(n);
+      if(n==Integer.parseInt(s))
+			{
+				System.out.println("Good job");
+			}
+			else
+			{
+				System.out.println("Wrong answer.");
+			}
+		}
+		catch (Do_Not_Terminate.ExitTrappedException e) {
+			System.out.println("Unsuccessful Termination!!");
+		}
+	}
+}
+
+
+class Do_Not_Terminate {
+		 
+	    public static class ExitTrappedException extends SecurityException {
+
+			private static final long serialVersionUID = 1L;
+	    }
+	 
+	    public static void forbidExit() {
+	        final SecurityManager securityManager = new SecurityManager() {
+	            
+	            public void checkPermission(Permission permission) {
+	                if (permission.getName().contains("exitVM")) {
+	                    throw new ExitTrappedException();
+	                }
+	            }
+	        };
+	        System.setSecurityManager(securityManager);
+	    }
+	}	
