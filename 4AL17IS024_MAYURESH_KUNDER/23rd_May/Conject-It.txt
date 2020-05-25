@@ -1,0 +1,51 @@
+Question:
+You are given a number N. You can perform the following operations on N any number of times:
+
+> If N is even, divide N by 2.
+
+> If N is odd, replace N with 3N+1.
+
+ 
+
+Your task is to find out, for a given N, if it is possible to reach the number 1 after performing the above two valid operations on N any number of times.
+
+ 
+
+Program:
+
+import java.util.*;
+import java.io.*;
+import java.math.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+       
+        Scanner s = new Scanner(System.in);
+        long t = s.nextLong();
+        for(int i = 0; i<t; i++)
+        {
+            long n = s.nextLong();
+
+            while(n>1)
+            {
+                if(n%2==0)
+                {
+                    n = n/2;
+                }
+                else
+                {
+                    n = (3*n)+1;
+                }
+            }
+            if(n==1)
+                {
+                    System.out.println("YES");
+                }
+                else
+                {
+                    System.out.println("NO");
+                }
+        }
+
+    }
+}
