@@ -1,0 +1,93 @@
+PRGM 1:
+
+Python program to swap two elements in a list:
+
+def swapPositions(list, pos1, pos2): 
+          list[pos1], list[pos2] = list[pos2], list[pos1] 
+    return list 
+List = [23, 65, 19, 90] 
+pos1, pos2  = 1, 3
+print(swapPositions(List, pos1-1, pos2-1)) 
+
+
+PRGM 2:
+
+Reversing a List:
+
+def Reverse(lst): 
+    return [ele for ele in reversed(lst)] 
+lst = [10, 11, 12, 13, 14, 15] 
+print(Reverse(lst))
+
+
+PRGM3:
+
+SQUARE ROOT OF A NUMBER:
+
+# Python Program to calculate the square root
+
+# Note: change this value for a different result
+num = 8 
+
+# To take the input from the user
+#num = float(input('Enter a number: '))
+
+num_sqrt = num ** 0.5
+print('The square root of %0.3f is %0.3f'%(num ,num_sqrt))
+
+
+PRGM 4:
+
+AREA OF A TRIANGLE:
+
+a = 5
+b = 6
+c = 7
+
+# Uncomment below to take inputs from the user
+# a = float(input('Enter first side: '))
+# b = float(input('Enter second side: '))
+# c = float(input('Enter third side: '))
+
+# calculate the semi-perimeter
+s = (a + b + c) / 2
+
+# calculate the area
+area = (s*(s-a)*(s-b)*(s-c)) ** 0.5
+print('The area of the triangle is %0.2f' %area)
+
+
+PRGM 5:
+
+AIRTHEMATIC OPERATIONS:
+
+a = 21
+b = 10
+c = 0
+
+c = a + b
+print "Line 1 - Value of c is ", c
+
+c = a - b
+print "Line 2 - Value of c is ", c 
+
+c = a * b
+print "Line 3 - Value of c is ", c 
+
+c = a / b
+print "Line 4 - Value of c is ", c 
+
+c = a % b
+print "Line 5 - Value of c is ", c
+
+a = 2
+b = 3
+c = a**b 
+print "Line 6 - Value of c is ", c
+
+a = 10
+b = 5
+c = a//b 
+print "Line 7 - Value of c is ", c
+
+
