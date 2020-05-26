@@ -1,0 +1,16 @@
+1.Swap case
+def swap_case(s):
+    a = ""
+    for let in s:
+        if let.isupper() == True:
+            a+=(let.lower())
+        else:
+            a+=(let.upper())
+    return a
+
+2.String Split and Join
+def split_and_join(line):
+    x=line.split(" ") 
+    x='-'.join(x)    
+    return x
+
