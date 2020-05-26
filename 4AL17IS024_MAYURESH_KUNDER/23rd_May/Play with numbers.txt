@@ -1,0 +1,38 @@
+Question:
+You are given an array of n numbers and q queries. For each query you have to print the floor of the expected value(mean) of the subarray from L to R.
+
+
+
+Program:
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String n = br.readLine();
+        String[] numbers=n.split(" ");
+        int[] x=new int[numbers.length];
+        int length = numbers.length;
+        for(int i=0;i<numbers.length;i++)
+        {
+            x[i]=Integer.parseInt(numbers[i]);
+        }
+        int[] arr = new int[x[0]];
+        for(int j=0;j<x[0];j++)
+        {
+            arr[i] = sc.nextInt();
+        }
+       // for(int i=0;i<q;i++)
+      //  {
+       //     int ind1 = Integer.parseInt(br.readLine());
+      //      int ind2 = Integer.parseInt(br.readLine());
+      //      int mean = (ind1+ind2)/2;
+      //      System.out.println(mean);
+      //  }
+            System.out.println(x[0]);
+            System.out.println(x[1]);
+            System.out.println(length);
+    }
+}

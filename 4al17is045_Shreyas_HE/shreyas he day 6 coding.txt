@@ -1,0 +1,389 @@
+23/05/2020
+
+1st program:
+
+
+Write a C Program to implement various operations of Singly Linked
+
+List Stack
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#define TRUE 1
+#define FALSE 0
+struct node
+{
+int data;
+struct node *next;
+};
+typedef struct node node;
+node *top;
+void initialize()
+{
+top = NULL;
+}
+void push(int value)
+{
+node *tmp;
+tmp = malloc(sizeof(node));
+tmp -&gt; data = value;
+tmp -&gt; next = top;
+top = tmp;
+}
+int pop()
+{
+node *tmp;
+int n;
+tmp = top;
+n = tmp-&gt;data;
+top = top-&gt;next;
+free(tmp);
+return n;
+}
+int Top()
+{
+return top-&gt;data;
+}
+int isempty()
+{
+return top==NULL;
+}
+void display(node *head)
+{
+if(head == NULL)
+{
+printf(&quot;NULL\n&quot;);
+}
+else
+{
+printf(&quot;%d\n&quot;, head -&gt; data);
+
+display(head-&gt;next);
+}
+}
+int main()
+{
+initialize();
+push(10);
+push(20);
+push(30);
+push(40);
+push(50);
+push(60);
+push(70);
+push(80);
+push(90);
+push(100);
+printf(&quot;The top is %d\n&quot;,Top());
+pop();
+printf(&quot;The top after pop is %d\n&quot;,Top());
+display(top);
+return 0;
+}
+
+
+
+2nd program:
+
+
+Java Program to find the largest and smallest word in a string (input with in the program)
+packagefriday;
+
+
+publicclassSmallestLargestWord{
+publicstaticvoid main(String[] args){
+String string = &quot;Hardships often prepare ordinary people for an extraordinary
+destiny&quot;;
+String word = &quot;&quot;, small = &quot;&quot;, large=&quot;&quot;;
+String[] words = new String[100];
+intlength = 0;
+//Add extra space after string to get the last word in the given string
+string = string + &quot; &quot;;
+for(inti = 0; i&lt;string.length(); i++){
+//Split the string into words
+if(string.charAt(i) != &#39; &#39;){
+word = word + string.charAt(i);
+}
+else{
+//Add word to array words
+words[length] = word;
+//Increment length
+length++;
+//Make word an empty string
+word = &quot;&quot;;
+}
+}
+//Initialize small and large with first word in the string
+small = large = words[0];
+//Determine smallest and largest word in the string
+for(intk = 0; k&lt;length; k++){
+//If length of small is greater than any word present in the string
+//Store value of word into small
+if(small.length() &gt;words[k].length())
+small = words[k];
+//If length of large is less than any word present in the string
+//Store value of word into large
+if(large.length() &lt;words[k].length())
+large = words[k];
+}
+System.out.println(&quot;Smallest word: &quot; + small);
+System.out.println(&quot;Largest word: &quot; + large);
+
+} }
+OUTPUT
+
+Java Program to find the largest and smallest word in a string(input from the keyboard)
+
+packagefriday;
+importjava.io.BufferedReader;
+importjava.io.InputStreamReader;
+publicclassLargestAndSmallestWord {
+// Method to split the string and find the largest and smallest word
+staticvoidprintLargestAndSmallestWord(String str){
+String[] arr=str.split(&quot; &quot;);
+inti=0;
+intmaxlength,minlength;
+maxlength=Integer.MIN_VALUE;
+minlength=Integer.MAX_VALUE;
+String largest,smallest;
+largest = smallest = &quot;&quot;;
+for(i=0;i&lt;arr.length;i++){
+if(arr[i].length() &lt;minlength){
+smallest=arr[i];
+minlength=arr[i].length();
+}
+if(arr[i].length() &gt;maxlength) {
+largest=arr[i];
+maxlength=arr[i].length();
+}
+}
+System.out.println(&quot;The largest and smallest word is: \&quot;&quot; + largest +
+&quot;\&quot; and \&quot;&quot; + smallest + &quot;\&quot;&quot;);
+}
+// Main function to read the string
+publicstaticvoid main(String[] args) {
+BufferedReaderbr = newBufferedReader(newInputStreamReader(System.in));
+System.out.println(&quot;Enter the text string&quot;);
+String str;
+try{
+str=br.readLine();
+}
+catch(Exception e){
+System.out.println(&quot;Error reading input&quot;);
+return;
+}
+printLargestAndSmallestWord(str);
+}
+
+}
+
+
+
+3rd program:
+
+
+Java Program to separate the Individual Characters from a String
+
+
+
+packagefriday;
+publicclassIndividualCharacters
+{
+publicstaticvoid main(String[] args) {
+String string = &quot;characters&quot;;
+//Displays individual characters from given string
+System.out.println(&quot;Individual characters from given string:&quot;);
+//Iterate through the string and display individual character
+for(inti = 0; i&lt;string.length(); i++){
+System.out.print(string.charAt(i) + &quot; &quot;);
+}
+}
+}
+
+
+4th program
+
+Write down a java program to print even and odd numbers series respectively from two
+threads: t1 and t2 synchronizing on a shared object
+package MainClass;
+
+
+
+import MainClass.sharedPrinter;
+class OddThread extends Thread
+{
+int limit;
+sharedPrinter printer;
+public OddThread(int limit, sharedPrinter printer)
+{
+
+this.limit = limit;
+this.printer = printer;
+
+}
+@Override
+public void run()
+{
+int oddNumber = 1; //First odd number is 1
+while (oddNumber &lt;= limit)
+{
+printer.printOdd(oddNumber);
+oddNumber = oddNumber + 2; //Incrementing to next odd number
+}
+}
+}
+
+package MainClass;
+import MainClass.sharedPrinter;
+class EvenThread extends Thread
+{
+int limit;
+sharedPrinter printer;
+public EvenThread(int limit, sharedPrinter printer)
+{
+this.limit = limit;
+this.printer = printer;
+}
+@Override
+public void run()
+{
+int evenNumber = 2; //First even number is 2
+while (evenNumber &lt;= limit)
+{
+printer.printEven(evenNumber); //Calling printEven() method of SharedPrinter class
+evenNumber = evenNumber + 2; //Incrementing to next even number
+}
+}
+
+package MainClass;
+class sharedPrinter
+{
+
+boolean isOddPrinted = false;
+synchronized void printOdd(int number)
+{
+while (isOddPrinted)
+{
+try
+{
+wait();
+}
+catch (InterruptedException e)
+{
+e.printStackTrace();
+}
+}
+System.out.println(Thread.currentThread().getName()+&quot; : &quot;+number);
+isOddPrinted = true;
+try
+{
+Thread.sleep(1000);
+}
+catch (InterruptedException e)
+{
+e.printStackTrace();
+}
+notify();
+
+}
+synchronized void printEven(int number)
+{
+while (! isOddPrinted)
+{
+try
+{
+wait();
+}
+catch (InterruptedException e)
+{
+e.printStackTrace();
+}
+}
+System.out.println(Thread.currentThread().getName()+&quot; : &quot;+number);
+isOddPrinted = false;
+try
+{
+Thread.sleep(1000);
+}
+catch (InterruptedException e)
+{
+e.printStackTrace();
+}
+notify();
+
+}
+}
+package MainClass;
+public class mainclass
+{
+public static void main(String[] args)
+{
+sharedPrinter printer = new sharedPrinter();
+OddThread oddThread = new OddThread(20, printer);
+oddThread.setName(&quot;ping--&gt;&quot;);
+EvenThread evenThread = new EvenThread(20, printer);
+evenThread.setName(&quot;pong--&gt;&quot;);
+oddThread.start();
+evenThread.start();
+}
+}
+
+
+5th program:
+
+
+
+C Program to count Number of possible triplet in given array.
+
+
+
+
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+int t,n;
+int i,j,l,m,k,count=0,sum=0;
+scanf(&quot;%d&quot;,&amp;t);
+for(i=0;i&lt;t;i++)
+{
+scanf(&quot;%d&quot;,&amp;n);
+int arr[n];
+for(j=0;j&lt;n;j++)
+{
+scanf(&quot;%d&quot;,&amp;arr[j]);
+
+}
+for(l=0;l&lt;n;l++)
+{
+for(m=l+1;m&lt;n;m++)
+
+{
+sum=arr[l]+arr[m];
+for(k=0;k&lt;n;k++)
+{
+if(sum==arr[k])
+{
+
+count=count+1;
+
+}
+
+}
+sum=0;
+
+}
+
+}if(count==0)
+{
+printf(&quot;-1\n&quot;);
+}
+else
+{
+
+printf(&quot;%d\n&quot;,count);
+count=0;
+}
+
+}
+}
