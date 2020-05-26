@@ -1,0 +1,250 @@
+1.In a tag-based language like XML or HTML, contents are enclosed between a start tag and an end tag like <tag>contents</tag>. Note that the corresponding end tag starts with a /.
+
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/* Solution assumes we can't have the symbol "<" as text between tags */
+public class Solution{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        int testCases = Integer.parseInt(scan.nextLine());
+        
+        while (testCases-- > 0) {
+            String line = scan.nextLine();
+            
+            boolean matchFound = false;
+            Pattern r = Pattern.compile("<(.+)>([^<]+)</\\1>");
+            Matcher m = r.matcher(line);
+
+            while (m.find()) {
+                System.out.println(m.group(2));
+                matchFound = true;
+            }
+            if ( ! matchFound) {
+                System.out.println("None");
+            }
+        }
+    }
+}
+
+
+Input (stdin)
+
+4
+<h1>Nayeem loves counseling</h1>
+<h1><h1>Sanjay has no watch</h1></h1><par>So wait for a while<par>
+<Amee>safat codes like a ninja</amee>
+<SA premium>Imtiaz has a secret crash</SA premium>
+
+Your Output (stdout)
+Nayeem loves counseling
+Sanjay has no watch
+None
+Imtiaz has a secret crash
+
+
+2.In computer science, a double-ended queue (dequeue, often abbreviated to deque, pronounced deck) is an abstract data type that generalizes a queue, for which elements can be added to or removed from either the front (head) or back (tail).
+
+import java.util.*;
+
+public class test {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Deque<Integer> deque = new ArrayDeque<>();
+        HashSet<Integer> set = new HashSet<>();
+        
+        int n = in.nextInt();
+        int m = in.nextInt();
+        int max = Integer.MIN_VALUE;
+
+        for (int i = 0; i < n; i++) {
+            int input = in.nextInt();
+            
+            deque.add(input);
+            set.add(input);
+            
+            if (deque.size() == m) {
+                if (set.size() > max) max = set.size();
+                int first = deque.remove();
+                if (!deque.contains(first)) set.remove(first);
+            }
+        }
+        
+        System.out.println(max);
+    }
+}
+
+Input (stdin)
+Download
+6 3
+5 3 5 2 3 2
+Your Output (stdout)
+3
+
+3.Java's BitSet class implements a vector of bit values (i.e.:  () or  ()) that grows as needed, allowing us to easily manipulate bits while optimizing space (when compared to other collections). Any element having a bit value of  is called a set bit.
+
+Given  BitSets,  and , of size  where all bits in both BitSets are initialized to , perform a series of  operations. After each operation, print the number of set bits in the respective BitSets as two space-separated integers on a new line.
+
+import java.util.BitSet;
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner get = new Scanner(System.in);
+        int n = get.nextInt();
+        int m = get.nextInt();
+      
+        BitSet b1 = new BitSet(n);
+        BitSet b2 = new BitSet(n);
+        BitSet[] bitset = new BitSet[3];
+      
+        bitset[1] = b1;
+        bitset[2] = b2;
+      
+        while ( 0 < m-- ) {
+          String op = get.next();
+          int x = get.nextInt();
+          int y = get.nextInt();
+          
+          switch (op) {
+            case "AND":
+              bitset[x].and(bitset[y]);
+              break;
+            case "OR":
+              bitset[x].or(bitset[y]);
+              break;
+            case "XOR":
+              bitset[x].xor(bitset[y]);
+              break;
+            case "FLIP":
+              bitset[x].flip(y);
+              break;
+            case "SET":
+              bitset[x].set(y);
+          }
+          
+          System.out.printf("%d %d%n", b1.cardinality(), b2.cardinality());
+        }
+    }
+}
+
+Input (stdin)
+Download
+5 4
+AND 1 2
+SET 1 4
+FLIP 2 2
+OR 2 1
+Your Output (stdout)
+0 0
+1 0
+1 1
+1 2
+
+
+4.Given a list, , of  integers, perform  queries on the list. Once all queries are completed, print the modified list as a single line of space-separated integers.
+
+import java.util.Scanner;
+import java.util.LinkedList;
+
+public class Solution {
+    public static void main(String[] args) {
+        /* Create and fill Linked List of Integers */
+        Scanner scan = new Scanner(System.in);
+        int N = scan.nextInt();
+        LinkedList<Integer> list = new LinkedList<>();
+        for (int i = 0; i < N; i++) {
+            int value = scan.nextInt();
+            list.add(value);
+        }
+        
+        /* Perfrom queries on Linked List */
+        int Q = scan.nextInt();
+        for (int i = 0; i < Q; i++) {
+            String action = scan.next();
+            if (action.equals("Insert")) {
+                int index = scan.nextInt();
+                int value = scan.nextInt();
+                list.add(index, value);
+            } else { // "Delete"
+                int index = scan.nextInt();
+                list.remove(index);
+            }
+        }
+        scan.close();
+        
+        /* Print our updated Linked List */
+        for (Integer num : list) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+Input (stdin)
+Download
+5
+12 0 1 78 12
+2
+Insert
+5 23
+Delete
+0
+Your Output (stdout)
+0 1 78 12 23 
+
+
+5. You are given a phone book that consists of people's names and their phone number. After that you will be given some person's name as query. For each query, print the phone number of that person.
+
+import java.util.*;
+import java.io.*;
+import java.util.*;
+import java.io.*;
+
+class Solution{
+   public static void main(String []argh)
+   {
+      Scanner in = new Scanner(System.in);
+      int n=in.nextInt();
+      in.nextLine();
+      HashMap<String, Integer> hm = new HashMap<String, Integer>();
+      
+      for(int i=0;i<n;i++)
+      {
+         String name=in.nextLine();
+         int phone=in.nextInt();
+         hm.put(name, phone);         
+         in.nextLine();
+      }
+      while(in.hasNext())
+      {
+         String s=in.nextLine();
+         try{
+            int temp = hm.get(s);
+            System.out.println(s+"="+temp);
+         }catch(NullPointerException e){
+            System.out.println("Not found");
+         }    
+      }
+   }
+}
+
+
+Input (stdin)
+Download
+3
+uncle sam
+99912222
+tom
+11122222
+harry
+12299933
+uncle sam
+uncle tom
+harry
+Your Output (stdout)
+uncle sam=99912222
+Not found
+harry=12299933
