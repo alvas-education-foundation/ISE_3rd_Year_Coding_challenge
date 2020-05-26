@@ -1,0 +1,173 @@
+1)We have seen that lists are mutable (they can be changed), and tuples are immutable (they cannot be changed).
+
+Let's try to understand this with an example.
+
+You are given an immutable string, and you want to make changes to it.
+
+Example
+
+>>> string = "abracadabra"
+You can access an index by:
+
+>>> print string[5]
+a
+What if you would like to assign a value?
+
+>>> string[5] = 'k' 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+How would you approach this?
+
+One solution is to convert the string to a list and then change the value.
+Example
+
+>>> string = "abracadabra"
+>>> l = list(string)
+>>> l[5] = 'k'
+>>> string = ''.join(l)
+>>> print string
+abrackdabra
+Another approach is to slice the string and join it back.
+Example
+
+>>> string = string[:5] + "k" + string[6:]
+>>> print string
+abrackdabra
+Task
+Read a given string, change the character at a given index and then print the modified string.
+
+Input Format
+The first line contains a string, .
+The next line contains an integer , denoting the index location and a character  separated by a space.
+
+Output Format
+Using any of the methods explained above, replace the character at index  with character .
+
+Sample Input
+
+abracadabra
+5 k
+Sample Output
+
+abrackdabra
+
+
+def mutate_string(string, position, character):
+    list2=list(string)
+    list2[position]=character      
+    return ''.join(list2)
+if __name__ == '__main__':
+
+
+2)You are given a string  and width .
+Your task is to wrap the string into a paragraph of width .
+
+Input Format
+
+The first line contains a string, .
+The second line contains the width, .
+
+Constraints
+
+Output Format
+
+Print the text wrapped paragraph.
+
+Sample Input 0
+
+ABCDEFGHIJKLIMNOQRSTUVWXYZ
+4
+Sample Output 0
+
+ABCD
+EFGH
+IJKL
+IMNO
+QRST
+UVWX
+YZ
+
+import textwrap
+
+def wrap(string, max_width):
+    return "\n".join([string[i:i+max_width] for i in range(0, len(string), max_width)])
+if __name__ == '__main__':
+
+3)Mr. Vincent works in a door mat manufacturing company. One day, he designed a new door mat with the following specifications:
+
+Mat size must be X. ( is an odd natural number, and  is  times .)
+The design should have 'WELCOME' written in the center.
+The design pattern should only use |, . and - characters.
+Sample Designs
+
+    Size: 7 x 21 
+    ---------.|.---------
+    ------.|..|..|.------
+    ---.|..|..|..|..|.---
+    -------WELCOME-------
+    ---.|..|..|..|..|.---
+    ------.|..|..|.------
+    ---------.|.---------
+    
+    Size: 11 x 33
+    ---------------.|.---------------
+    ------------.|..|..|.------------
+    ---------.|..|..|..|..|.---------
+    ------.|..|..|..|..|..|..|.------
+    ---.|..|..|..|..|..|..|..|..|.---
+    -------------WELCOME-------------
+    ---.|..|..|..|..|..|..|..|..|.---
+    ------.|..|..|..|..|..|..|.------
+    ---------.|..|..|..|..|.---------
+    ------------.|..|..|.------------
+    ---------------.|.---------------
+Input Format
+
+A single line containing the space separated values of  and .
+
+Constraints
+
+Output Format
+
+Output the design pattern.
+
+Sample Input
+
+9 27
+Sample Output
+
+------------.|.------------
+---------.|..|..|.---------
+------.|..|..|..|..|.------
+---.|..|..|..|..|..|..|.---
+----------WELCOME----------
+---.|..|..|..|..|..|..|.---
+------.|..|..|..|..|.------
+---------.|..|..|.---------
+------------.|.------------
+
+def getVals():
+    height, width = map(int, input().split())
+    assert h % 2 == 1  # make sure the numbers are odd
+    assert w == h * 3  # make sure the width is 3 times the height
+    return height, width
+
+def designMat(design, message):
+    h, w = getVals()
+    
+    # Top 
+    pattern = [i for i in range(1, h, 2)]
+    for i in pattern:
+        yield '{}'.format(str(design*i)).center(w, '-')
+
+    # Middle
+    yield '{}'.format(message).center(w, '-')
+    
+    # Bottom 
+    pattern = list(reversed(pattern))
+    for i in pattern:
+        yield '{}'.format(str(design*i)).center(w, '-')
+
+for line in designMat('.|.', 'WELCOME'):
+    print(line)
