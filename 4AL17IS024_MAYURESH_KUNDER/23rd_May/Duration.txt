@@ -1,0 +1,50 @@
+Question:
+Rahul is a very busy persion he dont wan't to waste his time . He keeps account of duration of each and every work. Now he don't even get time to calculate duration of works, So your job is to count the durations for each work and give it to rahul.
+
+ 
+
+Program:
+import java.util.*;
+import java.io.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+
+            Scanner sc = new Scanner(System.in);
+
+            int works = sc.nextInt();
+
+            for(int i =0;i<works;i++)
+            {
+                int sh = sc.nextInt();
+                int sm = sc.nextInt();
+                int eh = sc.nextInt();
+                int em = sc.nextInt();
+
+                if(sh<=12 && eh<=12)
+                {
+                    int hours = (eh-sh)-1;
+                    sm = 60 - sm;
+                    int mins = sm+em;
+                    if(mins>60)
+                    {
+                        mins -= 60;
+                    }
+                    System.out.println(hours+" "+mins);
+                }
+                else
+                {
+                     int hours = eh-sh;
+                    sm = 60 - sm;
+                    int mins = sm+em;
+                    if(mins>60)
+                    {
+                        mins -= 60;
+                    }
+                    System.out.println(hours+" "+mins);
+                }
+                
+            }        
+
+    }
+}
