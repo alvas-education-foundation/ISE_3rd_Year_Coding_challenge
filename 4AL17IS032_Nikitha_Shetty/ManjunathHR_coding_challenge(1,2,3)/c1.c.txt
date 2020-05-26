@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+int x;float y;
+scanf("%d%f",&x,&y);
+if(isnan(x) || isnan(y)){
+printf("Error");
+}else
+printf("%0.2f",(float)x+y);
+return 0;
+} 
