@@ -1,0 +1,204 @@
+26/05/2020
+
+program 1:
+
+Java Program to Sort Strings in an Alphabetical Order:
+
+import java.util.Scanner;
+public class JavaExample
+{
+    public static void main(String[] args) 
+    {
+        int count;
+        String temp;
+        Scanner scan = new Scanner(System.in);
+        
+        //User will be asked to enter the count of strings 
+        System.out.print("Enter number of strings you would like to enter:");
+        count = scan.nextInt();
+        
+        
+        String str[] = new String[count];
+        Scanner scan2 = new Scanner(System.in);
+        
+        //User is entering the strings and they are stored in an array
+        System.out.println("Enter the Strings one by one:");
+        for(int i = 0; i < count; i++)
+        {
+            str[i] = scan2.nextLine();
+        }
+        scan.close();
+        scan2.close();
+        
+        //Sorting the strings
+        for (int i = 0; i < count; i++) 
+        {
+            for (int j = i + 1; j < count; j++) { 
+                if (str[i].compareTo(str[j])>0) 
+                {
+                    temp = str[i];
+                    str[i] = str[j];
+                    str[j] = temp;
+                }
+            }
+        }
+        
+        //Displaying the strings after sorting them based on alphabetical order
+        System.out.print("Strings in Sorted Order:");
+        for (int i = 0; i <= count - 1; i++) 
+        {
+            System.out.print(str[i] + ", ");
+        }
+    }
+}
+
+
+progeam 2:
+
+java Program to reverse words in a String:
+
+public class Example
+{
+   public void reverseWordInMyString(String str)
+   {
+	/* The split() method of String class splits
+	 * a string in several strings based on the
+	 * delimiter passed as an argument to it
+	 */
+	String[] words = str.split(" ");
+	String reversedString = "";
+	for (int i = 0; i < words.length; i++)
+        {
+           String word = words[i]; 
+           String reverseWord = "";
+           for (int j = word.length()-1; j >= 0; j--) 
+	   {
+		/* The charAt() function returns the character
+		 * at the given position in a string
+		 */
+		reverseWord = reverseWord + word.charAt(j);
+	   }
+	   reversedString = reversedString + reverseWord + " ";
+	}
+	System.out.println(str);
+	System.out.println(reversedString);
+   }
+   public static void main(String[] args) 
+   {
+	Example obj = new Example();
+	obj.reverseWordInMyString("Welcome to BeginnersBook");
+	obj.reverseWordInMyString("This is an easy Java Program");
+   }
+}
+Output:
+
+Report Ad
+Welcome to BeginnersBook
+emocleW ot kooBsrennigeB 
+This is an easy Java Program
+sihT si na ysae avaJ margorP
+
+
+program 3:
+
+Java program to find the occurrence of a character in a string:
+
+
+class JavaExample {  
+
+   static void countEachChar(String str) 
+   { 
+	//ASCII values ranges upto 256
+	int counter[] = new int[256]; 
+
+	//String length
+	int len = str.length(); 
+
+	/* This array holds the occurrence of each char, For example
+	 * ASCII value of A is 65 so if A is found twice then 
+	 * counter[65] would have the value 2, here 65 is the ASCII value
+	 * of A
+	 */
+	for (int i = 0; i < len; i++) 
+		counter[str.charAt(i)]++; 
+
+	// We are creating another array with the size of String
+	char array[] = new char[str.length()]; 
+        for (int i = 0; i < len; i++) { 
+	   array[i] = str.charAt(i); 
+	   int flag = 0; 
+	   for (int j = 0; j <= i; j++) { 
+
+		/* If a char is found in String then set the flag 
+		 * so that we can print the occurrence
+		 */
+		if (str.charAt(i) == array[j])  
+			flag++;                 
+	   } 
+
+	   if (flag == 1)  
+	      System.out.println("Occurrence of char " + str.charAt(i)
+		 + " in the String is:" + counter[str.charAt(i)]);             
+	} 
+   } 
+   public static void main(String[] args) 
+   {  
+	String str = "beginnersbook"; 
+	countEachChar(str); 
+   } 
+}
+
+
+
+program 4:
+
+Java Program to Count Vowels and Consonants in a String:
+
+public class JavaExample {
+
+    public static void main(String[] args) {
+        String str = "BeginnersBook";
+        int vcount = 0, ccount = 0;
+
+        //converting all the chars to lowercase
+        str = str.toLowerCase();
+        for(int i = 0; i < str.length(); i++) { char ch = str.charAt(i); if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') { vcount++; } else if((ch >= 'a'&& ch <= 'z')) {
+                ccount++;
+            }
+        }
+        System.out.println("Number of Vowels: " + vcount);
+        System.out.println("Number of Consonants: " + ccount);
+    }
+}
+
+
+
+program 5:
+
+
+Java Program to Calculate average using Array:
+
+
+public class JavaExample {
+
+    public static void main(String[] args) {
+        double[] arr = {19, 12.89, 16.5, 200, 13.7};
+        double total = 0;
+
+        for(int i=0; i<arr.length; i++){
+        	total = total + arr[i];
+        }
+
+
+        /* arr.length returns the number of elements 
+         * present in the array
+         */
+        double average = total / arr.length;
+        
+        /* This is used for displaying the formatted output
+         * if you give %.4f then the output would have 4 digits
+         * after decimal point.
+         */
+        System.out.format("The average is: %.3f", average);
+    }
+}
