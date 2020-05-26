@@ -1,0 +1,30 @@
+PROGRAM2:
+
+#include<iostream>
+using namespace std; 
+
+void findNthTerm(int n) 
+{    
+    if (n % 2 == 0) 
+    { 
+        n = n / 2; 
+        n = 2 * (n - 1); 
+        cout <<"n th term is "<< n / 2 << endl; 
+    } 
+    else 
+    { 
+        n = (n / 2) + 1; 
+        n = 2 * (n - 1); 
+        cout << "n th term is "<<n << endl; 
+    } 
+} 
+
+int main() 
+{ 
+    int n; 
+    printf("Enter n:");
+    scanf("%d",&n);
+    findNthTerm(n); 
+
+    return 0; 
+}

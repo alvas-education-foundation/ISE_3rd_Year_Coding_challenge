@@ -1,0 +1,43 @@
+Question:
+Some problems appear hard though they are very easy. Today Aakash is stuck in a range query problem. He has been given an array with only numbers 0 and 1. There are two types of queries -
+
+0 L R : Check whether the number formed from the array elements L to R is even or odd and print EVEN or ODD respectively. Number formation is the binary number from the bits status in the array L to R
+
+1 X : Flip the Xth bit in the array
+
+Indexing is 1 based
+
+
+Program:
+#include<stdio.h>
+int main()
+{
+    int N,Q,L,R,A[1000000],i,C,X;
+    scanf("%d%d",&N,&Q);
+    for(i=1;i<=N;i++)
+    {
+        scanf("%d",&A[i]);
+    }
+    for(i=1;i<=Q;i++)
+    {
+        scanf("%d",&C);
+        switch(C)
+        {
+            case 0: scanf("%d%d",&L,&R);
+                    if(A[R]==1)
+                    printf("ODD\n");
+                    else
+                    printf("EVEN\n");
+                    break;
+            case 1: scanf("%d",&X);
+                    if(A[X]==0)
+                    A[X]=1;
+                    else
+                    A[X]=0;
+                    break;
+            default:break;
+                    
+        }
+    }
+    return 0;
+}
