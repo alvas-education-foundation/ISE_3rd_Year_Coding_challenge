@@ -1,0 +1,21 @@
+//Calculating Contra-harmonic Mean
+#include<stdio.h>
+int main()
+{
+  float sum,sqsum ,contraharmonic, count,max,a;
+  sum=sqsum= count=max=0.0;
+  printf("enter the number sucessively and enter ctrl-d in the end \n");
+  while(scanf("%f",&a)!=EOF)
+    {
+      count=count+1;
+      sum=sum+a;
+      sqsum=sqsum+(a*a);
+      if(a>max)
+ {
+   max=a;
+ }
+    }
+  contraharmonic=(sqsum)/sum;
+  printf("the largest number u entered is %f \n",max);
+  printf("the contraharmonic mean is %f",  contraharmonic);
+  return 0;
