@@ -1,4 +1,4 @@
-3. Given an input integer, you must determine which primitive data types are capable of properly storing that input.
+3.Given an input integer, you must determine which primitive data types are capable of properly storing that input.
 Input Format
 The first line contains an integer, , denoting the number of test cases.
 Each test case, , is comprised of a single line with an integer, , which can be arbitrarily large or small.
