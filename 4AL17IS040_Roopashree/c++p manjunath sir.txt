@@ -1,0 +1,105 @@
+1.#include <iostream>
+#include<cstring>
+using namespace std;
+float sum(float , float);
+int main()
+{
+    float num1,num2,total;
+    cin>>num1>>num2;
+    
+    total=sum(num1,num2);
+    cout<<total<<endl;
+    return 0;
+}
+float sum(float a, float b)
+{
+     if(isalpha(a&&b))
+    {
+        cout<<"Error"<<endl;
+    }
+    else
+    {
+        float result=a+b;
+        return result;
+    }
+}
+
+
+
+
+2.#include<iostream>
+
+int main()
+{
+    int i, n, a=0, b=0;
+    std::cin>>n;
+    
+    
+    for(i=1;i<=n;i++)
+    {
+        if(i%2!=0)
+        {
+            if(i>1)
+                a = a + 2;
+        }
+        else
+        {
+            b = a/2;
+        }
+    }
+
+    if(n%2!=0)
+    {
+        std::cout<<a;;
+    }
+    else
+    { 
+        std::cout<<b;
+    }
+    
+    return 0;
+}
+© 2020 GitHu
+
+
+
+3.#include<iostream>
+#include<cstring>
+int pow(int a,int n)
+{
+    int b=a;
+    if(n==0)      
+    {
+        return 1;
+    }
+    while(n>1)     
+    {
+        a*=b;
+        n--;
+    }
+    return a;
+}
+int main()
+{
+    char a[50];
+    int n,i,j=0,decimal=0;
+    std::cin>>a;                    
+    n=strlen(a);
+    while(n>0)
+    {
+        if(a[n-1]>64&&a[n-1]<72)      
+        {
+            i=a[n-1]-55;             
+            decimal+=i*pow(17,j);     
+            n--,j++;
+        }
+        else                         
+        {
+            i=a[n-1]-48;              
+            decimal+=i*pow(17,j);
+            n--,j++;
+        }
+    }
+    std::cout<<decimal;       
+	return 0;    
+}

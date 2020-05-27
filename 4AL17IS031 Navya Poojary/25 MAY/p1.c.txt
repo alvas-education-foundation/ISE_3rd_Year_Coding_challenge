@@ -1,0 +1,23 @@
+//lucus number
+#include<stdio.h>
+int main()
+{
+  int first,temp,second,count,n;
+  count=2;
+  first=2;
+  second=1;
+  printf("enter the number of terms to print \n");
+  scanf("%d",&n);  
+  printf("starts here\n");
+  printf("%d %d ",first,seconds);
+  while(count<=n)
+    {
+      temp=second;
+      seconds=first+second;
+      first=temp;
+      printf("%d ",second);
+      count++;
+    }
+  printf("\n");
+  return 0;
+}
