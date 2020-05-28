@@ -1,0 +1,16 @@
+//Square Root of any Number using Babylonian Method
+#include<stdio.h>
+int main()
+{
+  double x,y,p;
+  printf("enter x \n");
+  scanf("%lf",&x);
+  y=x;
+  do
+    {
+      p=y;
+      y=((y+(x/y))/2);
+    }
+  while((p-y)>.00001);
+  printf("the sq. root is %lf \n",y);
+  return 0;
