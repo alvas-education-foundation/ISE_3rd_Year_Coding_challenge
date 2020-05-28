@@ -1,8 +1,6 @@
-"if u r copying the program please change the variables name ;)"
-
-n = int(input())
-
-for i in range(0,n):
+solution 1
+x = int(input())
+for i in range(0,x):
     ele =int(input())
     print(ele, "can be fitted in: ")
     if ele >= -128 and ele <=127:

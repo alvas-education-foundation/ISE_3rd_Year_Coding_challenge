@@ -1,0 +1,248 @@
+1st program:
+
+Java Program to display first n or first 100 prime numbers:
+
+import java.util.Scanner;
+
+class PrimeNumberDemo
+{
+   public static void main(String args[])
+   {
+      int n;
+      int status = 1;
+      int num = 3;
+      //For capturing the value of n
+      Scanner scanner = new Scanner(System.in);
+      System.out.println("Enter the value of n:");
+      //The entered value is stored in the var n
+      n = scanner.nextInt();
+      if (n >= 1)
+      {
+         System.out.println("First "+n+" prime numbers are:");
+         //2 is a known prime number
+         System.out.println(2);
+      }
+
+      for ( int i = 2 ; i <=n ;  )
+      {
+         for ( int j = 2 ; j <= Math.sqrt(num) ; j++ )
+         {
+            if ( num%j == 0 )
+            {
+               status = 0;
+               break;
+            }
+         }
+         if ( status != 0 )
+         {
+            System.out.println(num);
+            i++;
+         }
+         status = 1;
+         num++;
+      }         
+   }
+}
+Output:
+
+Enter the value of n:
+15
+First 15 prime numbers are:
+2
+3
+5
+7
+11
+13
+17
+19
+23
+29
+31
+37
+41
+43
+47
+
+
+2nd program:
+
+Java program to display prime numbers from 1 to 100 and 1 to n:
+
+class PrimeNumbers
+{
+   public static void main (String[] args)
+   {		
+       int i =0;
+       int num =0;
+       //Empty String
+       String  primeNumbers = "";
+
+       for (i = 1; i <= 100; i++)         
+       { 		  	  
+          int counter=0; 	  
+          for(num =i; num>=1; num--)
+	  {
+             if(i%num==0)
+	     {
+ 		counter = counter + 1;
+	     }
+	  }
+	  if (counter ==2)
+	  {
+	     //Appended the Prime number to the String
+	     primeNumbers = primeNumbers + i + " ";
+	  }	
+       }	
+       System.out.println("Prime numbers from 1 to 100 are :");
+       System.out.println(primeNumbers);
+   }
+}
+Output:
+
+Prime numbers from 1 to 100 are :
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
+
+3rd program:
+
+Java Program to break Integer into Digits:
+
+
+package com.beginnersbook;
+import java.util.Scanner;
+public class JavaExample 
+{
+    public static void main(String args[])
+    {
+        int num, temp, digit, count = 0;
+        
+        //getting the number from user
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter any number:");
+        num = scanner.nextInt();
+        scanner.close();
+        
+        //making a copy of the input number
+        temp = num;
+        
+        //counting digits in the input number
+        while(num > 0)
+        {
+            num = num / 10;
+            count++;
+        }
+        while(temp > 0)
+        {
+            digit = temp % 10;
+            System.out.println("Digit at place "+count+" is: "+digit);
+            temp = temp / 10;
+            count--;
+        }
+    }
+}
+
+
+4th program:
+
+
+Java program to check prime number:
+
+
+import java.util.Scanner;
+class PrimeCheck
+{
+   public static void main(String args[])
+   {		
+	int temp;
+	boolean isPrime=true;
+	Scanner scan= new Scanner(System.in);
+	System.out.println("Enter any number:");
+	//capture the input in an integer
+	int num=scan.nextInt();
+        scan.close();
+	for(int i=2;i<=num/2;i++)
+	{
+           temp=num%i;
+	   if(temp==0)
+	   {
+	      isPrime=false;
+	      break;
+	   }
+	}
+	//If isPrime is true then the number is prime else not
+	if(isPrime)
+	   System.out.println(num + " is a Prime Number");
+	else
+	   System.out.println(num + " is not a Prime Number");
+   }
+}
+Output:
+
+Enter any number:
+19
+19 is a Prime Number
+Output 2:
+
+
+Enter any number:
+6
+6 is not a Prime Number
+You can also use while loop to check the prime number:
+Just replace this part of the code in above program:
+
+for(int i=2;i<=num/2;i++)
+{
+   temp=num%i;
+   if(temp==0)
+   {
+      isPrime=false;
+      break;
+   }
+}
+with this:
+
+int i=2;
+while(i<= num/2)
+{
+   if(num % i == 0)
+   {
+	isPrime = false;
+	break;
+   }
+   i++;
+}
+
+
+5th program:
+
+
+Java Program to Find square root of a Number without sqrt:
+
+
+package com.beginnersbook;
+import java.util.Scanner;
+class JavaExample { 
+
+    public static double squareRoot(int number) {
+	double temp;
+
+	double sr = number / 2;
+
+	do {
+		temp = sr;
+		sr = (temp + (number / temp)) / 2;
+	} while ((temp - sr) != 0);
+
+	return sr;
+    }
+
+    public static void main(String[] args)  
+    { 
+	System.out.print("Enter any number:");
+	Scanner scanner = new Scanner(System.in);
+	int num = scanner.nextInt(); 
+	scanner.close();
+
+	System.out.println("Square root of "+ num+ " is: "+squareRoot(num));
+    } 
+}
