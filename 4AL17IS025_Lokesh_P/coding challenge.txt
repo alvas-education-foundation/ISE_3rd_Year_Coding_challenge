@@ -1,0 +1,90 @@
+1)#include<stdio.h>
+addition(int a, float b)
+{
+    float ans;
+    sum= (float)a + b;
+    printf("Answer : %.2f",sum);
+}
+int main()
+{
+   int i;
+   float k;
+   printf("enter first number : ");
+   scanf("%d",&i);
+   printf("enter second number : ");
+   scanf("%f",&k);
+   addition(i, k);
+}
+2)#include<stdio.h>
+
+int main()
+{
+    int i, n, x=0, y=0;
+    printf("enter number : ");
+    scanf("%d",&n);
+    
+    
+    for(i=1;i<=n;i++)
+    {
+        if(i%2!=0)
+        {
+            if(i>1)
+               x = x + 2;
+        }
+        else
+        {
+            y = x/2;
+        }
+    }
+
+    if(n%2!=0)
+    {
+        printf("%y",a);
+    }
+    else
+    { 
+        printf("%y",b);
+    }
+    
+    return 0;
+}
+3)#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+int main(){
+
+  char hex[17];
+  long long decimal, place;
+
+  int i = 0, val, len;
+  decimal = 0;
+  place = 1;
+
+  scanf("%s",hex);
+
+  len = strlen(hex);
+  len--;
+
+  for(i = 0;hex[i]!='\0';i++)
+  {
+    if(hex[i]>='0'&& hex[i]<='9'){      
+      val = hex[i] - 48;
+    }
+    else if(hex[i]>='a'&& hex[i]<='g'){      
+      val = hex[i] - 97 + 10;
+    }
+    else if(hex[i]>='A'&& hex[i]<='G'){
+
+      //similarly, 65 to 71 are values of A - G
+      val = hex[i] - 65 + 10;
+    }
+
+    decimal = decimal + val * pow(17,len);
+    len--;
+  }
+
+  printf("%lld",decimal);
+
+  return 0;
+}

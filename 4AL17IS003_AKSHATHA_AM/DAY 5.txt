@@ -1,0 +1,184 @@
+QUESTION 1:In this challenge, you will learn to implement the basic functionalities of pointers in C.
+A pointer in C is a way to share a memory address among different contexts (primarily functions). They are primarily used whenever a function needs to modify the content of a variable,
+of which it doesn't have ownership.
+#include<stdio.h>
+
+void update(int *a,int *b) {
+    int temp = *a;
+    *a = *a + *b;
+    *b = abs(temp - *b);
+
+}
+
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b;
+    
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+
+    return 0;
+}
+
+QUESTION 2:In this challenge, you have to create an array of size  dynamically, input the elements of the array,
+sum them and print the sum of the elements in a new line.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  
+    int n, *arr, i, sum = 0;
+    scanf("%d", &n);
+    arr = (int*) malloc(n * sizeof(int));
+    for(i = 0; i < n; i++) {
+        scanf("%d", arr + i);
+    }
+
+    for(i = 0; i < n; i++) {
+        sum += *(arr + i);
+    }
+
+    printf("%d\n", sum);
+    free(arr);
+    return 0;
+}
+
+QUESTION 3:The first line contains an integer, , denoting the size of the array. The next line contains
+space-separated integers denoting the elements of the array.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num, *arr, i;
+    scanf("%d", &num);
+    arr = (int*) malloc(num * sizeof(int));
+    for(i = 0; i < num; i++) {
+        scanf("%d", arr + i);
+    }
+    /* Write the logic to reverse the array. */ 
+    int* left_ptr = arr;
+    int* right_ptr;
+    int temp;
+    for(i = 0; i < num; i++) {
+        if(i == num - 1) {
+            right_ptr = (arr + i);
+        }
+    }
+    while(left_ptr < right_ptr) {
+        temp = *right_ptr;
+        *right_ptr = *left_ptr;
+        *left_ptr = temp;
+        right_ptr--;
+        left_ptr++;
+    }for(i = 0; i < num; i++) {
+        printf("%d ", *(arr + i));
+    }
+    free(arr);
+    return 0;
+}
+
+
+QUESTION 4:
+This challenge will help you learn the concept of recursion.
+A function that calls itself is known as a recursive function.
+The C programming language supports recursion. But while using recursion, one needs to be careful to define an exit condition from the function,
+otherwise it will go into an infinite loop
+
+
+#include <stdio.h> 
+
+
+int fib(int n) 
+{ 
+    
+    if (n == 0) 
+        return 0; 
+
+    
+    if (n == 1 || n == 2) 
+        return 1; 
+
+    
+    else
+        return (fib(n - 1) + fib(n - 2)); 
+} 
+int main() 
+{ 
+    
+    int n = 5; 
+    printf("Fibonacci series "
+        "of %d numbers is: ", 
+        n); 
+    for (int i = 0; i < n; i++) { 
+        printf("%d ", fib(i)); 
+    } 
+    return 0; 
+} 
+
+
+QUESTION 5:To sort a given array of strings into lexicographically increasing order or into an order in which the string with the lowest length appears first, a sorting function with a flag indicating the type of comparison strategy can be written.
+The disadvantage with doing so is having to rewrite the function for every new comparison strategy.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int lexicographic_sort(const char* a, const char* b) {
+ return strcmp(a, b) > 0;
+}
+
+int lexicographic_sort_reverse(const char* a, const char* b) {
+return strcmp(a, b) <= 0;
+
+}
+
+int sort_by_number_of_distinct_characters(const char* a, const char* b) {
+    int c1 = 0, c2 = 0;
+    int hsh1[26] = {0}, hsh2[26] = {0};
+    int n1 = strlen(a);
+    int n2 = strlen(b);
+
+    for(int i = 0; i < n1; i++){
+        hsh1[a[i] - 'a'] = 1;   
+}
+  for(int i = 0; i < n2; i++){
+        hsh2[b[i] - 'a'] = 1;   
+  }
+  for(int i = 0; i < 26; i++){
+        if(hsh1[i])
+            c1++;
+        if(hsh2[i])
+            c2++;
+    }
+    if( c1 != c2)
+        return c1 > c2;
+    else
+        return strcmp(a, b)  > 0;
+
+}
+int sort_by_length(const char* a, const char* b) {
+if(strlen(a) != strlen(b))
+        return strlen(a) > strlen(b);
+    else
+        return strcmp(a, b) >  0;
+}
+
+void string_sort(char** arr,const int len,int (*cmp_func)(const char* a, const char* b)){
+for(int i = 1; i < len; i++){
+        int j = i;
+        char* p = arr[i];
+        while(j > 0){
+            if((*cmp_func)(arr[j-1],p) > 0 )
+                arr[j] = arr[j-1];
+            else
+                break;
+            j--;
+        }
+        arr[j] = p;
+    }
+}
+
