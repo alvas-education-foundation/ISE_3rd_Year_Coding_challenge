@@ -1,0 +1,39 @@
+Q-1: 
+Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending and DEPARTMENT Descending.
+
+Answer:
+Select * 
+from worker 
+order by first_name asc,department desc;
+
+
+Q-2: Write an SQL query to print details of workers excluding first names, “Vipul” and “Satish” from Worker table.
+
+Answer:
+Select * 
+from worker 
+where first_name != ('Vipul','Satish');
+
+
+Q-3: Write an SQL query to print details of the Workers whose SALARY lies between 100000 and 500000.
+
+Answer:
+Select * 
+from worker
+ where salary between 100000 and 500000;
+
+
+Q-4: Write an SQL query to print details of the Workers who have joined in Feb’2014.
+
+Answer:
+Select * 
+from worker 
+where year(joining_date) = 2014 and month(joining_date) = 2;
+
+
+Q-5: Write an SQL query to fetch worker names with salaries >= 50000 and <= 100000.
+
+Answer:
+Select first_name,last_name
+from worker
+where salary between 50000 and 100000;
