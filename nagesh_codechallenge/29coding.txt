@@ -5,7 +5,7 @@ Select *
 from Worker 
 order by FIRST_NAME asc,DEPARTMENT desc;
 
-Challenge-2: Write an SQL query to print details of workers excluding first names, “Vipul” and “Satish” from Worker table.
+Challenge-2: Write an SQL query to print details of workers excluding first names, ï¿½Vipulï¿½ and ï¿½Satishï¿½ from Worker table.
 Ans:
 Select * 
 from Worker 
@@ -17,7 +17,7 @@ Select *
 from Worker
 where SALARY between 100000 and 500000;
 
-Challenge-4: Write an SQL query to print details of the Workers who have joined in Feb’2014.
+Challenge-4: Write an SQL query to print details of the Workers who have joined in Febï¿½2014.
 Ans:
 Select * 
 from Worker 
