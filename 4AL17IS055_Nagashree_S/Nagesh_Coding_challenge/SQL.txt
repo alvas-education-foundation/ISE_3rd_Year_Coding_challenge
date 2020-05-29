@@ -11,11 +11,13 @@ Select *
 from Worker 
 where FIRST_NAME not in ('Vipul','Satish');
 
+
 3. Write an SQL query to print details of the Workers whose SALARY lies between 100000 and 500000.
 
 Select * 
 from Worker
 where SALARY between 100000 and 500000;
+
 
 4. Write an SQL query to print details of the Workers who have joined in Feb’2014.
 
@@ -23,11 +25,12 @@ Select *
 from Worker 
 where year(JOINING_DATE) = 2014 and month(JOINING_DATE) = 2;
 
+
 5. Write an SQL query to fetch worker names with salaries >= 50000 and <= 100000.
 
-SELECT CONCAT(FIRST_NAME, ' ', LAST_NAME) As Worker_Name, Salary
-FROM worker 
-WHERE WORKER_ID IN 
-(SELECT WORKER_ID FROM worker 
-WHERE Salary BETWEEN 50000 AND 100000);
+Select CONCAT(FIRST_NAME, ' ', LAST_NAME) As Worker_Name, Salary
+from worker 
+where WORKER_ID IN 
+(Select WORKER_ID from worker 
+where Salary BETWEEN 50000 AND 100000);
 
