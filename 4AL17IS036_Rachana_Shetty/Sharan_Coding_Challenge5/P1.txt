@@ -1,0 +1,31 @@
+1. Write a Program in Java to check whether a number is an Armstrong Number or not. 
+SAMPLE OUTPUT:
+
+Input an integer:  153
+Is Armstrong number? True
+
+Program:
+
+import java.io.*;
+import java.util.*;
+
+class Armstrong{  
+  public static void main(String[] args)  {  
+    int c=0,a,temp;  
+    Scanner s = new Scanner(System.in);
+    System.out.println("Input an integer: ");
+    int n = s.nextInt();
+    temp=n;  
+    while(n>0)  
+    {  
+    a=n%10;  
+    n=n/10;  
+    c=c+(a*a*a);  
+    } 
+    System.out.println("Is armstrong number?");  
+    if(temp==c)  
+        System.out.println("True");   
+    else  
+        System.out.println("False");   
+   }  
+}
