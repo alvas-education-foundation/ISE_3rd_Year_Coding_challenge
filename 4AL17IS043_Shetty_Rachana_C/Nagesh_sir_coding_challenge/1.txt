@@ -1,0 +1,39 @@
+Challenge-1: Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending and DEPARTMENT Descending.
+->
+Select *
+From Worker 
+order by FIRST_NAME asc, DEPARTMENT desc;
+
+
+
+Challenge-2: Write an SQL query to print details of workers excluding first names, “Vipul” and “Satish” from Worker table.
+->
+Select *
+From Worker 
+Where FIRST_NAME not in(‘Vipul’,’Satish’);
+
+
+
+
+Challenge-3: Write an SQL query to print details of the Workers whose SALARY lies between 100000 and 500000.
+->
+Select *
+From Worker
+Where SALARY between 100000 and 500000;
+
+
+
+Challenge-4: Write an SQL query to print details of the Workers who have joined in Feb’2014.
+->
+Select *
+From Worker 
+Where year(JOINING_DATE)=2014 and month(JOINING_DATE)=2;
+
+
+Challenge-5: Write an SQL query to fetch worker names with salaries >= 50000 and <= 100000.
+->
+Select CONCAT(FIRST_NAME,’’,LAST_NAME)As Worker_Name,SALARY
+From Worker
+Where WORKER_ID In(Select WORKER_ID 
+		    From Worker
+		    Where SALARY between 50000 and 100000);
