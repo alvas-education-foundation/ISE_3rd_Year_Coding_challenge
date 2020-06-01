@@ -1,0 +1,39 @@
+3.
+import java.util.*;
+import java.lang.*;
+public class MK {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int no_of_char = 256;
+        int[] count = new int[no_of_char];
+        int[] count1 = new int[no_of_char];
+        String str = sc.next();
+        boolean sorted = true;
+        for(int i = 0;i < str.length(); i++) {
+            count[str.charAt(i)]++;
+            count1[str.charAt(i)]++;
+        }
+        Arrays.sort(count1);
+        int cnt = count1[no_of_char-2];
+        int chr = 0;
+        for(int i = 0; i < no_of_char;i++)
+        {
+            if(count[i] == cnt)
+                chr = i;
+        }
+        for(int i = 0;i < str.length(); i++)
+        {
+          if(str.charAt(i) == chr) {
+              if(count1[no_of_char - 1] == 1) {
+                  System.out.println("No secondmost frequent character found");
+                  break;
+              }
+              else {
+                  System.out.println("secondmost frequnet character is: "+str.charAt(i));
+                  break;
+              }
+          }
+        }
+
+    }
+}
