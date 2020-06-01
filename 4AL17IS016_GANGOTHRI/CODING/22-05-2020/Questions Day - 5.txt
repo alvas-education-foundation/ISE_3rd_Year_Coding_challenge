@@ -1,9 +1,0 @@
-1. C Program to Check Whether a Character is a Vowel or Consonant
-
-2. C Program to Check Leap Year
-
-3. C Program to Check Whether a Character is an Alphabet or not
-
-4. C Program to Calculate the Sum of Natural Numbers
-
-5. C Program to Reverse a Number
