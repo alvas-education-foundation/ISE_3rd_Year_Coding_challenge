@@ -1,4 +1,4 @@
-Write a Java program to segregate all 0s on left side and all 1s on right side of a given array of 0s and 1s.
+ Write a Java program to segregate all 0s on left side and all 1s on right side of a given array of 0s and 1s.
 
 SAMPLE OUTPUT:
 Sample array: [1,0,1,1,0,0,1,1]

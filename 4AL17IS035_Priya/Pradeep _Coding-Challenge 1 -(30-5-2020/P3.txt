@@ -1,4 +1,4 @@
-Write a Java program to get a date before and after 1 year compares to the current date.
+ Write a Java program to get a date before and after 1 year compares to the current date.
 
  Program:
 

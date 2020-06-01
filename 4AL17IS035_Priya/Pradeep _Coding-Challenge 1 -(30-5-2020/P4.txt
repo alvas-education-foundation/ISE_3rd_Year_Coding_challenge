@@ -1,4 +1,4 @@
-Solve the challenge where,
+ Solve the challenge where,
 You are given a  2D array. An hourglass in an array is a portion shaped like this:
 a b c
 d

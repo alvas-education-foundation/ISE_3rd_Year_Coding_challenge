@@ -1,4 +1,4 @@
-Write a Java program to find the second most frequent character in a given string.
+ Write a Java program to find the second most frequent character in a given string.
 
 Sample Output:
 The given string is: successes

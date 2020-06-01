@@ -1,4 +1,4 @@
-Write a Java program to find the index of an array element.
+ Write a Java program to find the index of an array element.
 
  Program:
 
