@@ -1,0 +1,41 @@
+3)Given an array,X , of n  integers, calculate the respective first quartile (Q1), second quartile (Q2), and third quartile (Q3). It is guaranteed that ,Q1,Q2,Q3  are integers.
+
+Input Format
+
+•The first line contains an integer,n , denoting the number of elements in the array.
+•The second line contains  n space-separated integers describing the array's elements.
+
+Output format:
+Print  lines of output in the following order:
+
+1.The first line should be the value of Q1.
+2.The second line should be the value of Q2.
+3.The third line should be the value of Q3 .
+
+Constraint:
+1.n=[5 to 50]
+2.xi=[0 to 100]
+
+Program:
+
+def median(nums):
+    if len(nums)%2 == 0:
+        return int(sum(nums[len(nums)//2-1:len(nums)//2+1])/2)
+    else:
+        return nums[len(nums)//2]
+
+def quartiles(N,nums):
+    Q1 = median(nums[:len(nums)//2])
+    Q2 = median(nums)
+    if N%2 == 0:
+        Q3 = median(nums[len(nums)//2:])
+    else:
+        Q3 = median(nums[len(nums)//2+1:])
+    return Q1,Q2,Q3
+
+N = int(input())
+nums = sorted([int(num) for num in input().split()])
+Q1,Q2,Q3 = quartiles(N,nums)
+print(Q1)
+print(Q2)
+print(Q3)
