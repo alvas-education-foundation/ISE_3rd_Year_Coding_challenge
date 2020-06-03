@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+         Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        BitSet b1 = new BitSet(n);
+        BitSet b2 = new BitSet(n);
+        BitSet bs1, bs2;
+
+        for (int i=0; i<m; i++) {
+            String op = sc.next();
+            bs1 = (sc.nextInt()==1)  ?  b1  :  b2;
+            bs2 = (bs1 == b1)           ?  b2  :  b1;
+            int index = sc.nextInt();
+            
+            switch (op) {
+                case ("AND"):   bs1.and(bs2);       break;
+                case ("OR"):     bs1.or(bs2);          break;
+                case ("XOR"):   bs1.xor(bs2);        break;
+                case ("FLIP"):   bs1.flip(index);     break;
+                case ("SET"):    bs1.set(index);     break;
+            }
+            System.out.printf("%d %d%n", b1.cardinality(), b2.cardinality());
+        }
+        sc.close();
+    }
+}
