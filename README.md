@@ -13,7 +13,7 @@ Check whether you are in same location on your terminal, if not the use the foll
 cd path/location
 
 ```
-Move to the specific directory.
+Move to the specific directory.                  
 
 ## Clone the Repo
 
