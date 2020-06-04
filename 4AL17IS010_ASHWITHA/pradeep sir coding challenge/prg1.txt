@@ -1,4 +1,34 @@
-1.
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@ashwithasalian 
+alvas-education-foundation
+/
+ISE_3rd_Year_Coding_challenge
+3
+2
+0
+ Code
+ Issues 1
+ Pull requests 0 Actions
+ Projects 0
+ Wiki
+ Security 0
+ Insights
+Pradeep_Sir_Coding_Challenge
+
+ master
+@abmanthan
+abmanthan committed 2 days ago 
+1 parent 956ed2a commit 6b30b7b2877e14c6445b02f52e4289cd8feca9da
+Showing  with 101 additions and 0 deletions.
+ 17  4AL15IS014 _MANTHAN/Pradeep_Sir_Coding_Challenge/1.java 
+@@ -0,0 +1,17 @@
 public class one {
        public static int  findIndex (int[] my_array, int t) {
         if (my_array == null) return -1;
@@ -16,3 +46,113 @@ public class one {
       System.out.println("Index position of 77 is: " + findIndex(my_array, 77));
        }
 } 
+ 18  4AL15IS014 _MANTHAN/Pradeep_Sir_Coding_Challenge/2.java 
+@@ -0,0 +1,18 @@
+import java.util.Arrays; 
+public class two {
+  public static void main(String[] args) 
+    {
+        int[] my_array = {1, 2, 5, 5, 6, 6, 7, 2};
+
+        for (int i = 0; i < my_array.length-1; i++)
+        {
+            for (int j = i+1; j < my_array.length; j++)
+            {
+                if ((my_array[i] == my_array[j]) && (i != j))
+                {
+                    System.out.println("Duplicate Element : "+my_array[j]);
+                }
+            }
+        }
+    }    
+} 
+ 17  4AL15IS014 _MANTHAN/Pradeep_Sir_Coding_Challenge/3.java 
+@@ -0,0 +1,17 @@
+import java.util.*;
+public class three {
+   public static void main(String[] args)
+    {
+      Calendar cal = Calendar.getInstance();
+      Date cdate = cal.getTime();
+      // get next year
+      cal.add(Calendar.YEAR, 1); 
+      Date nyear = cal.getTime();
+      //get previous year
+      cal.add(Calendar.YEAR, -2); 
+      Date pyear = cal.getTime();
+      System.out.println("\nCurrent Date : " + cdate);
+      System.out.println("\nDate before 1 year : " + pyear);
+      System.out.println("\nDate after 1 year  : " + nyear+"\n");  	
+    }
+} 
+ 49  4AL15IS014 _MANTHAN/Pradeep_Sir_Coding_Challenge/4.java 
+@@ -0,0 +1,49 @@
+import java.io.*; 
+
+class four { 
+
+static int R = 5; 
+static int C = 5; 
+
+
+static int findMaxSum(int [][]mat) 
+{ 
+    if (R < 3 || C < 3) 
+        return -1; 
+
+
+    int max_sum = Integer.MIN_VALUE; 
+    for (int i = 0; i < R - 2; i++) 
+    { 
+        for (int j = 0; j < C - 2; j++) 
+        { 
+
+            int sum = (mat[i][j] + mat[i][j + 1] +  
+                       mat[i][j + 2]) + (mat[i + 1][j + 1]) +  
+                       (mat[i + 2][j] + mat[i + 2][j + 1] +  
+                       mat[i + 2][j + 2]); 
+
+
+            max_sum = Math.max(max_sum, sum); 
+        } 
+    } 
+    return max_sum; 
+} 
+
+
+    static public void main (String[] args) 
+    { 
+        int [][]mat = {{1, 2, 3, 0, 0}, 
+                       {0, 0, 0, 0, 0}, 
+                       {2, 1, 4, 0, 0}, 
+                       {0, 0, 0, 0, 0}, 
+                       {1, 1, 0, 1, 0}}; 
+        int res = findMaxSum(mat); 
+        if (res == -1) 
+            System.out.println("Not possible"); 
+        else
+            System.out.println("Maximum sum of hour glass = "
+                                + res); 
+    } 
+
+} 
+0 comments on commit 6b30b7b
+@ashwithasalian
+ 
+ 
+Leave a comment
+
+Attach files by dragging & dropping, selecting or pasting them.
+ You’re not receiving notifications from this thread.
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
