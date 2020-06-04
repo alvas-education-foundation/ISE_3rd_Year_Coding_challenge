@@ -1,0 +1,22 @@
+1.Select *
+from Worker
+order by FIRST_NAME asc,DEPARTMENT desc;
+
+2.Select *
+from Worker
+where FIRST_NAME not in ('Vipul','Satish');
+
+3.Select *
+from Worker
+where SALARY between 100000 and 500000;
+
+4.Select *
+from Worker
+where year(JOINING_DATE) = 2014 and month(JOINING_DATE) = 2;
+
+5.SELECT FIRST_NAME,LAST_NAME
+FROM worker 
+WHERE WORKER_ID IN 
+(SELECT WORKER_ID
+FROM worker 
+WHERE Salary BETWEEN 50000 AND 100000);
