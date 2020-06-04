@@ -1,0 +1,58 @@
+P-1
+
+Write a program to find the index of an array element
+
+n = int(input())
+x=[]
+for i in range(n):
+    ele=int(input())
+    x.append(ele)
+k=int(input())
+index=x.index(k)
+print(index)
+
+P-2
+
+Write a python program to find the duplicate values of an array of integer values
+
+import numpy as y 
+def unique(lst):
+    x=y.array(lst)
+    print(y.unique(x))
+lst=[]
+n=int(input("Number of elements"))
+for i in range(0,n):
+        ele=int(input())
+        lst.append(ele)
+unique(lst)
+
+P-3
+
+Write a program to get a date before and after 1 year compares to the current date
+
+from datetime import date as t 
+from datetime import timedelta as t1
+current = t.today()   
+before = (t.today()-t1(days=365))
+after = (t.today()+t1(days=365))
+print("Current Date: ",current)
+print("Before : ",before)
+print("After : ",after)
+
+P-4
+
+Hourglass problem 
+
+import sys
+a = []
+for arr_i in range(6):
+   arr_t = [int(arr_temp) for arr_temp in input().strip().split(' ')]
+   a.append(arr_t)  
+sumslist = []
+def calculatesum(i,j):
+    return(a[i][j] + a[i][j+1] + a[i][j+2] + a[i+1][j+1] + a[i+2][j] + a[i+2][j+1] + a[i+2][j+2])
+for j in range(0,4):
+    for i in range(0,4):
+        sum = calculatesum(i,j)
+        sumslist.append(sum)
+print(max(sumslist))
