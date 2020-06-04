@@ -1,6 +1,67 @@
-3.
-Write an SQL query to fetch the departments that have less than five people in it.*
+import numpy as np
+from scipy import stats
+n = int(input())
+li = []
 
-SELECT DEPARTMENT, COUNT(WORKER_ID) as 'Count' 
-FROM Worker 
-GROUP BY DEPARTMENT HAVING COUNT(WORKER_ID) < 5;
+for i in range(n):
+    ele = int(input())
+    li.append(ele)
+
+mean = np.mean(li)
+median = np.median(li)
+mode = stats.mode(li)
+print(mean)
+print(median)
+print(mode)
+
+
+
+
+n = int(input())
+li = []
+we = []
+mean = 0
+for i in range(n):
+    ele = int(input("Enter array element:\n"))
+    li.append(ele)
+for i in range(n):
+    wei = int(input("Enter weight of array element:\n"))
+    we.append(wei)
+sum_we = sum(we)    
+for i in range(n):
+    mean = mean + (li[i]*we[i])
+print(round(mean/sum_we)) 
+
+
+
+from statistics import median
+n = int(input())
+li = []
+
+for i in range(n):
+    ele = int(input())
+    li.append(ele)
+l = sorted(li)
+print(int(median(l[:n//2])))
+print(int(median(l)))
+print(int(median(l[(n+1)//2:])))
+
+
+import statistics as st
+
+n = int(input())
+X = [float(i) for i in input().split()]
+F = [int(i) for i in input().split()]
+S = []
+for i in range(n):
+    for f in range(F[i]):
+        S.append(X[i])
+S.sort()
+m = len(S)//2 
+L_half = S[:m]
+U_half = S[-m:]
+
+q1 = st.median(L_half)
+q3 = st.median(U_half)
+
+print(q3-q1)
