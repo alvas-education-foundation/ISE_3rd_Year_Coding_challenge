@@ -1,0 +1,57 @@
+1.import java.util.*;
+class two{
+
+     public static void main(String []argh) {
+          Scanner sc = new Scanner(System.in);
+          int t=sc.nextInt();
+          for(int i=0;i<t;i++) {
+               try {
+                    long x=sc.nextLong();
+                    System.out.println(x+” can be fitted in:”);
+                    if(x>=–128 && x<=127) System.out.println(“* byte”);
+                    if(x>=-32768 && x<=32767) System.out.println(“* short”);
+                    if(x>=-2147483648 && x<=2147483647) System.out.println(“* int”);
+                    if(x>=-9223372036854775808 &&
+                        x<=9223372036854775807)System.out.println(“* long”);
+               }
+               catch(Exception e) {
+                    System.out.println(sc.next()+” can’t be fitted anywhere.”);
+               }
+          }
+     }
+}
+
+
+2.from sys import stdin
+line =[]
+for l in stdin:
+    if l == 'end\n':
+        break
+    else:
+        line.append(l.rstrip())
+n = 1
+for i in line:
+  print(n,i)
+  n += 1 
+
+
+
+
+3.n=int(input())
+sl=[]
+n1=[]
+for i in range(n):
+    str1=input()
+    num=int(input())
+    sl.append(str1)
+    n1.append(num)
+for i in range(n):
+    rem_length=15-len(sl[i])
+    new_length=len(sl[i])+rem_length
+    new_string=sl[i].ljust(new_length)
+    print(new_string,end="")
+    if(n1[i]<10):
+        print("00",end="")
+    elif(n1[i]>9 and n1[i]<100):
+        print("0",end="")
+    print(n1[i])
