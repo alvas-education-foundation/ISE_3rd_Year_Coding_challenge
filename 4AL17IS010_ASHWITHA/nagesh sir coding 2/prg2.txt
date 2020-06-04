@@ -1,4 +1,6 @@
 2.
+
+
 Write an SQL query to fetch the list of employees with the same salary.
 
 Select distinct W.WORKER_ID, W.FIRST_NAME, W.Salary 

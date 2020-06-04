@@ -1,34 +1,4 @@
-Skip to content
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@ashwithasalian 
-alvas-education-foundation
-/
-ISE_3rd_Year_Coding_challenge
-3
-2
-0
- Code
- Issues 1
- Pull requests 0 Actions
- Projects 0
- Wiki
- Security 0
- Insights
-Pradeep_Sir_Coding_Challenge
-
- master
-@abmanthan
-abmanthan committed 2 days ago 
-1 parent 956ed2a commit 6b30b7b2877e14c6445b02f52e4289cd8feca9da
-Showing  with 101 additions and 0 deletions.
- 17  4AL15IS014 _MANTHAN/Pradeep_Sir_Coding_Challenge/1.java 
-@@ -0,0 +1,17 @@
 public class one {
        public static int  findIndex (int[] my_array, int t) {
         if (my_array == null) return -1;
@@ -46,8 +16,7 @@ public class one {
       System.out.println("Index position of 77 is: " + findIndex(my_array, 77));
        }
 } 
- 18  4AL15IS014 _MANTHAN/Pradeep_Sir_Coding_Challenge/2.java 
-@@ -0,0 +1,18 @@
+ 
 import java.util.Arrays; 
 public class two {
   public static void main(String[] args) 
@@ -66,8 +35,7 @@ public class two {
         }
     }    
 } 
- 17  4AL15IS014 _MANTHAN/Pradeep_Sir_Coding_Challenge/3.java 
-@@ -0,0 +1,17 @@
+ 
 import java.util.*;
 public class three {
    public static void main(String[] args)
@@ -85,8 +53,7 @@ public class three {
       System.out.println("\nDate after 1 year  : " + nyear+"\n");  	
     }
 } 
- 49  4AL15IS014 _MANTHAN/Pradeep_Sir_Coding_Challenge/4.java 
-@@ -0,0 +1,49 @@
+ 
 import java.io.*; 
 
 class four { 
