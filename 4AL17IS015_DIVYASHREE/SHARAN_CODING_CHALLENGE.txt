@@ -1,0 +1,68 @@
+P-1
+
+Write a program to find the second most frequent character in a given string.
+
+def getSecondMostFreq(str) :   
+	char = 256
+	count = [0] * char
+	for i in range(len(str)) : 
+        	count[ord(str[i])] += 1
+  	first, second = 0, 0
+	for i in range(char) : 
+        	if count[i] > count[first] : 
+  		second = first 
+            	first = i 
+        elif (count[i] > count[second] and
+            count[i] != count[first] ) : 
+ 	    second = i 
+	return chr(second) 
+
+if __name__ == "__main__" : 
+    str =input()  
+    res = getSecondMostFreq(str) 
+    if res != '\0' : 
+        print("Second most frequent char is", res) 
+    else : 
+        print("No second most frequent character") 
+  
+P-2
+
+Write a program to find the length of the longest consecutive elements sequence from a given unsorted array of integers.
+
+Write a program to segregate all 0s on left side and all 1s on right side of a given array of 0s and 1s.
+
+n = int(input())
+li =[]
+count = 0
+newseq = 0
+for i in range(0,n):
+    new = int(input())
+    li.append(new)
+li.sort()
+print(li)
+
+for i in range(1,len(li)):
+    if li[i] != li[i-1]:
+        if li[i] == li[i-1]+1:
+            count += 1
+        else:
+            newseq = max(newseq, count)     
+            count = 0
+print(newseq+1) 
+
+
+P-3
+
+Write a Program to check whether a number is an Armstrong Number or not.
+n = int(input())
+n1=n
+sum = 0
+while n > 0:
+    a=n%10
+    sum=sum+(a*a*a)
+    n=n//10
+print("Is Armstrong number?")
+if n1 == sum:
+    print("True")
+else:
+    print("False") 
