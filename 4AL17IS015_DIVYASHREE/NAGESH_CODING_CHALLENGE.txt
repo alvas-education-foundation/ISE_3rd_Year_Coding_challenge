@@ -1,45 +1,29 @@
-1.Write an SQL query to print all Worker details from the Worker table 
-order by FIRST_NAME Ascending and DEPARTMENT Descending.
-Solution:
+Challenge-1: Write an SQL query to determine the 5th highest salary.
+	
+select top 1 salary 
+(Select DISTINCT TOP 5 Salary
+FROM Employees
+Order By Salary Desc)
+result
+order by salary
 
+Challenge-2: Write an SQL query to fetch the list of employees with the same salary.
 
-Select *
-from Worker
-order by FIRST_NAME asc,DEPARTMENT desc;
+Select first_Name,last_name
+from worker_table
+where salary in(select salary
+from worker_table
+group by salary 
+having count(*)>1)
 
+Challenge-3: Write an SQL query to fetch the departments that have less than five people in it.
 
-2.Write an SQL query to print details of workers excluding first names, “Vipul” and “Satish” from Worker table.
-Solution:
+Select department
+from worker_table
+where having count(*)<5
 
-Select *
-from Worker
-where FIRST_NAME not in ('Vipul','Satish');
+Challenge-4: Write an SQL query to show all departments along with the number of people in there.
 
-
-3.Write an SQL query to print details of the Workers whose SALARY lies between 100000 and 500000.
-Solution:
-
-Select *
-from Worker
-where SALARY between 100000 and 500000;
-
-
-4.Write an SQL query to print details of the Workers who have joined in Feb’2014
-Solution:
-
-
-Select *
-from Worker
-where year(JOINING_DATE) = 2014 and month(JOINING_DATE) = 2;
-
-
-5.Write an SQL query to fetch worker names with salaries >= 50000 and <= 100000.
-Solution:
-
-
-SELECT FIRST_NAME,LAST_NAME
-FROM worker 
-WHERE WORKER_ID IN 
-(SELECT WORKER_ID
-FROM worker 
-WHERE Salary BETWEEN 50000 AND 100000);
+select department_name,count(*)
+from worker_table
+group by department_name;

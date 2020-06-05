@@ -1,0 +1,47 @@
+Challenge-1: Write an SQL query to determine the 5th highest salary.
+
+Ans:-
+
+Select SALARY
+From Worker W1
+Where 4 = (
+	   Select Count( DISTINCT ( W2.Salary ) )
+	   From Worker W2
+ 	   Where W2.Salary >= W1.Salary 
+	);
+
+
+
+Challenge-2: Write an SQL query to fetch the list of employees with the same salary.
+
+Ans:-
+
+Select distinct W.WORKER_ID, W.FIRST_NAME, W.Salary 
+From Worker W, Worker W1 
+Where W.Salary = W1.Salary 
+and W.WORKER_ID != W1.WORKER_ID;
+
+
+
+
+Challenge-3: Write an SQL query to fetch the departments that have less than five people in it.
+
+Ans:-
+
+Select DEPARTMENT, Count(WORKER_ID) as 'Number of Workers' 
+From Worker 
+Group By DEPARTMENT Having CountT(WORKER_ID) < 5;
+
+
+
+
+Challenge-4: Write an SQL query to show all departments along with the number of people in there.
+
+Ans:-
+
+Select DEPARTMENT, Count(DEPARTMENT) as 'Number of Workers' 
+From Worker Group By DEPARTMENT;
+
+
+
+
