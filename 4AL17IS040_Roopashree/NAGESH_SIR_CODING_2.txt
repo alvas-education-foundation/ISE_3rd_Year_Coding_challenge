@@ -1,37 +1,38 @@
-
-	1.Write an SQL query to determine the 5th highest salary.
+	1. Write an SQL query to determine the 5th highest salary.
 
 Ans:
+SELECT Salary
+FROM Worker W1
+WHERE 4 = (
+ SELECT COUNT( DISTINCT ( W2.Salary ) )
+ FROM Worker W2
+ WHERE W2.Salary >= W1.Salary
+ );
 
-select * from(
-select first_name, salary, dense_rank() 
-over(order by salary desc)r from worker) 
-where r=&5;
 
 	2. Write an SQL query to fetch the list of employees with the same salary.
 
 Ans:
-SELECT w1.first_name, w1.salary
-FROM worker_id w1, worker_id w2
-WHERE w1.Salary = w2.Salary
-AND w1.first_name <> w2.first_name
+Select distinct W.WORKER_ID, W.FIRST_NAME, W.Salary 
+from Worker W, Worker W1 
+where W.Salary = W1.Salary 
+and W.WORKER_ID != W1.WORKER_ID;
 
 
 
 
-	3.Write an SQL query to fetch the departments that have less than five people in it.
+	3. Write an SQL query to fetch the departments that have less than five people in it.
 
 Ans:
+SELECT DEPARTMENT, COUNT(WORKER_ID) as 'Number of Workers' 
+FROM Worker GROUP BY DEPARTMENT HAVING COUNT(WORKER_ID) < 5;
 
-SELECT department, count(worker_id) as 'Number of Workers' 
-FROM worker 
-GROUP BY department 
-HAVING count(worker_id) < 5;
 
-	4.Write an SQL query to show all departments along with the number of people in there.
 
-Answer:
 
-SELECT department, count(department) as 'Number of Workers'
-FROM worker 
-GROUP BY department;
+
+	4. Write an SQL query to show all departments along with the number of people in there.
+
+Ans:
+SELECT DEPARTMENT, COUNT(DEPARTMENT) as 'Number of Workers'
+FROM Worker GROUP BY DEPARTMENT;
