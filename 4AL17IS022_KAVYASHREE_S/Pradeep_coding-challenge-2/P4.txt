@@ -1,4 +1,4 @@
-4)Write A C++ Program For Selection Sort 
+4) Write A C++ Program For Selection Sort 
 
 Program:
 

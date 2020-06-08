@@ -1,4 +1,4 @@
-1)Write a C++ Program to print right angled pyramid of numbers. 
+1) Write a C++ Program to print right angled pyramid of numbers. 
 
 Program:
 

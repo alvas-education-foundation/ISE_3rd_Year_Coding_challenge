@@ -1,4 +1,4 @@
-5)C++ Program to Find All Roots of a Quadratic Equation
+5) C++ Program to Find All Roots of a Quadratic Equation
 
 Program:
 
