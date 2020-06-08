@@ -1,6 +1,5 @@
-3) Write A C++ Program To Implement Queue Operations Using Switch Statement.
-
-Program:
+Write A C++ Program To Implement Queue Operations Using Switch Statement
+*/
 
 #include <iostream>
 using namespace std;
@@ -39,9 +38,9 @@ void Display() {
 }
 int main() {
    int ch;
-   cout<<"1) Insert"<<endl;
-   cout<<"2) Delete"<<endl;
-   cout<<"3) Display all the elements"<<endl;
+   cout<<"1) Insert element to queue"<<endl;
+   cout<<"2) Delete element from queue"<<endl;
+   cout<<"3) Display all the elements of queue"<<endl;
    cout<<"4) Exit"<<endl;
 do {
    cout<<"Enter your choice : "<<endl;

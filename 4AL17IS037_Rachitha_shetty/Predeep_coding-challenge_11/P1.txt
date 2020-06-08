@@ -1,6 +1,6 @@
-1) Write a C++ Program to print right angled pyramid of numbers. 
+1)Write a C++ Program to print right angled pyramid of numbers.
 
-Program:
+Program:-
 
 #include <iostream>
 using namespace std;
@@ -8,13 +8,13 @@ using namespace std;
 int main()
 {
 
-	int i, s, r, k=1;
+	int i, space, rows, k=1;
 
 	cout<<"Enter the number of rows: ";
-	cin>>r;
+	cin>>rows;
 	
-	for(i=1; i<=r; i++) {
-		for(s=i; s<r; s++) {
+	for(i=1; i<=rows; i++) {
+		for(space=i; space<rows; space++) {
 			cout<<"\t";
 		}
 		for(j=1; j<=i; j++) {
@@ -25,4 +25,4 @@ int main()
 	}
 
 	return 0;
-}
+} 
