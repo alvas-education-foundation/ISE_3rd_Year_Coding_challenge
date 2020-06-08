@@ -1,0 +1,41 @@
+2.Write a function that accepts a single string input and returns the first non-repeated character.
+
+Program:
+
+class Main { 
+    static final int CHARS = 256; 
+    static char count[] = new char[CHARS]; 
+
+    static void CountArray(String str) 
+    { 
+        for (int i = 0; i < str.length(); i++) 
+            count[str.charAt(i)]++; 
+    } 
+
+    static int firstNR(String str) 
+    { 
+        CountArray(str); 
+        int index = -1, i; 
+  
+        for (i = 0; i < str.length(); i++) { 
+            if (count[str.charAt(i)] == 1) { 
+                index = i; 
+                break; 
+            } 
+        } 
+  
+        return index; 
+    } 
+  
+    public static void main(String[] args) 
+    { 
+        String str = "abvdavbsnbba"; 
+        int index = firstNR(str); 
+  
+        System.out.println( index == -1
+                ? "Either all characters are repeating or string "
+                      + "is empty"
+                : "First non-repeating character is "
+                      + str.charAt(index)); 
+    } 
+}

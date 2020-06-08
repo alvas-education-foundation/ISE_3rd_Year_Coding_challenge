@@ -1,0 +1,103 @@
+1.#include <bits/stdc++.h> 
+using namespace std; 
+set<string> st; 
+bool isVowel(char c) 
+{ 
+	return (c == 'a' or c == 'e' or 
+			c == 'i' or c == 'o' or 
+			c == 'u'); 
+} 
+bool isConsonant(char c) 
+{ 
+	return !isVowel(c); 
+} 
+
+void subsequence(string str) 
+{ 
+	for (int i = 0; i < str.length(); i++) 
+	{ 
+		if (isVowel(str[i])) 
+		{ 
+			for (int j = str.length() - 1; j >= i; j--) 
+			{ 
+				if (isConsonant(str[j])) 
+				{ 
+					string str_sub = str.substr(i, j + 1); 
+					st.insert(str_sub); 
+					for (int k = 1; k < str_sub.length() - 1; k++) 
+					{ 
+						string sb = str_sub; 
+						sb.erase(sb.begin() + k); 
+						subsequence(sb); 
+					} 
+				} 
+			} 
+		} 
+	} 
+} 
+int main() 
+{ 
+	string s = "xabcef"; 
+	subsequence(s); 
+
+	for (auto i : st) 
+		cout << i << " "; 
+	cout << endl; 
+
+	return 0; 
+} 
+
+2.def findmaxrow(l):
+    row =-1
+    (i,j) = (0, len(l[0])-1)
+    while i <= len(l) - 1 and j >= 0:
+        if l[i][j] == 1:
+            j = j - 1
+            row = i
+        else:
+            i += 1
+    return row + 1        
+
+m,n = map(int,input().strip().split())
+l =[]
+for i in range(m):
+    c = []
+    for j in range(n):
+        e=int(input())
+        c.append(e)
+    l.append(c)   
+max1 = findmaxrow(l)
+print("Max Row is ",max1)
+
+3.import java.util.*; 
+  
+class Main  
+{ 
+    static String removeDuplicate(char str[], int n) 
+    { 
+        int index = 0; 
+        for (int i = 0; i < n; i++) 
+        {  
+            int j; 
+            for (j = 0; j < i; j++)  
+            { 
+                if (str[i] == str[j]) 
+                { 
+                    break; 
+                } 
+            } 
+            if (j == i)  
+            { 
+                str[index++] = str[i]; 
+            } 
+        } 
+        return String.valueOf(Arrays.copyOf(str, index)); 
+    } 
+
+    public static void main(String[] args) 
+    { 
+        char str[] = "Malayalam".toCharArray(); 
+        int n = str.length; 
+        System.out.println(removeDuplicate(str, n)); 
+    } 
+} 
