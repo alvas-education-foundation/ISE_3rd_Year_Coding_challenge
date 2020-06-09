@@ -1,0 +1,58 @@
+Activity 2:
+You are given an array of  integers,a ,a[]= {1,2,3,4,,5,6….k} and a positive integer, k. Find and print the number of  pairs(i,j) where i<j  and  a[i]+ a[j] is divisible by k.
+
+Function Description
+
+Complete the divisibleSumPairs function in the editor below. It should return the integer count of pairs meeting the criteria.
+
+divisibleSumPairs has the following parameter(s):
+
+n: the integer length of array a
+a: an array of integers
+k: the integer to divide the pair sum by
+
+Input format
+
+The first line contains  2 space-separated integers, n  and k . 
+The second line contains  n space-separated integers describing the values of array a.
+
+Output Format
+
+Print the number of  pairs (i,j) where I<j and a[i]+a[j] is evenly divisible by k .
+
+Constraint:
+n=[2 to 100]
+k=[1 to 100]
+a[i]=[ 1 to 100]
+
+Program:-
+
+import math
+import os
+import random
+import re
+import sys
+n,k = [int(x) for x in input().strip().split(' ')]
+a = [int(a_temp) for a_temp in input().strip().split(' ')]
+mods = [0] * k
+for i in range(n):
+    mods[a[i] % k] += 1 
+    count = 0
+    for i in range(int(k/2) + 1):
+    if i == 0:
+        count += int(mods[0] * (mods[0] - 1) / 2)
+    elif float(i) == (k/2):
+        count += int(mods[int(k/2)] * (mods[int(k/2)] - 1) / 2)
+    else:
+        count += int(mods[i] * mods[k-i])
+print (count)
+def divisibleSumPairs(n, k, ar):
+    if __name__ == '__main__':
+        fptr = open(os.environ['OUTPUT_PATH'], 'w')
+        nk = input().split()
+        n = int(nk[0])
+        k = int(nk[1])
+        ar = list(map(int, input().rstrip().split()))
+        result = divisibleSumPairs(n, k, ar)
+       fptr.write(str(result) + '\n')
+       fptr.close()
