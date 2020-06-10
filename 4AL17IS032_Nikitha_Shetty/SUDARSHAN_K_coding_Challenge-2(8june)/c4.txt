@@ -1,0 +1,43 @@
+You are given a number of sticks of varying lengths. You will iteratively cut the sticks into smaller sticks, discarding the shortest pieces until there are none left. At each iteration you will determine the length of the shortest stick remaining, cut that length from each of the longer sticks and then discard all the pieces of that shortest length. When all the remaining sticks are the same length, they cannot be shortened so discard them.
+
+Given the lengths of n sticks, print the number of sticks that are left before each iteration until there are none left.
+
+Input format:
+The first line contains a single integer n, the size of arr. 
+The next line contains  n space- separated integers, each an  arr[i], where each value represents the length of the ith stick.
+
+Output format:
+For each operation, print the number of sticks that are present before the operation on separate lines.
+
+Constraints:
+n=[1 to 1000]
+arr[i]=[1 to 1000]
+
+PROGRAM-
+
+
+
+ import java.util.Scanner;
+import java.util.Arrays;
+
+public class Solution {
+    public static void main(String[] args) {
+        /* Save Input */
+        Scanner scan = new Scanner(System.in);
+        int numSticks = scan.nextInt();
+        int [] array = new int[numSticks];
+        for (int i = 0; i < numSticks; i++) {
+            array[i] = scan.nextInt();
+        }
+        scan.close();
+        
+        Arrays.sort(array);
+        
+        System.out.println(array.length);
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] != array[i-1]) {
+                System.out.println(array.length - i);
+            }
+        }
+    }
+}
