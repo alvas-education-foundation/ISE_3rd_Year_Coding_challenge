@@ -1,0 +1,39 @@
+Q-1: 
+Write an SQL query to determine the 5th highest salary.
+
+Answer:
+
+select * from(
+select first_name, salary, dense_rank() 
+over(order by salary desc)r from worker) 
+where r=&5;
+
+Q-2: Write an SQL query to fetch the list of employees with the same salary.
+
+Answer:
+
+SELECT w1.first_name, w1.salary
+FROM worker_id w1, worker_id w2
+WHERE w1.Salary = w2.Salary
+AND w1.first_name <> w2.first_name
+
+
+
+
+Q-3:Write an SQL query to fetch the departments that have less than five people in it.
+
+Answer:
+
+SELECT department, count(worker_id) as 'Number of Workers' 
+FROM worker 
+GROUP BY department 
+HAVING count(worker_id) < 5;
+
+
+Q-4: Write an SQL query to show all departments along with the number of people in there.
+
+Answer:
+
+SELECT department, count(department) as 'Number of Workers'
+FROM worker 
+GROUP BY department;
