@@ -6,12 +6,7 @@ Read some unknown  n  lines of input from stdin(System.in) until you reach EOF; 
 
 
 
-
-
-
-
-
-
+PROGRAM-
 
 import java.io.*;
 import java.util.*;
