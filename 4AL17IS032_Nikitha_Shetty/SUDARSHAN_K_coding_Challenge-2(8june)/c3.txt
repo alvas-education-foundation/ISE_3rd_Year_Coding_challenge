@@ -1,0 +1,62 @@
+Given a square matrix, calculate the absolute difference between the sums of its diagonals. The function must return an integer representing the absolute diagonal difference.
+The diagonalDifference takes the following parameter:
+
+arr: an array of integers. 
+Input Format
+
+1.	The first line contains a single integer,n , the number of rows and columns in the matrix arr. 
+2.	Each of the next  n lines describes a row,arr[i] , and consists of n space-separated integers arr[i][j].
+
+Output Format
+
+Print the absolute difference between the sums of the matrix's two diagonals as a single integer.
+
+Constraint:
+arr[i][j]={-100 to 100}
+
+
+PROGRAM-
+
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+int main()
+{
+ 
+    int n, j;
+    int i=0,RightDiagonalSum=0,LeftDiagonalSum=0, firstarray, secondarray;
+    
+ scanf("%d",&n);
+    int a[n][n];
+    
+ for(int firstarray = 0; firstarray < n; firstarray++)
+ {
+       for(int secondarray = 0; secondarray < n; secondarray++)
+    {
+         
+          scanf("%d",&a[firstarray][secondarray]);
+       }
+    }
+ 
+  while(i<n)
+  {
+    RightDiagonalSum=RightDiagonalSum+a[i][i];
+    i++;
+  }
+    
+ j=n-1,i=0;
+    
+  while(i<n)
+  {
+    LeftDiagonalSum=LeftDiagonalSum+a[i][j];
+    i++;
+    j--;
+  }
+    
+ printf("%d",abs(RightDiagonalSum-LeftDiagonalSum));
+    return 0;
+}
