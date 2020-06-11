@@ -15,7 +15,7 @@ cd path/location
 ```
 Move to the specific directory.                  
 
-## Clone the Repo
+## Clone the Repo 
 
 In the Terminal copy and paste this command to clone this repo
 

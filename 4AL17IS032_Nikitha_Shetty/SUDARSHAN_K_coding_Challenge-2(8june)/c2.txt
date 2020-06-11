@@ -1,0 +1,86 @@
+You are given an array of  integers,a ,a[]= {1,2,3,4,,5,6….k} and a positive integer, k. Find and print the number of  pairs(i,j) where i<j  and  a[i]+ a[j] is divisible by k.
+
+Function Description
+
+Complete the divisibleSumPairs function in the editor below. It should return the integer count of pairs meeting the criteria.
+
+divisibleSumPairs has the following parameter(s):
+
+n: the integer length of array a
+a: an array of integers
+k: the integer to divide the pair sum by
+
+Input format
+
+The first line contains  2 space-separated integers, n  and k . 
+The second line contains  n space-separated integers describing the values of array a.
+
+Output Format
+
+Print the number of  pairs (i,j) where I<j and a[i]+a[j] is evenly divisible by k .
+
+Constraint:
+n=[2 to 100]
+k=[1 to 100]
+a[i]=[ 1 to 100]
+
+
+
+
+PROGRAM-
+using namespace std;
+
+\int main(){
+
+
+    int n;
+
+
+    int k;
+
+
+    int count=0;
+
+
+    cin >> n >> k;
+
+
+    vector<int> a(n);
+
+
+    for(int a_i = 0;a_i < n;a_i++){
+
+
+       cin >> a[a_i];
+
+
+    }
+
+
+    for(int a_i = 0;a_i < n;a_i++)
+
+
+        {
+
+
+            for(int j=a_i+1;j<n;j++)
+
+
+                {
+
+
+                    if((a[a_i]+a[j])%k==0)
+
+
+                        count++;
+
+
+            }
+
+
+        }   
+    cout<<count;    
+   return 0;
+
+
+}

@@ -1,0 +1,50 @@
+ Activity 1:
+Given an array,X of N integers, calculate and print the standard deviation. Your answer should be in decimal form, rounded to a scale of 1 decimal place. An error margin of  +0.1 or -0.1 will be tolerated for the standard deviation.
+Input format:
+1.	The first line contains an integer,N , denoting the number of elements in the array. 
+2.	The second line contains  N space-separated integers describing the respective elements of the array.
+Output format:
+Print the standard deviation on a new line, rounded to a scale of  1 decimal place.
+
+Constraints:
+N=[5 to 100]
+x=[0 to 10000], is the index of array X
+
+
+PROGRAM-
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() 
+{
+  
+
+    
+    int n; 
+    cin>>n; 
+    int a[n+4]; double sum=0, sum1=0;
+    
+    for(auto i=0; i<n; i++)
+    {
+        cin>>a[i];
+        sum += a[i];
+    }
+    
+    double mean = (double)(sum/n);
+    
+    for(auto i=0; i<n; i++)
+    {
+        sum1 += (((double)a[i]-mean)*((double)a[i]-mean));
+    }
+    
+    double std = (double)sqrt(sum1/n);
+    
+    printf("%.1f\n", std);
+    
+    return 0;
+}
