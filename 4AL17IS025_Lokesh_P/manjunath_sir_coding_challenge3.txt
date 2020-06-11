@@ -1,0 +1,139 @@
+1)public class prog1
+{
+    static void isBinaryOrNot(int number)
+    {
+        boolean isBinary = true;
+ 
+        int copyOfNumber = number;
+ 
+        while (copyOfNumber != 0)
+        {
+            int temp = copyOfNumber%10;   //Gives last digit of the number
+ 
+            if(temp > 1)
+            {
+                isBinary = false;
+                break;
+            }
+            else
+            {
+                copyOfNumber = copyOfNumber/10;    //Removes last digit from the number
+            }
+        }
+ 
+        if (isBinary)
+        {
+            System.out.println(number+" is a binary number");
+        }
+        else
+        {
+            System.out.println(number+" is not a binary number");
+        }
+    }
+ 
+    public static void main(String[] args)
+    {
+        isBinaryOrNot(128956);
+ 
+        isBinaryOrNot((101110));
+ 
+        isBinaryOrNot((42578));
+ 
+        isBinaryOrNot((10110101));
+    }
+}
+2)class prog2  
+{ 
+
+    //method for checking prime number
+    static int checkPrime(int num) 
+    { 
+	int i, flag = 0; 
+	for(i = 2; i<= num / 2; i++) 
+	{ 
+	   if(num % i == 0) 
+	   { 
+	       flag = 1; 
+	       break; 
+	   } 
+	} 
+
+	/* If flag value is 0 then the given number num
+	 * is a prime number else it is not a prime number
+	 */
+	if(flag == 0) 
+	   return 1; 
+	else
+	   return 0; 
+    } 
+
+    //Method for printing alternate prime numbers
+    static void printAltPrime(int n) 
+    { 
+	/* When the temp value is odd then we are
+	 * not printing the prime number and when it is
+	 * even then we are printing it, this way we are
+	 * displaying alternate prime numbers
+	 */
+	int temp = 2; 
+
+	for(int num = 2; num <= n-1; num++) 
+	{ 
+	   //checking each number whether it is prime or not
+	   if (checkPrime(num) == 1) 
+	   {  
+		// if temp is even then only print the prime number
+		if (temp % 2 == 0) 
+		   System.out.print(num + " "); 
+
+		temp ++; 
+	   } 
+	} 
+    } 
+
+    public static void main(String[] args)  
+    { 
+	int num = 20; 
+	System.out.print("Alternate prime numbers upto " + num+" are: ");  
+	printAltPrime(num); 
+    } 
+}
+3)public class prog3
+{
+public static void main(String[] args)
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter N : ");
+int n=sc.nextInt(); 
+System.out.print("Enter Symbol : "); 
+char c = sc.next().charAt(0);
+for(int i=n;i>0;i--)
+{
+ 
+for(int j=1;j<=n-i;j++)
+ 
+{
+System.out.print(" ");
+}
+if(i==1 || i==n)
+for(int j=1;j<=i*2-1;j++)
+ 
+{
+System.out.print(c);
+}
+else
+{
+for(int j=1;j<=i*2-1;j++)
+ 
+{ 
+if(j==1 || j==i*2-1)
+System.out.print(c);
+else
+ 
+System.out.print(" ");
+}
+}
+System.out.println();
+} 
+}
+}
