@@ -1,0 +1,3 @@
+/*Write an SQL query to determine the 5th highest salary.*/
+
+SELECT DISTINCT(Salary) FROM table ORDER BY Salary DESC LIMIT 4,1;
