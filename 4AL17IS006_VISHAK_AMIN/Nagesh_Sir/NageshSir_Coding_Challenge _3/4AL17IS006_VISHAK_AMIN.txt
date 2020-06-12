@@ -1,0 +1,49 @@
+================================================================================
+1] Write an SQL query to show one row twice in results from a table.
+
+SELECT FIRST_NAME, DEPARTMENT 
+FROM Worker w1
+WHERE w1.DEPARTMENT = 'HR' UNION ALL SELECT FIRST_NAME, DEPARTMENT
+                                    FROM Worker W2 
+                                    WHERE W.DEPARTMENT = 'HR';
+
+
+==================================================================================
+
+2]Write an SQL query to fetch the last five records from a table.
+
+Solution:
+
+SELECT *
+FROM Worker
+WHERE WORKER_ID <=5 UNION SELECT * 
+                        FROM (SELECT *
+                              FROM Worker w 
+                              ORDER BY W>WORKER_ID DESC) AS W1.WORKER_ID <=5;
+
+=====================================================================================
+
+3] Write an SQL query to show the last record from a table.
+
+Solution:
+
+SELECT *
+FROM Worker 
+WHERE WORKER_ID =(SELECT max(WORKER_ID) FROM Worker);
+======================================================================================
+4] Write an SQL query to print the name of employees having the highest salary in each department.
+
+Solution:
+
+SELECT t.DEPARTMENT,t.FIRST_NAME, t.SALARY 
+FROM (SELECT max(SALARY) as TOTALSALARY, DEPARTMENT
+     FROM Worker 
+     GROUP BY DEPARTMENT) as TEMPNEW
+     INNER JOIN Worker t ON TEMPNEW.DEPARTMENT=t.DEPARTMENT AND TEMPNEW.TOTALSALARY= t.SALARY
+
+=======================================================================================
+
+
+
+
+

@@ -1,0 +1,38 @@
+Activity 2:
+You are given an array of  integers,a ,a[]= {1,2,3,4,,5,6….k} and a positive integer, k. Find and print the number of  pairs(i,j) where i<j  and  a[i]+ a[j] is divisible by k.
+
+Function Description
+
+Complete the divisibleSumPairs function in the editor below. It should return the integer count of pairs meeting the criteria.
+
+divisibleSumPairs has the following parameter(s):
+
+n: the integer length of array a
+a: an array of integers
+k: the integer to divide the pair sum by
+
+Input format
+
+The first line contains  2 space-separated integers, n  and k . 
+The second line contains  n space-separated integers describing the values of array a.
+
+Output Format
+
+Print the number of  pairs (i,j) where I<j and a[i]+a[j] is evenly divisible by k .
+
+Constraint:
+n=[2 to 100]
+k=[1 to 100]
+a[i]=[ 1 to 100]
+
+SOLUTION:
+n,k = raw_input().strip().split(' ')
+n,k = [int(n),int(k)]
+a = map(int,raw_input().strip().split(' '))
+count=0
+for i in xrange(len(a)):
+    for j in xrange(i+1,len(a)):
+        if (a[i]+a[j]) % k == 0:
+            count+=1
+         
+print count
