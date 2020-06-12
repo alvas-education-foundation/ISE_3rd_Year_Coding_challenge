@@ -1,4 +1,4 @@
-Challenge-1: Write an SQL query to show one row twice in results from a table
+Challenge-1: Write an SQL query to show one row twice in results from a table.
 
 Ans:-   
 
