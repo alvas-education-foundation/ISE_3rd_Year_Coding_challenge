@@ -27,7 +27,7 @@ WHERE W1.WORKER_ID <=5;
 
 Challenge-3: Write an SQL query to show the last record from a table.
 Ans:
-Select * 
+SELECT * 
 from Worker 
 where WORKER_ID = (SELECT max(WORKER_ID) 
 		from Worker);
