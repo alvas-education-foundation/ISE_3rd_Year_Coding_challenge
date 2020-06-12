@@ -6,10 +6,10 @@ Ans:
 select FIRST_NAME, DEPARTMENT 
 from worker W 
 where W.DEPARTMENT='HR' 
-	union all 
-	select FIRST_NAME, DEPARTMENT 
-	from Worker W1 
-	where W1.DEPARTMENT='HR';
+union all 
+select FIRST_NAME, DEPARTMENT 
+from Worker W1 
+where W1.DEPARTMENT='HR';
 
 
 Challenge-2: Write an SQL query to fetch the last five records from a table.
