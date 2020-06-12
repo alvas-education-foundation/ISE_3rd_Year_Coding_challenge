@@ -1,5 +1,6 @@
 Consider the below Worker table:
 
+
 Challenge-1: Write an SQL query to show one row twice in results from a table
 Ans:
 select FIRST_NAME, DEPARTMENT 
