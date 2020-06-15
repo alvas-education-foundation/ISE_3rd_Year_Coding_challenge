@@ -1,0 +1,7 @@
+Algorithm:
+
+Step 1: Input number of elements
+Step 2: Enter array elements
+Step 3: Travel through the array from beginnig using for loop
+Step 4: Using If condtion check whether current element is found inside array or not
+Step 5: If element is found then break else count that element and print the count
