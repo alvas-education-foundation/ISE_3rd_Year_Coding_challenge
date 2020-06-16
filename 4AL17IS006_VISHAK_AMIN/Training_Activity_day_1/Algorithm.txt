@@ -1,0 +1,9 @@
+Algorithm:
+
+1] Read n,i
+2] Read a[]
+3] call function calc_dist
+4] Travel through the array from beginnig using for loop
+5] Check whether current element is found inside array again using If condtion .
+6] If element is found than break the condtion.
+7] Else count that element and print. 
