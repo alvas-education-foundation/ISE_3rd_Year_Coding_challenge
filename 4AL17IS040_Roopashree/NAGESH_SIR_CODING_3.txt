@@ -1,0 +1,31 @@
+1)select FIRST_NAME, DEPARTMENT 
+FROM worker W where W.DEPARTMENT='HR' 
+  union all 
+  select FIRST_NAME, DEPARTMENT from Worker W1 where W1.DEPARTMENT='HR';
+
+
+
+2) SELECT * 
+   FROM Worker 
+   WHERE WORKER_ID <=5
+   UNION
+   SELECT * 
+   FROM (SELECT * 
+         FROM Worker W order by W.WORKER_ID DESC) AS W1 
+         WHERE W1.WORKER_ID <=5;
+
+
+
+
+3) Select * 
+   from Worker 
+   where WORKER_ID = (SELECT max(WORKER_ID) 
+                      from Worker);
+
+
+
+
+4) SELECT t.DEPARTMENT,t.FIRST_NAME,t.Salary 
+   from(SELECT max(Salary) as TotalSalary,DEPARTMENT 
+   from Worker group by DEPARTMENT) as TempNew 
+   Inner Join Worker t on TempNew.DEPARTMENT=t.DEPARTMENT and TempNew.TotalSalary=t.Salary;
