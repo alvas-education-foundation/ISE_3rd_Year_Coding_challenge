@@ -1,0 +1,12 @@
+Algorithm :
+Step 1 : Start
+Step 2 : Input size
+Step 3 : Input array elements
+Step 4 :  for i 0 to n
+	      Calculate frequeny of each element
+	 End for
+Step 5 : for i 0 to n
+	    If frequency=1
+		Ele++
+Step 6 : Print ele
+Step 7 : Stop 

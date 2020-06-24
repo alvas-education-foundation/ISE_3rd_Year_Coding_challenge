@@ -1,0 +1,9 @@
+Algorithm :
+
+Step 1:Declare and input the array elements.
+Step 2:.Traverse the array from the beginning.
+Step 3: Check if the current element is found in the array again.
+Step 4:If it is found, then do not print that element.
+Step 5:Else, print that element and continue.
+
+
