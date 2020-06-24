@@ -1,0 +1,71 @@
+file = 'doc.txt'
+num_lines = 0
+with open(file, 'r') as f:
+    for line in f:
+        num_lines += 1
+print("Number of lines:")
+print(num_lines)
+Number of lines:
+5
+In [3]:
+file = 'doc.txt'
+#fname = input("Enter file name: ")
+num_words = 0
+with open(file, 'r') as f:
+    for line in f:
+        words = line.split()
+        num_words += len(words)
+print("Number of words:")
+print(num_words)
+Number of words:
+9
+In [5]:
+file = 'doc.txt'
+word=input("Enter word to be searched:")
+k = 0
+
+with open(file, 'r') as f:
+    for line in f:
+        words = line.split()
+        for i in words:
+            if(i==word):
+                k=k+1
+print("Occurrences of the word:")
+print(k)
+Enter word to be searched:lines
+Occurrences of the word:
+1
+In [6]:
+file = 'doc.txt'
+with open (file,'r') as f:
+    for line in f:
+        l=line.split()
+        l.reverse() 
+        st= " ".join(l)
+        print (st)
+count
+the
+no
+of
+files text this in lines
+In [26]:
+#Get  a string and store word by word as elements in a tuple and find the largest word in the  tuple and print it
+t = []
+n = int(input("Enter the number of word"))
+for i in range(0,n):
+  ele = input("Enter Word")
+  t.append(ele)
+words = sorted(t, key=len)
+print(words[-1])
+Enter the number of word2
+Enter Wordtreeee
+Enter Word2
+treeee
+In [27]:
+dir(tuple)
+help(tuple.index)
+Help on method_descriptor:
+
+index(...)
+    T.index(value, [start, [stop]]) -> integer -- return first index of value.
+    Raises ValueError if the value is not present.
