@@ -1,0 +1,10 @@
+ALGORITHM TO COUNT SISTINCT ELEMENTS IN AN ARRAY:
+
+Step 1: Input the number of elements to be entered in an array.
+Step 2: Input the array elements using for loop.
+Step 3: Traverse the array from the beginning using 2 for loops.
+Step 4: Using if condition, check whether the array elements pointed by 2 indexes are same.
+Step 5: If they are same, then break the loop.
+Step 6: Else increment the count value and print it.
+Step 7: Continue the iteration until the condition is satisfied.
+ 

@@ -1,0 +1,38 @@
+P 1:
+
+Write a program to find factorial of a given number.
+
+  fact=1,num=5
+  for i in range(1,num):    
+      fact=fact*i    
+  print(fact)
+
+P 2:
+ 
+Write a program to count occurrences of each character in String.  
+
+test_str =input() 
+all_freq = {} 
+for i in test_str: 
+    if i in all_freq: 
+        all_freq[i] += 1
+    else: 
+        all_freq[i] = 1
+print ("Count of all characters in given string is :\n "+  str(all_freq)) 
+
+P 3:
+
+Write a program to find all the permutations of the given String.
+
+from itertools import permutations 
+lis=[]
+def allPermutations(str): 
+    permList = permutations(str) 
+    for perm in list(permList): 
+        a=(''.join(perm)) 
+        lis.append(a)
+if __name__ == "__main__": 
+    str =input()
+    allPermutations(str) 
+    print(lis)
+  

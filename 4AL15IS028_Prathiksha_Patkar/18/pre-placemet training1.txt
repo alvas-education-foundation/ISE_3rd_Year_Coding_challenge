@@ -1,0 +1,195 @@
+Find the compound interest for the given p,n,r  (formula : p(1+r/100)n )
+p = float(input("Enter the principle amount : "))
+r = float(input("Enter the rate of interest : "))
+t = float(input("Enter the time in the years: "))
+
+# calculating compound interest
+ci =  p * (pow((1 + r / 100), t)) 
+
+# printing the values
+print("Principle amount  : ", p)
+print("Interest rate     : ", r)
+print("Time in years     : ", t)
+print("compound Interest : ", ci)
+Enter the principle amount : 8000
+Enter the rate of interest : 3.5
+Enter the time in the years: 2
+Principle amount  :  8000.0
+Interest rate     :  3.5
+Time in years     :  2.0
+compound Interest :  8569.8
+In [ ]:
+#2.	Convert centegrade to farenheit  ( f= 9/5*c+32)
+centegrade = float(input("Enter temperature in centegrade: "))
+fahrenheit = (centegrade * 9/5) + 32
+print('%.2f centegrade is: %0.2f Fahrenheit' %(centegrade, fahrenheit))
+Enter temperature in centegrade: 37
+37.00 centegrade is: 98.60 Fahrenheit
+In [ ]:
+#3.	Find the greater of two nos 
+a=int(input())
+b=int(input())
+if(a>b):
+  print(a,"is greater")
+else :
+  print(b,"is greater")
+55
+23
+55 is greater
+In [ ]:
+#4.	Write a program for finding surface areas of cylinder and cone (2*PI*r*r*h, 1/3*PI*r*r*h) using function.
+import math 
+pi = math.pi 
+  
+# Function to calculate Volume of Cone 
+def volume(r, h): 
+    return (1 / 3) * pi * r * r * h 
+  
+# Function To Calculate Surface Area of Cone 
+def surfacearea(r, s): 
+    return pi * r * s + pi * r * r 
+  
+# Driver Code 
+#radius = float(5) 
+#height = float(12) 
+#slat_height = float(13) 
+
+# Function To Calculate Volume OF Cylinder 
+def volume(r, h): 
+    vol = pi * r * r * h 
+    return vol 
+  
+# Function To Calculate Total Surface Area 
+# of Cylinder 
+def totalsurfacearea(r, h): 
+    tsurf_ar = (2 * pi * r * h) + (2 * pi * r * r) 
+    return tsurf_ar 
+r=float(input())
+h=float(input())
+print( "Surface Area Of Cone : ", surfacearea(r,h) )
+print("Surface Area  Of Cylinder =  ",totalsurfacearea(r,h))
+5
+8
+Surface Area Of Cone :  204.20352248333654
+Surface Area  Of Cylinder =   408.4070449666731
+In [ ]:
+#5.	Find the greatest of four nos ( using ‘and’ operator)   using function.
+def maximum(a,b,c,d):
+  if((a>b) and (a>c) and (a>d)):
+    max = a
+  if((b>a) and (b>c) and (b>d)):
+    max = b
+  if((c>a) and (c>b) and (c>d)):
+    max = c
+  if((d>a) and (d>b) and (d>c)):
+    max = d
+  return max
+print("enrter 4 numbers")
+a=int(input())
+b=int(input())
+c=int(input())
+d=int(input())
+print(" greater number is",maximum(a,b,c,d))
+enrter 4 numbers
+8
+55
+2
+66
+ greater number is 66
+In [29]:
+#6.	Write a  menu program to perform the operations ( ODDorEven, Factorial, ODDNoUptoN, PrimeUptoN ) using functions for two nos with  menu choice
+def fact(n):
+    factorial = 1
+    if n < 0:
+        print("Invalid number")
+    elif n == 0:
+        print("1")
+    
+    else:
+        for i in range(1,n + 1):
+            factorial = factorial*i
+        print("The factorial of",n,"is",factorial)
+
+def odd_even(n):
+    if (n%2==0):
+        print("Even")
+    else:
+        print("Odd")    
+def odd_upto(n):
+    for i in range(n):
+        if i % 2 != 0:
+            print(i)
+
+def prime_upto(n):
+  for num in range(2, n + 1):
+   # all prime numbers are greater than 1
+    if num > 1:
+        for i in range(2, num):
+            if (num % i) == 0:
+                break
+        else:
+            print(num)
+
+loop = 1
+while loop == 1:
+    print("Your options are:" )
+    print("1. Factorial")
+    print("1. Factorial")
+    print("2. Odd or Even")
+    print("3. Odd no Up to")
+    print("4. Prime Up to")
+    print("5. To Exit\n")
+    try:
+        choice = int(input("Choose your option: "))
+    except:
+            print('please enter a valid number for option')
+    print(" ")
+
+    if choice == 1:
+        x = int(input("Enter The Number: "))
+        fact(x)
+
+    if choice == 2:
+        x = int(input("Enter The Number: "))
+        odd_even(x)
+
+    if choice == 3:
+        x = int(input("Enter The Number: "))
+        print("The number up to ",odd_upto(x))
+
+    if choice == 4:
+        x = int(input("Enter The Number: "))
+        print("The number upto",prime_upto(x))
+
+    elif choice == 5:
+            loop = 0
+        
+    else:
+        print("please choice a valid option from 1 to 5")
+        choice=0
+please enter a valid number for option
+ 
+please choice a valid option from 1 to 5
+Your options are:
+1. Factorial
+1. Factorial
+2. Odd or Even
+3. Odd no Up to
+4. Prime Up to
+5. To Exit
+
+Choose your option: 2
+ 
+Enter The Number: 500
+Even
+please choice a valid option from 1 to 5
+Your options are:
+1. Factorial
+1. Factorial
+2. Odd or Even
+3. Odd no Up to
+4. Prime Up to
+5. To Exit
+
+Choose your option: 5
+ 
