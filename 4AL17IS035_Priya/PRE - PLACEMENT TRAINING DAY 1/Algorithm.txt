@@ -1,0 +1,8 @@
+Algorithm 
+
+Step1: Declare and input the array elements.
+Step2: Enter the array elements.
+Step3: Traverse the array from the beginning using for loop.
+Step4: Check if the current element is found in the array again.
+Step5: If it is found, then do not print that element.
+Step6: Else, count that element and print the count.
