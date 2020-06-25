@@ -1,0 +1,57 @@
+P-1:
+Program To Check Whether The Given Number Is Binary Or not.
+
+def check(string) : 
+    p = set(string) 
+    s = {'0', '1'} 
+    if s == p or p == {'0'} or p == {'1'}: 
+        print("Yes") 
+    else : 
+        print("No")
+string =input()
+check(string) 
+
+
+P-2:
+Program to print alternate prime numbers.
+
+def prime(num) : 
+    flag = 0
+    for i in range(2,num // 2 + 1) : 
+        if num % i == 0 : 
+            flag = 1
+            break
+    if flag == 0 : 
+        return 1
+    else : 
+        return 0
+  
+
+def print_alternate_prime(n): 
+    counter = 0
+    for num in range(2,n) : 
+        if prime(num) == 1 : 
+            if counter % 2 == 0 : 
+                print(num,end =" ") 
+            counter += 1
+if __name__ == "__main__": 
+    n =int(input())
+    print("Following are the alternate prime number smaller than or equal to",n)          
+    print_alternate_prime(n) 
+
+
+P-3:
+Program to print Hollow Inverted Pyramid star pattern program
+
+def printPattern(n) : 
+    for i in range(1,n+1) : 
+        for j in range(1,i) : 
+            print (" ",end="") 
+        for j in range(1,(n*2-(2*i-1))+1): 
+            if (i == 1 or j == 1 or j==(n*2-(2*i-1))): 
+                print ("*", end="")  
+            else : 
+                print(" ", end="")  
+        print (" ")
+n =int(input())
+printPattern(n)
