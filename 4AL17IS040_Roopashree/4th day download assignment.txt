@@ -1,0 +1,2 @@
+Download property_data1.csv file from
+https://github.com/badhusha-sm/5-days-Online-Workshop-on-Applications-of-Python-programming-in-DA-and-ML/blob/CSV-files-for-Workshop/property_data1.csv
