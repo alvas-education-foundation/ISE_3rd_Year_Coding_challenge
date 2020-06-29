@@ -1,0 +1,42 @@
+#include<stdio.h>
+void main()
+{
+	int a[20], n,count;
+	int i, j, k;
+	printf("Enter the number of elements: ");
+	scanf("%d",&n);
+	printf("Enter array elements:\n");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("Number of distinct elements in the array are : ");
+	for(i=0; i<n; i++)
+	{
+		count=1;
+		for (i = 1; i < n; i++)
+		{
+			for (j = 0; j < i; j++)
+			{
+				if (a[i] == a[j])
+				{
+					break;
+				}
+			}
+			if (i == j)
+			{
+				count++;
+			}
+		}
+	}
+printf("%d",count);
+}
+
+Algorithm
+• Declare and input the array elements.
+• Enter the no of elements.
+• Enter the array elements.
+• Traverse the array from the beginning.
+• Check if the current element is found in the array again.
+• If it is found, then do not print that element.
+• Else, print that element and continue.
