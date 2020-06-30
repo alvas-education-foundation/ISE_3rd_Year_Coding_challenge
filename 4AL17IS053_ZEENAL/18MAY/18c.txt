@@ -1,0 +1,129 @@
+1.) Hello world in c
+
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{   
+    char stdout[100];
+    char s[100];
+    strcpy(stdout,"Welcome to C programming.");
+    printf("Hello, World!");
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    printf("\n%s",stdout);
+    return 0;
+}
+
+
+
+2.)Playing with characters
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+        int BUFFSIZE = 256;
+    
+    char c;
+    char str[BUFFSIZE];
+    char sen[BUFFSIZE];
+    
+    scanf("%c ", &c);
+    scanf("%s ", str);
+    fgets(sen, BUFFSIZE, stdin);
+    
+    printf("%c\n", c);
+    printf("%s\n", str);
+    printf("%s\n", sen);
+    
+    return 0;
+}
+
+3.)Sum and Difference of Two Numbers
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+    int sum1,diff1;
+    float sum2,diff2;
+    int a,b;
+    float c,d;
+    scanf("%d%d",&a,&b);
+    sum1=a+b;
+    diff1=a-b;
+    scanf("%f%f",&c,&d);
+    sum2=c+d;
+    diff2=c-d;
+    printf("%d %d\n",sum1,diff1);
+	printf("%.1f %.1f\n",sum2,diff2);
+    
+    return 0;
+}
+
+4.)Functions in C
+
+#include <stdio.h>
+int max_of_four(int a,int b,int c,int d)
+{
+  if((a>b)&&(a>c)&&(a>d))
+  {
+    return a;
+  }
+  else if((b>a)&&(b>c)&&(b>d))
+  {
+    return b;
+  
+  }
+  else if((c>a)&&(c>b)&&(c>d))
+  {
+    return c;
+  }
+  else
+    return d;
+  }
+/*
+Add `int max_of_four(int a, int b, int c, int d)` here.
+*/
+
+int main() {
+    int a, b, c, d;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+    int ans = max_of_four(a, b, c, d);
+    printf("%d", ans);
+    
+    return 0;
+}
+
+
+5.)Pointers in C
+
+#include <stdio.h>
+
+void update(int *a,int *b) {
+    *a=*a+*b;
+    *b=abs(*a-(2**b));
+}
+
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b;
+    
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+
+    return 0;
+}
+
+
+
+
