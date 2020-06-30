@@ -1,0 +1,141 @@
+P-1:
+
+Given an array,X of N integers, calculate and print the standard deviation. Your answer should be in decimal form, rounded to a scale of 1 decimal place. An error margin of  +0.1 or -0.1 will be tolerated for the standard deviation.
+Input format:
+1.The first line contains an integer,N , denoting the number of elements in the array. 
+2.The second line contains  N space-separated integers describing the respective elements of the array.
+Output format:
+Print the standard deviation on a new line, rounded to a scale of  1 decimal place.
+Constraints:
+N=[5 to 100]
+x=[0 to 10000], is the index of array X 
+
+test_list =[]
+n=int(input())
+for i in range(0,n):
+    test_list.append(int(input()))
+print(test_list)
+mean = sum(test_list) / len(test_list) 
+variance = sum([((x - mean) ** 2) for x in test_list]) / len(test_list) 
+res = variance ** 0.5
+
+# Printing result 
+print("Standard deviation of sample is "+"{:.1f}".format(res))
+
+P-2
+You are given an array of  integers,a ,a[]= {1,2,3,4,,5,6….k} and a positive integer, k. Find and print the number of  pairs(i,j) where i<j  and  a[i]+ a[j] is divisible by k.
+
+Function Description
+Complete the divisibleSumPairs function in the editor below. It should return the integer count of pairs meeting the criteria.divisibleSumPairs has the following parameter(s):
+n: the integer length of array a
+a: an array of integers
+k: the integer to divide the pair sum by
+
+Input format
+
+The first line contains  2 space-separated integers, n  and k . 
+The second line contains  n space-separated integers describing the values of array a.
+
+Output Format
+
+Print the number of  pairs (i,j) where I<j and a[i]+a[j] is evenly divisible by k .
+
+Constraint:
+n=[2 to 100]
+k=[1 to 100]
+a[i]=[ 1 to 100]
+
+a=[]
+n=int(input())
+for i in range(n):
+    a.append(int(input()))
+k=int(input())
+for i in range(1,n):
+    for j in range(i,n):
+        if(i<j):
+            if((a[i]+a[j])%k==0):
+                print("(",a[i],",",a[j],")")
+
+P-3
+Given a square matrix, calculate the absolute difference between the sums of its diagonals. The function must return an integer representing the absolute diagonal difference.
+The diagonalDifference takes the following parameter:
+
+arr: an array of integers. 
+Input Format
+
+1.	The first line contains a single integer,n , the number of rows and columns in the matrix arr. 
+2.	Each of the next  n lines describes a row,arr[i] , and consists of n space-separated integers arr[i][j].
+
+Output Format
+
+Print the absolute difference between the sums of the matrix's two diagonals as a single integer.
+
+Constraint:
+arr[i][j]={-100 to 100}
+
+lis=[]
+s1,s2=0,0
+n=int(input())
+for i in range(n):
+    m=[]
+    for j in range(n):
+        m.append(int(input()))
+        print(m)
+    l.append(m)
+    print(l)
+for i in range(n):
+    for j in range(n):
+        if(i==j):
+            s1=s1+l[i][j]
+        if(i+j==(n-1)):
+            s2=s2+l[i][j]
+diff=abs(s2-s1)
+print(diff)
+
+Activity 4:
+You are given a number of sticks of varying lengths. You will iteratively cut the sticks into smaller sticks, discarding the shortest pieces until there are none left. At each iteration you will determine the length of the shortest stick remaining, cut that length from each of the longer sticks and then discard all the pieces of that shortest length. When all the remaining sticks are the same length, they cannot be shortened so discard them.
+
+Given the lengths of n sticks, print the number of sticks that are left before each iteration until there are none left.
+
+Input format:
+The first line contains a single integer n, the size of arr. 
+The next line contains  n space- separated integers, each an  arr[i], where each value represents the length of the ith stick.
+
+Output format:
+For each operation, print the number of sticks that are present before the operation on separate lines.
+
+Constraints:
+n=[1 to 1000]
+arr[i]=[1 to 1000]
+Activity 5:
+Given an array of integers, find and print the maximum number of integers you can select from the array such that the absolute difference between any two of the chosen integers is less than or equal to 1.
+
+Input Format
+
+The first line contains a single integer n, the size of the array arr. 
+The second line contains n space-separated integers.
+
+Output Format
+
+A single integer denoting the maximum number of integers you can choose from the array such that the absolute difference between any two of the chosen integers is <2.
+
+lis=[]
+n=int(input())
+for i in range(n):
+    l.append(int(input()))
+print(len(l))
+while(1):
+    count=0
+    short=min(l)
+    for i in range(len(l)):
+        if(l[i]!=999):
+            l[i]=l[i]-short
+            if(l[i]<=0):
+                l[i]=999
+    for i in l:
+        if(i!=999):
+            count=count+1
+    if(count==0):
+        break
+    else:
+        print(count)

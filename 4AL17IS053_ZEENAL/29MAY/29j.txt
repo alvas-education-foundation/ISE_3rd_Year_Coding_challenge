@@ -1,0 +1,94 @@
+
+
+1.)Java Program to find the most repeated word in a text file
+
+Program:
+import java.io.BufferedReader;    
+import java.io.FileReader;    
+import java.util.ArrayList;    
+     
+public class MostRepeatedWord {    
+        
+    public static void main(String[] args) throws Exception {    
+        String line, word = "";    
+        int count = 0, maxCount = 0;    
+        ArrayList<String> words = new ArrayList<String>();    
+            
+        //Opens file in read mode    
+        FileReader file = new FileReader("data.txt ");    
+        BufferedReader br = new BufferedReader(file);    
+            
+        //Reads each line    
+        while((line = br.readLine()) != null) {    
+            String string[] = line.toLowerCase().split("([,.\\s]+) ");    
+            //Adding all words generated in previous step into words    
+            for(String s : string){    
+                words.add(s);    
+            }    
+        }    
+            
+        //Determine the most repeated word in a file    
+        for(int i = 0; i < words.size(); i++){    
+            count = 1;    
+            //Count each word in the file and store it in variable count    
+            for(int j = i+1; j < words.size(); j++){    
+                if(words.get(i).equals(words.get(j))){    
+                    count++;    
+                }     
+            }    
+            //If maxCount is less than count then store value of count in maxCount     
+            //and corresponding word to variable word    
+            if(count > maxCount){    
+                maxCount = count;    
+                word = words.get(i);    
+            }    
+        }    
+            
+        System.out.println("Most repeated word: " + word);    
+        br.close();    
+    }    
+}    
+
+
+
+2.)How to Sort an Array in Java
+
+
+
+import java.util.Arrays;   
+public class SortArrayExample1  
+{   
+public static void main(String[] args)   
+{   
+//defining an array of integer type   
+int [] array = new int [] {90, 23, 5, 109, 12, 22, 67, 34};  
+//invoking sort() method of the Arrays class  
+Arrays.sort(array);   
+System.out.println("Elements of array sorted in ascending order: ");  
+//prints array using the for loop  
+for (int i = 0; i < array.length; i++)   
+{       
+System.out.println(array[i]);   
+}   
+}  
+}  
+
+
+3.)Program to print the elements of an array in reverse order
+
+public class ReverseArray {  
+    public static void main(String[] args) {  
+        //Initialize array  
+        int [] arr = new int [] {1, 2, 3, 4, 5};  
+        System.out.println("Original array: ");  
+        for (int i = 0; i < arr.length; i++) {  
+            System.out.print(arr[i] + " ");  
+        }  
+        System.out.println();  
+        System.out.println("Array in reverse order: ");  
+        //Loop through the array in reverse order  
+        for (int i = arr.length-1; i >= 0; i--) {  
+            System.out.print(arr[i] + " ");  
+        }  
+    }  
+}  

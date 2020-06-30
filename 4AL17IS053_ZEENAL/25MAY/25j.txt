@@ -1,0 +1,74 @@
+1.)  java if-else
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();            
+        String ans;
+        if(n%2==1)ans = "Weird";
+        else
+        {
+            if(n>=2 && n<=5)ans = "Not Weird";
+            else if(n>=5 && n<=20)ans="Weird";
+            else ans = "Not Weird";
+        }
+        System.out.println(ans);
+
+    }
+}
+
+
+
+
+2.)  java inheritence 1
+
+
+class Bird extends Animal {
+
+    void fly() {
+        System.out.println("I am flying");
+    }
+
+    void sing() {
+        System.out.println("I am singing");
+    }
+}
+
+
+
+
+
+
+3.) java loops 1
+
+
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int N = in.nextInt();
+
+        for(int i = 1; i <= 10; i++){
+
+            System.out.printf("%d x %d = %d%n", N, i, N*i);
+        }
+    }
+}
