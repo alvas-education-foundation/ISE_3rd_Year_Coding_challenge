@@ -1,0 +1,113 @@
+1.) Array Reversal
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num, *arr, i;
+    scanf("%d", &num);
+    arr = (int*) malloc(num * sizeof(int));
+    for(i = 0; i < num; i++) {
+        scanf("%d", arr + i);
+    }
+
+    
+
+    for(i = num-1; i>-1; i--)
+        printf("%d ", *(arr + i));
+    return 0;
+}
+
+
+2.)Printing Tokens
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    char *s;
+    s = malloc(1024 * sizeof(char));
+    scanf("%[^\n]", s);
+    s = realloc(s, strlen(s) + 1);
+    for (char *c = s; *c != NULL; c++) {
+    if (*c == ' ') {
+        *c = '\n';
+    }
+}
+printf("%s", s);
+    return 0;
+}
+
+
+
+3.) 1D Arrays in C
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,sum=0;
+    scanf("%d",&n);
+    int *val = malloc(n*sizeof(int));
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&val[i]);
+        sum+=val[i];
+    }
+    printf("%i",sum);
+    free(val);
+   
+    return 0;
+}
+
+
+4.)Digit Frequency
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    char s;
+    int i,a[] ={0,0,0,0,0,0,0,0,0,0};
+    while(scanf("%c", &s) == 1)
+        if(s >= '0' && s <= '9')
+            a[s-'0']+=1;
+                        
+    for(i=0;i<10;i++)
+        printf("%d ",a[i]);  
+    return 0;
+}
+
+
+
+5.) Students Marks Sum
+
+int marks_summation(int* marks, int number_of_students, char gender) {
+    int sum=0;
+    if(gender=='b'){
+        for(int i=0;i< number_of_students;i++){
+            if(i%2==0){
+                sum+=marks[i];
+            }
+            
+        }
+    } else if(gender=='g'){
+        for(int i=0;i<number_of_students;i++){
+            if(i%2>0){
+                sum+=marks[i];
+            }
+        }
+    }return sum;
+}
