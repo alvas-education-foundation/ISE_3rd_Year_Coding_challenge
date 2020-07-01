@@ -1,4 +1,3 @@
-
 Question 1:Write a java program to find factorial of a given number.
 Solution:
 class FactorialExample{  
