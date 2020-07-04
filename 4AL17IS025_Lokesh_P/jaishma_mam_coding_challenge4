@@ -1,0 +1,55 @@
+1)
+public class Replace {
+    public static void main(String[] args) {
+        String sentence = " how to do in java ";
+        System.out.println("Original sentence: " + sentence);
+
+        sentence = sentence.replaceAll("\\s+", "");
+
+        System.out.println("After replacement: " + sentence);
+    }
+}
+2)
+
+import java.util.*;
+
+class Reverse {
+    public static void main(String args[]) {
+        String original, reverse = "";
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Enter a string to reverse");
+        original = in.nextLine();
+
+        int length = original.length();
+
+        for (int i = length - 1; i >= 0; i--)
+            reverse = reverse + original.charAt(i);
+
+        System.out.println("Reverse of the string: " + reverse);
+    }
+}
+3)
+class Common {
+    static void common(int arr1[], int arr2[], int m, int n) {
+        int i = 0, j = 0;
+        while (i < m && j < n) {
+            if (arr1[i] < arr2[j])
+                i++;
+            else if (arr2[j] < arr1[i])
+                j++;
+            else {
+                System.out.print(arr2[j++] + " ");
+                i++;
+            }
+        }
+    }
+
+    public static void main(String args[]) {
+        int arr1[] = { 1, 2, 4, 5, 6 };
+        int arr2[] = { 2, 3, 5, 7 };
+        int m = arr1.length;
+        int n = arr2.length;
+        common(arr1, arr2, m, n);
+    }
+}
