@@ -1,0 +1,80 @@
+
+1.)welcome to java
+
+
+public class Solution {
+
+    public static void main(String[] args) {
+       System.out.println("Hello, World.");
+       System.out.println("Hello, Java.");
+        /* Enter your code here. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
+
+
+
+
+2.)java data types
+
+
+import java.util.*;
+import java.io.*;
+    class Solution{ 
+        public static void main(String []argh) {
+
+    Scanner sc = new Scanner(System.in);
+    int t=sc.nextInt();
+
+    for(int i=0;i<t;i++)
+    {
+
+        try
+        {
+            long x=sc.nextLong();
+            System.out.println(x+" can be fitted in:");
+            if(x>=-128 && x<=127)System.out.println("* byte");
+            //Complete the code
+            if(x >= -Math.pow(2, 15) && x <= Math.pow(2, 15) - 1)
+                System.out.println("* short");
+            if(x >= -Math.pow(2, 31) && x <= Math.pow(2, 31) - 1)
+                System.out.println("* int");
+            if(x >= -Math.pow(2, 63) && x <= Math.pow(2, 63) - 1)
+                System.out.println("* long");
+        }
+        catch(Exception e)
+        {
+            System.out.println(sc.next()+" can't be fitted anywhere.");
+        }
+
+    }
+    }
+    }
+
+
+
+3.)java end of file
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+            int i=1;
+            Scanner sc = new Scanner(System.in);
+            
+            while(sc.hasNext())
+            {
+                System.out.println(i++ +" "+sc.nextLine());
+            }
+    }
+}
+
+
+

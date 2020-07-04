@@ -1,0 +1,72 @@
+
+Question 1:Write a java program to find factorial of a given number.
+Solution:
+class FactorialExample{  
+ public static void main(String args[]){  
+  int i,fact=1;  
+  int number=5;//It is the number to calculate factorial    
+  for(i=1;i<=number;i++){    
+      fact=fact*i;    
+  }    
+  System.out.println("Factorial of "+number+" is: "+fact);    
+ }  
+} 
+
+ 
+Question 2:Write a java program to count occurrences of each character in String in java. If the String is  
+"Java Hungry" then the answer should be
+{ =1, a=2, r=1, u=1, v=1, g=1, H=1, y=1, J=1, n=1}
+Solution:
+
+public class EachCharacterCountInString
+{ 
+ public static void main(String[] args)
+    {
+	characterCount("Java Hungry");
+    }
+ 
+ static void characterCount(String inputString)
+    {
+ 
+        HashMap<Character, Integer> eachCharCountMap = new HashMap<Character, Integer>();
+ 
+        char[] charArray = inputString.toCharArray();
+ 
+        for (char c : charArray)
+        {
+            if(eachCharCountMap.containsKey(c))
+            {
+                eachCharCountMap.put(c, eachCharCountMap.get(c)+1);
+            }
+            else
+            {
+                eachCharCountMap.put(c, 1);
+            }
+        }
+System.out.println(eachCharCountMap);
+    }
+     
+}
+
+Question 3:Write a java program to find all the permutations of the given String.
+Solution:
+public class GFG { 
+	static void printPermutn(String str, String ans) 
+	{ 
+		if (str.length() == 0) { 
+			System.out.print(ans + " "); 
+			return; 
+		} 
+		for (int i = 0; i < str.length(); i++) { 
+			char ch = str.charAt(i); 
+			String ros = str.substring(0, i) + 
+						str.substring(i + 1); 
+			printPermutn(ros, ans + ch); 
+		} 
+	} 
+	public static void main(String[] args) 
+	{ 
+		String s = "abb"; 
+		printPermutn(s, ""); 
+	} 
+} 
