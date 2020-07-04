@@ -1,0 +1,122 @@
+1)
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main()
+{
+    int d1;
+    int m1;
+    int y1;
+    scanf("%d %d %d", &d1, &m1, &y1);
+    int d2;
+    int m2;
+    int y2;
+    scanf("%d %d %d", &d2, &m2, &y2);
+    if (y2 == y1)
+    {
+        if (m2 == m1)
+        {
+            if (d1 < d2)
+                printf("0");
+            else
+                printf("%d", 15 * (d1 - d2));
+        }
+        else
+        {
+            if (m1 < m2)
+                printf("0");
+            else
+                printf("%d", 500 * (m1 - m2));
+        }
+    }
+    else
+    {
+        if (y1 < y2)
+            printf("0");
+        else
+            printf("%d", 10000 * (y1 - y2));
+    }
+    return 0;
+}
+2)
+def isPrime(n):
+    if (n <= 1):
+        return False
+    for i in range(2, n):
+        if (n % i == 0):
+            return False
+    return True
+
+
+n = int(input())
+if isPrime(n):
+    print("True")
+else:
+    print("False")
+   3)
+import java.io.*
+import java.util.*
+//binary
+class Node{
+    Node left, right
+    int data
+    Node(int data){
+        this.data = data
+        left = right = null
+    }
+}
+class Solution{
+    public static int getHeight(Node root){
+        return root == null ? - 1: 1 + Math.max(getHeight(root.left), getHeight(root.right))
+    }
+    public static Node insert(Node root, int data){
+        if(root == null){
+            return new Node(data)
+        }
+        else{
+            Node cur
+            if(data <= root.data){
+                cur = insert(root.left, data)
+                root.left = cur
+            }
+            else{
+                cur = insert(root.right, data)
+                root.right = cur
+            }
+            return root
+        }
+    }
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in)
+        int T = sc.nextInt()
+        Node root = null
+        while(T-->0){
+            int data = sc.nextInt()
+            root = insert(root, data)
+        }
+        int height = getHeight(root)
+        System.out.println(height)
+    }
+}
+4)
+import sys
+n = int(input())
+a = [int(i) for i in input().strip().split(' ')]
+numSwaps = 0
+for i in range(n):
+    currentSwaps = 0
+    for j in range(0, n - 1):
+        if a[j] > a[j + 1]:
+            a[j], a[j + 1] = a[j + 1], a[j]
+            currentSwaps += 1
+    numSwaps += currentSwaps
+    if currentSwaps == 0:
+        break
+print("Array is sorted in " + str(numSwaps) + " swaps.")
+print("First Element: " + str(a[0]))
+print("Last Element: " + str(a[-1]))
