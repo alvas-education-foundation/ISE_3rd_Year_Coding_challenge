@@ -1,0 +1,80 @@
+1)
+def power(num, n):
+
+    if(n == 0):
+        return 1
+    elif(n % 2 == 0):
+        return power(num, n // 2) * power(num, n // 2)
+    else:
+        return num * power(num, n // 2) * power(num, n // 2)
+
+
+def checkRecursive(x, n, curr_num=1, curr_sum=0):
+
+    results = 0
+
+    p = power(curr_num, n)
+    while(p + curr_sum < x):
+
+        results += checkRecursive(x, n, curr_num + 1, p + curr_sum)
+        curr_num = curr_num + 1
+        p = power(curr_num, n)
+
+    if(p + curr_sum == x):
+        results = results + 1
+
+    return results
+
+
+if __name__ == '__main__':
+    x = int(input())
+    n = int(input())
+    print(checkRecursive(x, n))
+    2)
+n, k = map(int, input().split())
+x = n * k % 9
+print(x if x else 9)
+3)def convert24(str1):
+
+    if str1[-2:] == "AM" and str1[:2] == "12":
+        return "00" + str1[2:-2]
+
+    elif str1[-2:] == "AM":
+        return str1[:-2]
+
+    elif str1[-2:] == "PM" and str1[:2] == "12":
+        return str1[:-2]
+
+    else:
+
+        return str(int(str1[:2]) + 12) + str1[2:8]
+
+
+if __name__ == "__main__":
+    n = input()
+    print(convert24(n))
+ 3)def convert24(str1):
+
+    if str1[-2:] == "AM" and str1[:2] == "12":
+        return "00" + str1[2:-2]
+
+    elif str1[-2:] == "AM":
+        return str1[:-2]
+
+    elif str1[-2:] == "PM" and str1[:2] == "12":
+        return str1[:-2]
+
+    else:
+
+        return str(int(str1[:2]) + 12) + str1[2:8]
+
+
+if __name__ == "__main__":
+    n = input()
+    print(convert24(n))
+ 4)
+n = int(input().strip())
+p = int(input().strip())
+solution = 0
+solution = min(p//2, n//2 - p//2)
+print(solution)
