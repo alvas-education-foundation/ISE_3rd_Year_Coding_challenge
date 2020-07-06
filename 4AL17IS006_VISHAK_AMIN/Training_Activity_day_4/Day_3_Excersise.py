@@ -30,8 +30,6 @@ print(df.tolist())
 
 
 # In[9]:
-
-
 #Write a Pandas program to add, subtract, multiple and divide two Pandas Series and print their results using the Sample Series: [2, 4, 6, 8, ...100], [1, 3, 5, 7, 9...99]
 import pandas as pd
 li = []
