@@ -1,0 +1,59 @@
+Activity 1
+Your local library needs your help! Given the expected and actual return dates for a library book, create a program that calculates the fine (if any). 
+The fee structure is as follows:
+1.If the book is returned on or before the expected return date, no fine will be charged (i.e.:fine=0).
+2.If the book is returned after the expected return day but still within the same calendar month and year as the expected return date :fine=Rs.15*(No. Of Days)
+3.If the book is returned after the expected return month but still within the same calendar year as the expected return date, the fine=Rs.500*(No. Of Days).
+4.If the book is returned after the calendar year in which it was expected, there is a fixed fine of Rs. 10000.
+
+Input Format
+1.The first line contains 3 space-separated integers denoting the respective DD,MM, YY on which the book was actually returned.
+2.The second line contains 3 space-separated integers denoting the respective DD,MM, YY on which the book was expected to be returned (due date).
+
+Constraints
+1.DD={1 to 31}
+2.MM={1 to 12}
+3.YY={1 to 3000}
+4.Accept only valid dates
+
+Output Format
+Print a single integer denoting the library fine for the book received as input.
+
+Program:
+
+#include <iostream>
+
+int library_fine(int ret_day, int ret_mon, int ret_yr, int due_day, int due_mon, int due_year) 
+{
+    int fine = 0;
+    if (ret_yr == due_year)
+    {
+        if (ret_mon == due_mon)
+        {
+            if (ret_day > due_day)
+            {
+                fine = 15 * (ret_day - due_day);
+            }
+        }
+        else if (ret_mon > due_mon)
+        {
+            fine = 500 * (ret_mon - due_mon);
+        }
+    }
+    else if (ret_yr > due_year)
+    {
+        fine = 10000;
+    }
+    return fine;
+}
+
+int main()
+{
+    int ret_day, ret_mon, ret_yr;
+    int due_day, due_mon, due_year;
+
+    std::cin >> ret_day >> ret_mon >> ret_yr;
+    std::cin >> due_day >> due_mon >> due_year;
+
+    std::cout << library_fine(ret_day, ret_mon, ret_yr, due_day, due_mon, due_year) << "\n";
+}    
