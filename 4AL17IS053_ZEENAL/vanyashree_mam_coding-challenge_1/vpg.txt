@@ -1,0 +1,18 @@
+
+
+  
+1.)  C Program to Find ASCII value of a Character
+
+ASCII value represents the English characters as numbers, each letter is assigned a number from 0 to 127. For example, the ASCII value for uppercase Q is 81.
+
+Program:-
+
+#include <stdio.h>
+int main()
+{
+    char ch;
+    printf("Enter any character:");
+    scanf("%c", &ch);
+    printf("ASCII value of character %c is: %d", ch, ch);
+    return 0;
+}
